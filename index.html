@@ -43,6 +43,27 @@
                     <a href="#contact" class="btn btn-primary btn-lg">Get Your Free Consultation</a>
                     <a href="#services" class="btn btn-outline btn-lg">See What We Build</a>
                 </div>
+                <!-- MAX Audio Intro -->
+                <div class="hero-audio">
+                    <div class="audio-player" id="audioPlayer">
+                        <img src="images/max-avatar.png" alt="MAX" class="audio-avatar">
+                        <div class="audio-info">
+                            <p class="audio-label">🔊 Hear from MAX — our AI</p>
+                            <p class="audio-sublabel">2 min intro — tap to play</p>
+                        </div>
+                        <button class="audio-btn" id="audioBtn" aria-label="Play audio">
+                            <span class="play-icon" id="playIcon">▶</span>
+                        </button>
+                    </div>
+                    <div class="audio-progress" id="audioProgress" style="display:none;">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                        <span class="audio-time" id="audioTime">0:00</span>
+                    </div>
+                    <audio id="maxAudio" preload="none" src="audio/website-intro-audio.mp3"></audio>
+                </div>
+
                 <div class="hero-proof">
                     <div class="proof-item">
                         <span class="proof-icon">🤖</span>
@@ -88,6 +109,19 @@
                     <div class="problem-emoji">🕐</div>
                     <h3>No Time to Scale</h3>
                     <p>You know you could grow, but you're stuck doing $15/hour tasks when your time is worth $150.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New to AI Section -->
+    <section class="newtoai-section">
+        <div class="container">
+            <div class="newtoai-card">
+                <div class="newtoai-icon">💡</div>
+                <div class="newtoai-content">
+                    <h3>New to AI? Perfect.</h3>
+                    <p>You don't need to understand how AI works to benefit from it — just like you don't need to understand how your car engine works to drive. Tell us what's eating your time, and we'll handle the rest. No jargon, no confusion, no tech degree required. We speak human.</p>
                 </div>
             </div>
         </div>

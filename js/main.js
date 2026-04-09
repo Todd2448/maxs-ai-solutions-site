@@ -98,6 +98,53 @@ if (contactForm) {
     });
 }
 
+// Audio Player
+const audio = document.getElementById('maxAudio');
+const audioBtn = document.getElementById('audioBtn');
+const audioPlayer = document.getElementById('audioPlayer');
+const playIcon = document.getElementById('playIcon');
+const audioProgress = document.getElementById('audioProgress');
+const progressFill = document.getElementById('progressFill');
+const audioTime = document.getElementById('audioTime');
+
+if (audio && audioBtn) {
+    function toggleAudio() {
+        if (audio.paused) {
+            audio.play();
+            playIcon.textContent = '⏸';
+            audioPlayer.classList.add('playing');
+            audioProgress.style.display = 'flex';
+        } else {
+            audio.pause();
+            playIcon.textContent = '▶';
+            audioPlayer.classList.remove('playing');
+        }
+    }
+
+    audioBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleAudio();
+    });
+    audioPlayer.addEventListener('click', toggleAudio);
+
+    audio.addEventListener('timeupdate', () => {
+        if (audio.duration) {
+            const pct = (audio.currentTime / audio.duration) * 100;
+            progressFill.style.width = pct + '%';
+            const mins = Math.floor(audio.currentTime / 60);
+            const secs = Math.floor(audio.currentTime % 60).toString().padStart(2, '0');
+            audioTime.textContent = mins + ':' + secs;
+        }
+    });
+
+    audio.addEventListener('ended', () => {
+        playIcon.textContent = '▶';
+        audioPlayer.classList.remove('playing');
+        progressFill.style.width = '0%';
+        audioTime.textContent = '0:00';
+    });
+}
+
 // Intersection Observer for scroll animations
 const observerOptions = {
     threshold: 0.1,
