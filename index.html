@@ -381,5 +381,21 @@
     </footer>
 
     <script src="js/main.js"></script>
+
+    <!-- ElevenLabs Conversational AI Widget -->
+    <!-- TODO: Replace YOUR_AGENT_ID_HERE with the actual agent ID from ElevenLabs dashboard -->
+    <style>
+      elevenlabs-convai {
+        --el-convai-button-color: #6c47ff;
+        --el-convai-button-icon-color: #ffffff;
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        z-index: 9999;
+      }
+    </style>
+    <elevenlabs-convai agent-id="YOUR_AGENT_ID_HERE"></elevenlabs-convai>
+    <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+
 </body>
 </html>
