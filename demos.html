@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try Our AI Receptionist | Max's AI Solutions</title>
+    <meta name="description" content="Call our live demo lines and hear exactly what your customers would experience. Real AI receptionists for plumbers, real estate, doctors, and contractors.">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .demos-hero {
+            padding: 120px 20px 60px;
+            text-align: center;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+        }
+        .demos-hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 16px;
+            color: #fff;
+        }
+        .demos-hero p {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.7);
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .demos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px 80px;
+        }
+
+        .demo-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 40px 32px;
+            text-align: center;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        .demo-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(102, 126, 234, 0.4);
+        }
+
+        .demo-icon {
+            font-size: 3rem;
+            margin-bottom: 16px;
+        }
+        .demo-name {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        .demo-agent {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 16px;
+        }
+        .demo-desc {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.65);
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+        .demo-scenarios {
+            text-align: left;
+            margin-bottom: 24px;
+        }
+        .demo-scenarios h4 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: rgba(255,255,255,0.4);
+            margin-bottom: 10px;
+        }
+        .demo-scenarios ul {
+            list-style: none;
+            padding: 0;
+        }
+        .demo-scenarios li {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.6);
+            padding: 4px 0;
+        }
+        .demo-scenarios li::before {
+            content: "→ ";
+            color: #667eea;
+        }
+
+        .demo-btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: opacity 0.2s, transform 0.2s;
+        }
+        .demo-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        .demo-widget-btn {
+            display: inline-block;
+            padding: 10px 24px;
+            background: transparent;
+            color: #667eea;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid #667eea;
+            border-radius: 8px;
+            text-decoration: none;
+            margin-top: 10px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .demo-widget-btn:hover {
+            background: rgba(102, 126, 234, 0.1);
+        }
+
+        .demos-cta {
+            text-align: center;
+            padding: 60px 20px 80px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #0a0a0a 100%);
+        }
+        .demos-cta h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 16px;
+        }
+        .demos-cta p {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.6);
+            max-width: 550px;
+            margin: 0 auto 32px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(102, 126, 234, 0.15);
+            color: #667eea;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 6px 14px;
+            border-radius: 20px;
+            margin-bottom: 16px;
+        }
+
+        .demo-card.featured {
+            border-color: rgba(102, 126, 234, 0.3);
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.08) 0%, rgba(118, 75, 162, 0.05) 100%);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo.png" alt="Max's AI Solutions" class="nav-logo-img">
+                Max's AI Solutions
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#how-it-works">How It Works</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="training.html">Free Training</a></li>
+                <li><a href="free-guide.html">Free Guide</a></li>
+                <li><a href="phone-answering.html">Phone Answering</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="index.html#contact" class="btn btn-nav">Get Started</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="demos-hero">
+        <span class="badge">Live Demos</span>
+        <h1>Hear It <span class="gradient-text">Before You Buy It</span></h1>
+        <p>Don't take our word for it. Call a demo line and experience exactly what your customers would hear. Real AI. Real conversations. No scripts.</p>
+    </section>
+
+    <!-- Demo Cards -->
+    <section style="background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);">
+        <div class="demos-grid">
+
+            <!-- Doctor's Office -->
+            <div class="demo-card featured">
+                <div class="demo-icon">🏥</div>
+                <div class="demo-name">Doctor's Office</div>
+                <div class="demo-agent">AI Receptionist: Alex</div>
+                <p class="demo-desc">Handles medication refills, appointment scheduling, messages for the care team, and after-hours calls — with empathy patients actually feel.</p>
+                <div class="demo-scenarios">
+                    <h4>Try asking about:</h4>
+                    <ul>
+                        <li>Refilling a pain medication</li>
+                        <li>Scheduling a follow-up appointment</li>
+                        <li>Leaving a message for the doctor</li>
+                        <li>Lab results</li>
+                    </ul>
+                </div>
+                <a href="tel:+14433979716" class="demo-btn">📞 Call Alex: (443) 397-9716</a>
+            </div>
+
+            <!-- Plumber -->
+            <div class="demo-card">
+                <div class="demo-icon">🔧</div>
+                <div class="demo-name">Plumbing Company</div>
+                <div class="demo-agent">AI Receptionist: Sam</div>
+                <p class="demo-desc">Handles emergencies at 2 AM, schedules service calls, and keeps your customers calm when their basement is flooding.</p>
+                <div class="demo-scenarios">
+                    <h4>Try asking about:</h4>
+                    <ul>
+                        <li>A burst pipe emergency</li>
+                        <li>Scheduling a drain cleaning</li>
+                        <li>Water heater not working</li>
+                        <li>Pricing questions</li>
+                    </ul>
+                </div>
+                <a href="#" class="demo-btn" onclick="alert('Demo line coming soon! Chat with Sam using the voice widget below.'); return false;">📞 Call Sam — Coming Soon</a>
+                <br>
+                <span class="demo-widget-btn" onclick="document.getElementById('plumber-widget').style.display='block'; this.style.display='none';">🎙️ Try Sam via Voice Chat</span>
+                <div id="plumber-widget" style="display:none; margin-top: 16px;">
+                    <elevenlabs-convai agent-id="agent_8101kppj9jyhet19db1evr0ebmy4"></elevenlabs-convai>
+                </div>
+            </div>
+
+            <!-- Real Estate -->
+            <div class="demo-card">
+                <div class="demo-icon">🏠</div>
+                <div class="demo-name">Real Estate Agency</div>
+                <div class="demo-agent">AI Receptionist: Jamie</div>
+                <p class="demo-desc">Captures listing inquiries, schedules showings, qualifies buyers, and never lets a lead slip through the cracks — even on weekends.</p>
+                <div class="demo-scenarios">
+                    <h4>Try asking about:</h4>
+                    <ul>
+                        <li>A property you saw online</li>
+                        <li>Scheduling a showing</li>
+                        <li>Selling your home</li>
+                        <li>What's available in your area</li>
+                    </ul>
+                </div>
+                <a href="#" class="demo-btn" onclick="alert('Demo line coming soon! Chat with Jamie using the voice widget below.'); return false;">📞 Call Jamie — Coming Soon</a>
+                <br>
+                <span class="demo-widget-btn" onclick="document.getElementById('realtor-widget').style.display='block'; this.style.display='none';">🎙️ Try Jamie via Voice Chat</span>
+                <div id="realtor-widget" style="display:none; margin-top: 16px;">
+                    <elevenlabs-convai agent-id="agent_6901kppj9t21ef7vpj6ttxnbgh65"></elevenlabs-convai>
+                </div>
+            </div>
+
+            <!-- Construction -->
+            <div class="demo-card">
+                <div class="demo-icon">🏗️</div>
+                <div class="demo-name">Construction Company</div>
+                <div class="demo-agent">AI Receptionist: Jordan</div>
+                <p class="demo-desc">Handles new project inquiries, quote requests, scheduling, and keeps your phone covered when you're on the job site.</p>
+                <div class="demo-scenarios">
+                    <h4>Try asking about:</h4>
+                    <ul>
+                        <li>Getting a quote for a renovation</li>
+                        <li>Scheduling an estimate</li>
+                        <li>Checking on a current project</li>
+                        <li>Emergency repair needs</li>
+                    </ul>
+                </div>
+                <a href="#" class="demo-btn" onclick="alert('Demo line coming soon!'); return false;">📞 Call Jordan — Coming Soon</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="demos-cta">
+        <h2>Ready to <span class="gradient-text">Stop Missing Calls?</span></h2>
+        <p>Your AI receptionist can be live in 48 hours. Custom-built for your business, your industry, your voice. Starting at $97/month.</p>
+        <a href="index.html#contact" class="demo-btn">Get Your Free Consultation</a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <img src="images/logo.png" alt="Logo" class="footer-logo-img">
+                <span>Max's AI Solutions</span>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="phone-answering.html">Phone Answering</a>
+                <a href="training.html">Free Training</a>
+                <a href="free-guide.html">Free Guide</a>
+            </div>
+            <p class="footer-copy">&copy; 2026 Max's AI Solutions. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- ElevenLabs Widget Script -->
+    <script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript"></script>
+
+    <!-- Nav toggle -->
+    <script>
+        document.getElementById('navToggle').addEventListener('click', () => {
+            document.getElementById('navLinks').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
