@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partner Program | Max's AI Solutions</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .partner-hero {
+            background: linear-gradient(135deg, #0a0a1a 0%, #0d1b2a 50%, #0a0a1a 100%);
+            padding: 100px 0 80px;
+            text-align: center;
+        }
+        .partner-hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #00d4ff, #7b2fff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
+        .partner-hero p {
+            font-size: 1.25rem;
+            color: #a0aec0;
+            max-width: 650px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+        }
+        .paths-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            max-width: 900px;
+            margin: 60px auto;
+        }
+        .path-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+        }
+        .path-card.featured {
+            border-color: #00d4ff;
+            background: rgba(0,212,255,0.05);
+            position: relative;
+        }
+        .path-card.featured::before {
+            content: "MOST POPULAR";
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #00d4ff, #7b2fff);
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 4px 16px;
+            border-radius: 20px;
+            letter-spacing: 1px;
+        }
+        .path-price {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #00d4ff;
+            margin: 15px 0 5px;
+        }
+        .path-price span {
+            font-size: 1rem;
+            color: #a0aec0;
+            font-weight: 400;
+        }
+        .path-card h3 {
+            font-size: 1.4rem;
+            color: white;
+            margin-bottom: 10px;
+        }
+        .path-card p {
+            color: #a0aec0;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+        .path-features {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+            margin-bottom: 30px;
+        }
+        .path-features li {
+            color: #e2e8f0;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 0.95rem;
+        }
+        .path-features li::before {
+            content: "✓ ";
+            color: #00d4ff;
+            font-weight: 700;
+        }
+
+        /* Video section */
+        .video-section {
+            background: #0d1b2a;
+            padding: 80px 0;
+            text-align: center;
+        }
+        .video-placeholder {
+            width: 100%;
+            max-width: 720px;
+            height: 400px;
+            background: rgba(0,0,0,0.4);
+            border: 1px solid rgba(0,212,255,0.2);
+            border-radius: 16px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #a0aec0;
+            font-size: 1.1rem;
+        }
+
+        /* Gate section */
+        .gate-section {
+            background: linear-gradient(135deg, rgba(0,212,255,0.08), rgba(123,47,255,0.08));
+            border: 1px solid rgba(0,212,255,0.2);
+            border-radius: 24px;
+            padding: 60px 40px;
+            text-align: center;
+            max-width: 700px;
+            margin: 80px auto;
+        }
+        .gate-section h2 {
+            font-size: 2rem;
+            color: white;
+            margin-bottom: 15px;
+        }
+        .gate-section p {
+            color: #a0aec0;
+            margin-bottom: 30px;
+            font-size: 1.05rem;
+        }
+        .gate-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 420px;
+            margin: 0 auto;
+        }
+        .gate-form input {
+            padding: 14px 18px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 10px;
+            color: white;
+            font-size: 1rem;
+        }
+        .gate-form input::placeholder { color: #666; }
+        .gate-form input:focus {
+            outline: none;
+            border-color: #00d4ff;
+        }
+        .gate-form button {
+            padding: 16px;
+            background: linear-gradient(135deg, #00d4ff, #7b2fff);
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+        .gate-form button:hover { opacity: 0.9; }
+
+        /* Numbers section - hidden until gate */
+        .numbers-section {
+            display: none;
+            padding: 60px 0;
+        }
+        .numbers-section.revealed { display: block; }
+        .numbers-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .number-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 35px 25px;
+            text-align: center;
+        }
+        .number-card h4 {
+            color: #a0aec0;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+        .number-big {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #00d4ff;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+        .number-sub {
+            color: #a0aec0;
+            font-size: 0.9rem;
+        }
+        .number-annual {
+            color: #7b2fff;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-top: 10px;
+        }
+
+        /* Training overview */
+        .training-section {
+            padding: 80px 0;
+            background: #0a0a1a;
+        }
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1000px;
+            margin: 40px auto 0;
+        }
+        .module-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 14px;
+            padding: 28px;
+        }
+        .module-num {
+            font-size: 0.8rem;
+            color: #00d4ff;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        .module-card h4 {
+            color: white;
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+        .module-card p {
+            color: #718096;
+            font-size: 0.875rem;
+            line-height: 1.5;
+        }
+
+        /* Apply form */
+        .apply-section {
+            background: #0d1b2a;
+            padding: 80px 0;
+            text-align: center;
+        }
+        .apply-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            max-width: 600px;
+            margin: 30px auto 0;
+        }
+        .apply-form input, .apply-form textarea {
+            padding: 14px 18px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 10px;
+            color: white;
+            font-size: 0.95rem;
+            font-family: inherit;
+        }
+        .apply-form textarea {
+            grid-column: 1 / -1;
+            height: 100px;
+            resize: vertical;
+        }
+        .apply-form input::placeholder,
+        .apply-form textarea::placeholder { color: #666; }
+        .apply-form input:focus,
+        .apply-form textarea:focus {
+            outline: none;
+            border-color: #00d4ff;
+        }
+        .apply-form button {
+            grid-column: 1 / -1;
+            padding: 16px;
+            background: linear-gradient(135deg, #00d4ff, #7b2fff);
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .section-label {
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #00d4ff;
+            margin-bottom: 12px;
+        }
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 15px;
+        }
+        .section-sub {
+            color: #a0aec0;
+            font-size: 1.05rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .paths-grid, .numbers-grid, .modules-grid { grid-template-columns: 1fr; }
+            .apply-form { grid-template-columns: 1fr; }
+            .apply-form textarea, .apply-form button { grid-column: 1; }
+            .partner-hero h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAV -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo.png" alt="Max's AI Solutions" class="logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="phone-answering.html">Phone System</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="demos.html">Live Demos</a></li>
+                <li><a href="partner.html" class="nav-cta">Partner Program</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="partner-hero">
+        <div class="container">
+            <div class="section-label">Partner Program</div>
+            <h1>Get Paid to Help<br>Small Businesses Win</h1>
+            <p>Refer clients and earn. Or get certified and build a real recurring income — while we do the heavy lifting.</p>
+            <a href="#apply" class="btn-primary">Apply to Become a Partner</a>
+        </div>
+    </section>
+
+    <!-- VIDEO -->
+    <section class="video-section">
+        <div class="container">
+            <div class="section-label">Hear It From MAX</div>
+            <h2 class="section-title">Why Partners Love This Program</h2>
+            <p class="section-sub" style="margin-bottom:40px;">MAX breaks down exactly how the program works and what you can earn.</p>
+            <div class="video-placeholder">
+                🎬 Partner Program Video — Coming Soon
+            </div>
+        </div>
+    </section>
+
+    <!-- TWO PATHS -->
+    <section style="padding: 80px 0; background: #0a0a1a;">
+        <div class="container">
+            <div class="section-label" style="text-align:center;">Choose Your Path</div>
+            <h2 class="section-title" style="text-align:center;">Two Ways to Partner With Us</h2>
+            <div class="paths-grid">
+                <!-- Referral -->
+                <div class="path-card">
+                    <h3>Referral Partner</h3>
+                    <div class="path-price">Free <span>to join</span></div>
+                    <p>Send us a lead. We close it. You get paid. Simple as that.</p>
+                    <ul class="path-features">
+                        <li>No training required</li>
+                        <li>10% of first month's revenue per referral</li>
+                        <li>One-time payout per client</li>
+                        <li>No ongoing responsibility</li>
+                        <li>Commissions offset your own MAX services</li>
+                    </ul>
+                    <a href="#apply" class="btn-secondary" style="display:block;text-align:center;padding:14px;">Join as Referral Partner</a>
+                </div>
+
+                <!-- Certified -->
+                <div class="path-card featured">
+                    <h3>Certified Partner</h3>
+                    <div class="path-price">$499 <span>one-time</span></div>
+                    <p>Get trained, get certified, manage accounts, and earn 25% recurring — forever.</p>
+                    <ul class="path-features">
+                        <li>Full 5-module training program</li>
+                        <li>Written certification test</li>
+                        <li>1 accompanied sales appointment</li>
+                        <li>25% of monthly recurring revenue — forever</li>
+                        <li>$499 fee credited back after first client</li>
+                        <li>Commissions offset your own MAX services</li>
+                        <li>Build your own client base under our brand</li>
+                    </ul>
+                    <a href="#apply" class="btn-primary" style="display:block;text-align:center;padding:14px;">Apply for Certification</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EMAIL GATE -->
+    <section style="padding: 40px 20px; background: #0d1b2a;">
+        <div class="container">
+            <div class="gate-section" id="gate-box">
+                <div class="section-label">The Real Numbers</div>
+                <h2>Want to See What You Could Actually Earn?</h2>
+                <p>We don't show earnings examples to everyone — enter your name and email and we'll show you exactly what the numbers look like for 5, 10, and 20 clients.</p>
+                <form class="gate-form" id="gate-form" onsubmit="revealNumbers(event)">
+                    <input type="text" placeholder="Your first name" required id="gate-name">
+                    <input type="email" placeholder="Your email address" required id="gate-email">
+                    <button type="submit">Show Me the Numbers →</button>
+                </form>
+            </div>
+
+            <!-- Hidden numbers section -->
+            <div class="numbers-section" id="numbers-section">
+                <div style="text-align:center; margin-bottom:40px;">
+                    <div class="section-label">Partner Earnings Examples</div>
+                    <h2 class="section-title">Here's What the Numbers Look Like</h2>
+                    <p class="section-sub">Based on 25% of $297/mo per client. These are real numbers — not projections.</p>
+                </div>
+                <div class="numbers-grid">
+                    <div class="number-card">
+                        <h4>5 Clients</h4>
+                        <div class="number-big">$371</div>
+                        <div class="number-sub">per month</div>
+                        <div class="number-annual">$4,455 / year</div>
+                        <p style="color:#718096;font-size:0.85rem;margin-top:12px;">Your own MAX services fully covered + cash left over</p>
+                    </div>
+                    <div class="number-card" style="border-color: rgba(0,212,255,0.3);">
+                        <h4>10 Clients</h4>
+                        <div class="number-big">$743</div>
+                        <div class="number-sub">per month</div>
+                        <div class="number-annual">$8,910 / year</div>
+                        <p style="color:#718096;font-size:0.85rem;margin-top:12px;">A real side income. Most partners hit this in 60-90 days.</p>
+                    </div>
+                    <div class="number-card" style="border-color: rgba(123,47,255,0.4); background: rgba(123,47,255,0.05);">
+                        <h4>20 Clients</h4>
+                        <div class="number-big">$1,485</div>
+                        <div class="number-sub">per month</div>
+                        <div class="number-annual">$17,820 / year</div>
+                        <p style="color:#718096;font-size:0.85rem;margin-top:12px;">Full-time income. No employees. No overhead. Work from anywhere.</p>
+                    </div>
+                </div>
+                <div style="text-align:center;margin-top:40px;padding:30px;background:rgba(0,212,255,0.05);border:1px solid rgba(0,212,255,0.15);border-radius:16px;max-width:600px;margin-left:auto;margin-right:auto;">
+                    <p style="color:white;font-size:1.1rem;font-weight:600;margin-bottom:8px;">💡 The $499 math</p>
+                    <p style="color:#a0aec0;font-size:0.95rem;">Land your first client → $499 training fee credited back immediately. After that, every dollar is pure recurring income. Your first 2 clients pay you back in month one.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRAINING OVERVIEW -->
+    <section class="training-section">
+        <div class="container">
+            <div style="text-align:center;">
+                <div class="section-label">Certified Partner Training</div>
+                <h2 class="section-title">What Your $499 Covers</h2>
+                <p class="section-sub">5 modules. A written test. One real appointment with us by your side. Then you're certified.</p>
+            </div>
+            <div class="modules-grid">
+                <div class="module-card">
+                    <div class="module-num">Module 01</div>
+                    <h4>What MAX Actually Does</h4>
+                    <p>Phone systems, automation, websites, CRM, social media. Know the product cold before you sell it.</p>
+                </div>
+                <div class="module-card">
+                    <div class="module-num">Module 02</div>
+                    <h4>The Sales Conversation</h4>
+                    <p>3 questions that open every conversation. How to demo live. How to handle every objection.</p>
+                </div>
+                <div class="module-card">
+                    <div class="module-num">Module 03</div>
+                    <h4>Onboarding a Client</h4>
+                    <p>What info to collect. How the setup works. What to tell the client to expect on day one.</p>
+                </div>
+                <div class="module-card">
+                    <div class="module-num">Module 04</div>
+                    <h4>Managing the Relationship</h4>
+                    <p>Monthly check-ins. How to upsell. How to handle a complaint. When to escalate.</p>
+                </div>
+                <div class="module-card">
+                    <div class="module-num">Module 05</div>
+                    <h4>The Business of Being a Partner</h4>
+                    <p>Tracking commissions. Offsetting your own services. Building your network. Growing to 20 clients.</p>
+                </div>
+                <div class="module-card" style="border-color:rgba(0,212,255,0.2);background:rgba(0,212,255,0.04);">
+                    <div class="module-num">Certification</div>
+                    <h4>Written Test + Live Appointment</h4>
+                    <p>Pass the test (80%+). Complete one real appointment with us on the call. You're certified. We sign off. You're official.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REFERRAL PAYS SERVICES -->
+    <section style="padding:80px 0; background:#0d1b2a; text-align:center;">
+        <div class="container">
+            <div class="section-label">Referral Pays for Services</div>
+            <h2 class="section-title">Your Commissions Can Cover Your Own Bill</h2>
+            <p class="section-sub" style="margin-bottom:50px;">Using our AI phone system yourself? Every client you refer offsets your monthly cost. Most partners end up paying nothing.</p>
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:25px;max-width:800px;margin:0 auto;">
+                <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:14px;padding:30px;">
+                    <div style="font-size:2rem;margin-bottom:10px;">📞</div>
+                    <h4 style="color:white;margin-bottom:8px;">You Use Our Phone System</h4>
+                    <p style="color:#718096;font-size:0.9rem;">$99/mo Starter plan for your own business</p>
+                </div>
+                <div style="background:rgba(0,212,255,0.05);border:1px solid rgba(0,212,255,0.2);border-radius:14px;padding:30px;">
+                    <div style="font-size:2rem;margin-bottom:10px;">🤝</div>
+                    <h4 style="color:white;margin-bottom:8px;">You Refer 1 Client</h4>
+                    <p style="color:#718096;font-size:0.9rem;">Earn $74.25/mo — your bill is covered with cash left over</p>
+                </div>
+                <div style="background:rgba(123,47,255,0.05);border:1px solid rgba(123,47,255,0.2);border-radius:14px;padding:30px;">
+                    <div style="font-size:2rem;margin-bottom:10px;">💰</div>
+                    <h4 style="color:white;margin-bottom:8px;">Net Cost to You</h4>
+                    <p style="color:#7b2fff;font-size:1.1rem;font-weight:700;">$0</p>
+                    <p style="color:#718096;font-size:0.9rem;">And you're still earning $74/mo after that</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- APPLY -->
+    <section class="apply-section" id="apply">
+        <div class="container">
+            <div class="section-label">Ready to Start?</div>
+            <h2 class="section-title">Apply to Become a Partner</h2>
+            <p class="section-sub">Tell us a little about yourself. We'll reach out within 24 hours.</p>
+            <form class="apply-form" action="https://formspree.io/f/mwvwjjoq" method="POST">
+                <input type="text" name="name" placeholder="Your full name" required>
+                <input type="email" name="email" placeholder="Your email" required>
+                <input type="tel" name="phone" placeholder="Your phone number" required>
+                <input type="text" name="path" placeholder="Referral Partner or Certified Partner?" required>
+                <textarea name="why" placeholder="Tell us a little about yourself and why you want to partner with us..."></textarea>
+                <input type="hidden" name="_subject" value="New Partner Application">
+                <button type="submit">Submit My Application →</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer style="background:#050510;padding:40px 0;text-align:center;border-top:1px solid rgba(255,255,255,0.06);">
+        <p style="color:#4a5568;font-size:0.9rem;">© 2026 Max's AI Solutions. All rights reserved. | <a href="index.html" style="color:#00d4ff;">Home</a> | <a href="pricing.html" style="color:#00d4ff;">Pricing</a> | <a href="demos.html" style="color:#00d4ff;">Live Demos</a></p>
+    </footer>
+
+    <script>
+        function revealNumbers(e) {
+            e.preventDefault();
+            const name = document.getElementById('gate-name').value;
+            const email = document.getElementById('gate-email').value;
+
+            // Send to Formspree
+            fetch('https://formspree.io/f/mwvwjjoq', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({name, email, _subject: 'Partner Numbers Request'})
+            });
+
+            // Hide gate, show numbers
+            document.getElementById('gate-box').style.display = 'none';
+            document.getElementById('numbers-section').classList.add('revealed');
+
+            // Scroll to numbers
+            document.getElementById('numbers-section').scrollIntoView({behavior: 'smooth'});
+        }
+    </script>
+</body>
+</html>
