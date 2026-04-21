@@ -385,19 +385,64 @@
     <script src="js/main.js"></script>
 
     <!-- ElevenLabs Conversational AI Widget -->
-    <!-- ElevenLabs voice widget — MAX Website Assistant -->
     <style>
-      elevenlabs-convai {
-        --el-convai-button-color: #6c47ff;
-        --el-convai-button-icon-color: #ffffff;
+      #max-widget-container {
         position: fixed;
         bottom: 24px;
         right: 24px;
         z-index: 9999;
       }
+      #max-widget-close {
+        display: none;
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        width: 26px;
+        height: 26px;
+        background: #fff;
+        border: 2px solid #6c47ff;
+        border-radius: 50%;
+        color: #6c47ff;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 22px;
+        text-align: center;
+        cursor: pointer;
+        z-index: 10000;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      }
+      #max-widget-close:hover { background: #6c47ff; color: #fff; }
+      elevenlabs-convai {
+        --el-convai-button-color: #6c47ff;
+        --el-convai-button-icon-color: #ffffff;
+      }
     </style>
-    <elevenlabs-convai agent-id="agent_8901kppgsk0qezab60wrd94xbm7a"></elevenlabs-convai>
+    <div id="max-widget-container">
+      <div id="max-widget-close" onclick="document.getElementById('max-widget-container').style.display='none'">×</div>
+      <elevenlabs-convai agent-id="agent_8901kppgsk0qezab60wrd94xbm7a"></elevenlabs-convai>
+    </div>
     <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+    <script>
+      // Show close button when widget expands
+      document.addEventListener('DOMContentLoaded', function() {
+        const observer = new MutationObserver(function() {
+          const widget = document.querySelector('elevenlabs-convai');
+          const closeBtn = document.getElementById('max-widget-close');
+          if (widget && closeBtn) {
+            const expanded = widget.getAttribute('expand') === 'true' ||
+                            widget.shadowRoot?.querySelector('.expanded') ||
+                            widget.offsetHeight > 80;
+            closeBtn.style.display = expanded ? 'block' : 'none';
+          }
+        });
+        const widget = document.querySelector('elevenlabs-convai');
+        if (widget) observer.observe(widget, { attributes: true, subtree: true, childList: true });
+        // Always show close button after 2s in case widget auto-expands
+        setTimeout(() => {
+          document.getElementById('max-widget-close').style.display = 'block';
+        }, 2000);
+      });
+    </script>
 
 </body>
 </html>
