@@ -188,12 +188,19 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
     gap: 10px;
     text-decoration: none;
     color: var(--text-primary);
+    overflow: visible;
 }
 
 .logo-img {
-    width: 52px;
-    height: 52px;
-    border-radius: 10px;
+    width: 72px;
+    height: 72px;
+    border-radius: 12px;
+    transform: rotate(-8deg);
+    margin-top: 6px;
+    margin-bottom: 6px;
+    filter: drop-shadow(0 0 10px rgba(0,212,255,0.35));
+    position: relative;
+    z-index: 10;
 }
 
 .logo-text {
@@ -877,10 +884,11 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
 }
 
 .footer-logo {
-    width: 40px;
-    height: 40px;
-    border-radius: 8px;
+    width: 80px;
+    height: 80px;
+    border-radius: 12px;
     margin-bottom: 16px;
+    filter: drop-shadow(0 0 8px rgba(0,212,255,0.3));
 }
 
 .footer-brand p {
