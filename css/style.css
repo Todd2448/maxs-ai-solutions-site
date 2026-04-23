@@ -19,8 +19,8 @@
     --bg-card: #1A1A2E;
     --bg-card-hover: #222240;
     --text-primary: #FFFFFF;
-    --text-secondary: #A0A0B8;
-    --text-muted: #6B6B80;
+    --text-secondary: #C0C0D8;
+    --text-muted: #9090A8;
     --border: #2A2A40;
     --gradient: linear-gradient(135deg, #4F46E5, #7C3AED, #F59E0B);
     --gradient-text: linear-gradient(135deg, #6366F1, #A78BFA, #FCD34D);
@@ -78,7 +78,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
     padding: 12px 28px;
     border-radius: var(--radius-sm);
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 1rem;
     text-decoration: none;
     transition: all 0.3s ease;
     cursor: pointer;
@@ -112,7 +112,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
     background: var(--primary);
     color: white;
     padding: 10px 24px;
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
 
 .btn-nav:hover {
@@ -148,7 +148,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
     background: rgba(79,70,229,0.15);
     color: var(--primary-light);
     border-radius: 50px;
-    font-size: 0.85rem;
+    font-size: 1rem;
     font-weight: 600;
     margin-bottom: 16px;
     letter-spacing: 0.5px;
@@ -217,7 +217,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
 .nav-links a {
     color: var(--text-secondary);
     text-decoration: none;
-    font-size: 0.95rem;
+    font-size: 1rem;
     font-weight: 500;
     transition: color 0.3s;
 }
@@ -285,7 +285,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
     border: 1px solid rgba(79,70,229,0.3);
     border-radius: 50px;
     color: var(--primary-light);
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-weight: 600;
     margin-bottom: 24px;
 }
@@ -349,13 +349,13 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
 
 .audio-label {
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 1rem;
     color: var(--text-primary);
     margin: 0;
 }
 
 .audio-sublabel {
-    font-size: 0.8rem;
+    font-size: 1rem;
     color: var(--text-muted);
     margin: 2px 0 0 0;
 }
@@ -408,7 +408,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
 }
 
 .audio-time {
-    font-size: 0.8rem;
+    font-size: 1rem;
     color: var(--text-muted);
     min-width: 40px;
     text-align: right;
@@ -432,7 +432,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
     align-items: center;
     gap: 8px;
     color: var(--text-secondary);
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
 
 .proof-icon {
@@ -477,7 +477,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
 
 .problem-card p {
     color: var(--text-secondary);
-    font-size: 0.95rem;
+    font-size: 1rem;
 }
 
 /* ==========================================
@@ -566,7 +566,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
     padding: 4px 12px;
     background: var(--gradient);
     color: white;
-    font-size: 0.75rem;
+    font-size: 1rem;
     font-weight: 700;
     border-radius: 50px;
     text-transform: uppercase;
@@ -584,7 +584,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
 
 .service-card > p {
     color: var(--text-secondary);
-    font-size: 0.95rem;
+    font-size: 1rem;
     margin-bottom: 20px;
 }
 
@@ -595,7 +595,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
 .service-features li {
     padding: 6px 0;
     color: var(--text-secondary);
-    font-size: 0.9rem;
+    font-size: 1rem;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -650,7 +650,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
 
 .step-card p {
     color: var(--text-secondary);
-    font-size: 0.95rem;
+    font-size: 1rem;
 }
 
 /* ==========================================
@@ -701,7 +701,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
 
 .value-item p {
     margin-bottom: 0;
-    font-size: 0.95rem !important;
+    font-size: 1rem !important;
 }
 
 .about-image {
@@ -730,7 +730,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
 .about-card-text {
     font-style: italic;
     color: var(--text-secondary);
-    font-size: 0.95rem;
+    font-size: 1rem;
 }
 
 /* ==========================================
@@ -791,7 +791,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
     display: block;
     margin-bottom: 8px;
     font-weight: 500;
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: var(--text-secondary);
 }
 
@@ -844,7 +844,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
 .form-note {
     text-align: center;
     color: var(--text-muted);
-    font-size: 0.8rem;
+    font-size: 1rem;
     margin-top: -8px;
 }
 
@@ -893,20 +893,20 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
 
 .footer-brand p {
     color: var(--text-secondary);
-    font-size: 0.9rem;
+    font-size: 1rem;
     max-width: 280px;
 }
 
 .footer-links h4 {
     margin-bottom: 16px;
-    font-size: 0.95rem;
+    font-size: 1rem;
 }
 
 .footer-links a {
     display: block;
     color: var(--text-secondary);
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 1rem;
     padding: 4px 0;
     transition: color 0.3s;
 }
@@ -921,7 +921,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
     padding-top: 24px;
     border-top: 1px solid var(--border);
     color: var(--text-muted);
-    font-size: 0.85rem;
+    font-size: 1rem;
 }
 
 /* ==========================================
