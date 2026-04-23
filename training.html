@@ -463,6 +463,137 @@
             margin: 0 auto 80px;
         }
 
+        /* Lesson 4 — Mindset */
+        .mindset-section {
+            padding: 80px 0;
+            background: linear-gradient(180deg, var(--bg-dark), #0a0a16, var(--bg-dark));
+        }
+
+        .mindset-highlight {
+            background: linear-gradient(135deg, rgba(79,70,229,0.1), rgba(124,58,237,0.05));
+            border: 1px solid rgba(79,70,229,0.25);
+            border-radius: var(--radius-lg);
+            padding: 36px 40px;
+            margin-top: 32px;
+        }
+
+        .mindset-highlight p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.85;
+            margin-bottom: 16px;
+        }
+
+        .mindset-highlight p:last-child {
+            margin-bottom: 0;
+        }
+
+        .mindset-highlight strong {
+            color: var(--text-primary);
+        }
+
+        .mindset-highlight .big-statement {
+            font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 24px;
+            line-height: 1.4;
+        }
+
+        .mindset-highlight .big-statement span {
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Real Results */
+        .results-section {
+            padding: 80px 0;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .result-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 32px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .result-card:hover {
+            background: var(--bg-card-hover);
+            border-color: rgba(79,70,229,0.3);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .result-card-top {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 20px;
+        }
+
+        .result-avatar {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .result-name {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 3px;
+        }
+
+        .result-biz {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+        }
+
+        .result-problem {
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            line-height: 1.65;
+            margin-bottom: 14px;
+            padding-bottom: 14px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .result-win {
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            line-height: 1.65;
+            font-weight: 500;
+        }
+
+        .result-win::before {
+            content: '✅ ';
+        }
+
+        .results-disclaimer {
+            text-align: center;
+            margin-top: 28px;
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .fear-card {
@@ -740,6 +871,86 @@
         </div>
     </section>
 
+    <!-- LESSON 4 — Mindset Shift -->
+    <section class="mindset-section" id="lesson-4">
+        <div class="container">
+            <div class="lesson-block">
+                <div class="lesson-header">
+                    <div class="lesson-number-badge">4</div>
+                    <div class="lesson-title-group">
+                        <span class="lesson-tag">Lesson 4 · Mindset</span>
+                        <h2>The One Thing That <span class="gradient-text">Actually Separates</span> the Winners</h2>
+                    </div>
+                </div>
+                <div class="lesson-body full-width">
+                    <div class="mindset-highlight">
+                        <div class="big-statement">It's not budget. It's not tech skills. It's not having the right software.<br><span>It's deciding to stop waiting until you feel ready.</span></div>
+                        <p>Here's what I see constantly: smart, hardworking business owners who know AI could help them — but keep putting it off. They're waiting for more time. Waiting to understand it better. Waiting for someone to hand them a perfect plan.</p>
+                        <p>Meanwhile, their competitors are already using it. Not perfectly. Not with a giant team or a $50,000 budget. Just <strong>a little bit, every day</strong> — and it's compounding.</p>
+                        <p>The truth is, you don't need to become a tech person. You don't need to understand how the model works. You need to understand what it can do for your business — and then take one small step. That's it. The people winning with AI right now are not the most technical people in the room. <strong>They're the most willing.</strong></p>
+                        <p>You've already taken that step by reading this. The next one is smaller than you think.</p>
+                    </div>
+                    <div class="analogy-card" style="margin-top: 24px;">
+                        <div class="analogy-label">🔑 The Unlock</div>
+                        <p>Think about the first time someone handed you a smartphone. You didn't read a manual. You didn't take a class. You figured it out because the upside was obvious and the first step was easy.</p>
+                        <p><strong>AI is the same thing.</strong> The first step is easy. The upside is obvious once you see it. What holds most people back isn't complexity — it's hesitation. And hesitation is a choice you don't have to make.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- Real Results -->
+    <section class="results-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">What This Looks Like in Practice</div>
+                <h2>Real Businesses. <span class="gradient-text">Real Shifts.</span></h2>
+                <p>Not magic. Not overnight millions. Just real business owners who took one step — and what changed because of it.</p>
+            </div>
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="result-card-top">
+                        <div class="result-avatar">🔧</div>
+                        <div>
+                            <div class="result-name">Mike T.</div>
+                            <div class="result-biz">Roofing Contractor, 6 employees</div>
+                        </div>
+                    </div>
+                    <div class="result-problem">Mike was spending 45 minutes every evening writing estimates and follow-up emails — after already working a 10-hour day on roofs.</div>
+                    <div class="result-win">He used AI to build 3 email templates in one afternoon. Now follow-ups go out in 4 minutes, and he's closing more jobs because he's not ghosting leads anymore.</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-card-top">
+                        <div class="result-avatar">💇</div>
+                        <div>
+                            <div class="result-name">Denise R.</div>
+                            <div class="result-biz">Salon Owner, solo operator</div>
+                        </div>
+                    </div>
+                    <div class="result-problem">Denise had zero social media presence because she never had time to write posts after a full day of clients — and blank pages stressed her out.</div>
+                    <div class="result-win">She now spends 20 minutes on Sunday getting a week of Instagram content drafted with AI. She edits, posts, and moves on. Her booking rate from social went from zero to a steady drip.</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-card-top">
+                        <div class="result-avatar">🏗️</div>
+                        <div>
+                            <div class="result-name">Carlos M.</div>
+                            <div class="result-biz">General Contractor, 12 employees</div>
+                        </div>
+                    </div>
+                    <div class="result-problem">Carlos was losing leads because his phone went to voicemail after hours and he had no system for following up before the next morning.</div>
+                    <div class="result-win">He set up an AI phone assistant that answers after hours, captures caller info, and sends a follow-up text automatically. He stopped losing the late-night leads that used to just disappear.</div>
+                </div>
+            </div>
+            <p class="results-disclaimer">Results based on real-world AI use cases. Individual outcomes vary.</p>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
     <!-- CTA Section -->
     <section class="training-cta-section">
         <div class="container">
@@ -777,6 +988,7 @@
                     <a href="#lesson-1">Lesson 1: What Is AI?</a>
                     <a href="#lesson-2">Lesson 2: 5 Ways AI Helps</a>
                     <a href="#lesson-3">Lesson 3: Your First Win</a>
+                    <a href="#lesson-4">Lesson 4: The Mindset Shift</a>
                 </div>
                 <div class="footer-links">
                     <h4>Connect</h4>
