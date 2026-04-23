@@ -192,11 +192,11 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
 }
 
 .logo-img {
-    width: 72px;
-    height: 72px;
-    border-radius: 12px;
-    transform: rotate(-8deg);
-    margin-top: 6px;
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    transform: none;
+    margin-top: 0;
     margin-bottom: 6px;
     filter: drop-shadow(0 0 10px rgba(0,212,255,0.35));
     position: relative;
