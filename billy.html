@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Everything We've Built — For Billy 💙</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { padding-top: 40px; }
+        .billy-hero {
+            text-align: center;
+            padding: 60px 0 40px;
+        }
+        .billy-hero h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); margin-bottom: 16px; }
+        .billy-hero p { color: var(--text-secondary); font-size: 1.1rem; max-width: 560px; margin: 0 auto; line-height: 1.7; }
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin: 48px 0;
+        }
+        .link-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 28px;
+            transition: all 0.2s ease;
+        }
+        .link-card:hover { border-color: var(--primary); transform: translateY(-2px); }
+        .link-card .card-icon { font-size: 2rem; margin-bottom: 12px; }
+        .link-card h3 { font-size: 1.1rem; margin-bottom: 8px; }
+        .link-card p { color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6; margin-bottom: 16px; }
+        .link-card a.card-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background: var(--gradient);
+            color: white;
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: opacity 0.2s;
+        }
+        .link-card a.card-link:hover { opacity: 0.85; }
+        .link-card.new-badge { border-color: #22c55e; }
+        .link-card.new-badge::before {
+            content: "🆕 Launched Today!";
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #22c55e;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+        }
+        .simple-box {
+            background: linear-gradient(135deg, rgba(79,70,229,0.1), rgba(124,58,237,0.1));
+            border: 1px solid var(--primary);
+            border-radius: var(--radius-lg);
+            padding: 40px;
+            margin: 48px 0;
+            text-align: center;
+        }
+        .simple-box h2 { margin-bottom: 20px; }
+        .simple-box p { color: var(--text-secondary); font-size: 1rem; line-height: 1.8; max-width: 600px; margin: 0 auto 16px; }
+        .simple-box p strong { color: var(--text-primary); }
+        .updated { text-align: center; color: var(--text-muted); font-size: 0.85rem; margin-top: 40px; padding-bottom: 60px; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="billy-hero">
+            <div style="font-size:3rem; margin-bottom:16px;">💙</div>
+            <h1>Everything We've Built<br><span class="gradient-text">For Billy</span></h1>
+            <p>Todd and MAX have been building something real. Here's every piece of it — explained simply, with links so you can see for yourself anytime you want.</p>
+        </div>
+
+        <div class="links-grid">
+
+            <div class="link-card">
+                <div class="card-icon">🌐</div>
+                <h3>The Main Business Website</h3>
+                <p>Max's AI Solutions — our AI services company. This is where clients find us. Has a video right at the top so you can hear what it's all about.</p>
+                <a href="https://maxsaisolutions.com" target="_blank" class="card-link">Visit the Site →</a>
+            </div>
+
+            <div class="link-card">
+                <div class="card-icon">🎓</div>
+                <h3>The AI Business Academy</h3>
+                <p>Online courses teaching small business owners how to use AI. 4 tracks, 16 lessons — all written and ready. People pay and get access instantly.</p>
+                <a href="https://maxsaisolutions.com/academy.html" target="_blank" class="card-link">See the Academy →</a>
+            </div>
+
+            <div class="link-card">
+                <div class="card-icon">📞</div>
+                <h3>AI Phone Answering Service</h3>
+                <p>An AI that answers the phone for small businesses 24/7. Never misses a call, books appointments, handles questions. Already have hot leads interested.</p>
+                <a href="https://maxsaisolutions.com/phone-answering.html" target="_blank" class="card-link">See the Service →</a>
+            </div>
+
+            <div class="link-card">
+                <div class="card-icon">🎁</div>
+                <h3>Free Training & Guide</h3>
+                <p>Free lessons and a free guide that bring people in. Once they see the value, they buy the full academy. This is how we get leads without paying for ads.</p>
+                <a href="https://maxsaisolutions.com/training.html" target="_blank" class="card-link">See the Free Training →</a>
+            </div>
+
+            <div class="link-card">
+                <div class="card-icon">💰</div>
+                <h3>Pricing — All Services</h3>
+                <p>Every service and price in one place. Academy courses, phone answering, social media management. Real prices, real products, ready to sell.</p>
+                <a href="https://maxsaisolutions.com/pricing.html" target="_blank" class="card-link">See Pricing →</a>
+            </div>
+
+            <div class="link-card">
+                <div class="card-icon">📚</div>
+                <h3>The Course Content (Google Drive)</h3>
+                <p>All 16 course lessons are written and stored here. Students get access to their track after purchase. The content is done — it's real.</p>
+                <a href="https://drive.google.com/drive/folders/1CEJExp6ndXkCD3TBOMK4zxXYyhnaXZBw" target="_blank" class="card-link">See the Courses →</a>
+            </div>
+
+            <div class="link-card">
+                <div class="card-icon">📊</div>
+                <h3>MAX's Live Dashboard</h3>
+                <p>Shows what MAX is doing in real time — posts made, tasks running, system status. If you ever wonder if MAX is working, here's proof.</p>
+                <a href="https://todd2448.github.io/max-dashboard/" target="_blank" class="card-link">See the Dashboard →</a>
+            </div>
+
+            <div class="link-card new-badge">
+                <div class="card-icon">🥦</div>
+                <h3>FoodTruth — Our Second Product</h3>
+                <p>An app that scans grocery barcodes and tells you if the food is safe. Clean ingredients get a green rating. Dangerous ones get flagged in plain English. Coming to iPhone and Android.</p>
+                <a href="https://todd2448.github.io/foodtruth-site/" target="_blank" class="card-link">See FoodTruth →</a>
+            </div>
+
+        </div>
+
+        <div class="simple-box">
+            <h2>The Simple Version 💡</h2>
+            <p>Todd isn't doing this alone. He has an AI partner named MAX that <strong>builds websites, writes courses, makes videos, posts on social media, handles payments, and builds apps.</strong></p>
+            <p>Most of this would cost <strong>$10,000–$50,000</strong> to hire a team to do. We're building it for near zero because MAX does the work.</p>
+            <p><strong>The websites are live. The payment links work. The courses are written. The products are real.</strong></p>
+            <p>The only thing missing is customers — and that's what we're working on every single day. 🙏</p>
+        </div>
+
+        <p class="updated">Last updated: April 23, 2026 · Built by MAX ⚡ — Todd's AI business partner</p>
+
+    </div>
+
+</body>
+</html>
