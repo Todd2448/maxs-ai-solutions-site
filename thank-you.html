@@ -148,27 +148,97 @@
     <!-- Thank You -->
     <section class="thankyou-hero">
         <div class="hero-bg"></div>
-        <div class="thankyou-inner container">
-            <div class="thankyou-emoji">🎉</div>
-            <h1>You're In! <span style="background: var(--gradient-text); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Download Your Guide</span></h1>
-            <p class="subheadline">Thank you for your purchase. Your guide is ready — click below to download it right now.</p>
-            <a href="5-AI-Wins-for-Small-Business.pdf" download class="download-btn">📥 Download Your PDF Guide</a>
-            <p style="color: var(--text-muted); font-size: 0.85rem;">Tip: Save it somewhere you'll find it. This page will stay available if you need to re-download.</p>
-
-            <div class="next-steps">
-                <h3>What to Do Next</h3>
-                <ul>
-                    <li>Open the guide and start with Win #1 — it takes 10 minutes</li>
-                    <li>Try to knock out all 5 wins this week while the momentum is fresh</li>
-                    <li>Want us to set up AI systems for your specific business? <a href="pricing.html">Check our done-for-you services</a></li>
-                    <li>Need a phone system that never misses a call? <a href="phone-answering.html">See our AI Phone Answering</a></li>
-                </ul>
-                <div class="cta-line">
-                    <a href="index.html#contact">Questions? Get in touch →</a>
-                </div>
-            </div>
+        <div class="thankyou-inner container" id="thankYouContent">
+            <!-- Content injected by JS based on purchase type -->
         </div>
     </section>
+
+    <script>
+        // Detect purchase type from URL param or referrer
+        const params = new URLSearchParams(window.location.search);
+        const type = params.get('type') || 'guide'; // guide | single | bundle | monthly | partner
+
+        const content = {
+            guide: {
+                emoji: '🎉',
+                title: 'Download Your <span class="gradient-text">Free Guide</span>',
+                sub: 'Your copy of the 5 AI Wins guide is ready. Click below to download it right now.',
+                action: '<a href="5-AI-Wins-for-Small-Business.pdf" download class="download-btn">📥 Download Your PDF Guide</a>',
+                steps: [
+                    'Start with Win #1 — it takes 10 minutes',
+                    'Try to knock out all 5 wins this week while momentum is fresh',
+                    'Ready to go deeper? <a href="academy.html">Check out the AI Business Academy</a>',
+                    'Want it done for you? <a href="index.html#contact">Let’s talk</a>'
+                ]
+            },
+            single: {
+                emoji: '📚',
+                title: 'Welcome to the <span class="gradient-text">AI Business Academy</span>',
+                sub: 'Your course access is confirmed. We’re setting up your content now — you’ll receive an email within 24 hours with your direct access link.',
+                action: '<a href="index.html#contact" class="download-btn">⚡ Questions? Reach Out</a>',
+                steps: [
+                    'Check your email within 24 hours for your course access link',
+                    'Your content is hosted in a private, organized folder — available 24/7',
+                    'Each module ends with one action item — do it before moving on',
+                    'When our full platform launches (coming soon), you’ll get a login automatically — free upgrade'
+                ]
+            },
+            bundle: {
+                emoji: '🎓',
+                title: 'You Got <span class="gradient-text">Everything.</span>',
+                sub: 'Full curriculum access confirmed — all 3 tracks from beginner to advanced. Your access link is on its way to your email within 24 hours.',
+                action: '<a href="academy.html" class="download-btn">📚 Back to Academy</a>',
+                steps: [
+                    'Check your email within 24 hours for your full curriculum access link',
+                    'Start with Track 1 even if you have some AI experience — the foundation matters',
+                    'Work through one module per day and you’ll be done in under 3 weeks',
+                    'Full platform with progress tracking launches in 30 days — you’ll be first in'
+                ]
+            },
+            monthly: {
+                emoji: '🔄',
+                title: 'Membership <span class="gradient-text">Activated.</span>',
+                sub: 'Welcome to the AI Business Academy monthly membership. Your access link is on its way within 24 hours — new content added every month.',
+                action: '<a href="academy.html" class="download-btn">📚 Back to Academy</a>',
+                steps: [
+                    'Check your email within 24 hours for your membership access link',
+                    'New lessons drop monthly — we’ll email you when new content is live',
+                    'Cancel anytime from your Stripe dashboard — no questions asked',
+                    'Full platform with student dashboard launches in 30 days — you’ll get it automatically'
+                ]
+            },
+            partner: {
+                emoji: '🤝',
+                title: 'Welcome to the <span class="gradient-text">Partner Program.</span>',
+                sub: 'Your partner training access is confirmed. This is a big move — we take it seriously. Expect a personal email from us within 24 hours with everything you need to get started.',
+                action: '<a href="index.html#contact" class="download-btn">⚡ We’ll Be In Touch</a>',
+                steps: [
+                    'Watch for a personal welcome email within 24 hours',
+                    'You’ll get full access to the Partner Track + the complete curriculum',
+                    'We’ll walk you through the first steps together',
+                    'You’re now part of the Max’s AI Solutions partner network — let’s build something'
+                ]
+            }
+        };
+
+        const c = content[type] || content.guide;
+        document.getElementById('thankYouContent').innerHTML = `
+            <div class="thankyou-emoji">${c.emoji}</div>
+            <h1>${c.title}</h1>
+            <p class="subheadline">${c.sub}</p>
+            ${c.action}
+            <div class="next-steps" style="margin-top:48px;">
+                <h3>What Happens Next</h3>
+                <ul>${c.steps.map(s => `<li>${s}</li>`).join('')}</ul>
+                <div class="cta-line"><a href="index.html#contact">Questions? Get in touch →</a></div>
+            </div>
+        `;
+
+        // Apply gradient to h1 spans
+        document.querySelectorAll('.gradient-text').forEach(el => {
+            el.style.cssText = 'background: var(--gradient-text); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;';
+        });
+    </script>
 
     <!-- Footer -->
     <footer style="text-align: center; padding: 40px 0; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.85rem;">
