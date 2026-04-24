@@ -348,29 +348,54 @@
     </nav>
 
     <!-- HERO -->
-    <section class="partner-hero">
-        <div class="container">
-            <div class="section-label">Partner Program</div>
-            <h1>Get Paid to Help<br>Small Businesses Win</h1>
-            <p>Refer clients and earn. Or get certified and build a real recurring income — while we do the heavy lifting.</p>
-            <a href="#apply" class="btn-primary">Apply to Become a Partner</a>
-        </div>
-    </section>
+    <section class="partner-hero" style="position:relative; overflow:hidden;">
+        <div style="position:absolute;inset:0;background:radial-gradient(ellipse 80% 50% at 50% -20%, rgba(0,212,255,0.18), transparent), radial-gradient(ellipse 60% 40% at 80% 60%, rgba(123,47,255,0.18), transparent);pointer-events:none;"></div>
+        <div class="container" style="position:relative;z-index:1;padding-top: 120px; padding-bottom: 80px;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
 
-    <!-- VIDEO -->
-    <section class="video-section">
-        <div class="container">
-            <div class="section-label">Hear It From MAX</div>
-            <h2 class="section-title">Why Partners Love This Program</h2>
-            <p class="section-sub" style="margin-bottom:40px;">MAX breaks down exactly how the program works and what you can earn.</p>
-            <div class="video-placeholder">
-                🎬 Partner Program Video — Coming Soon
+                <!-- Left: Text -->
+                <div style="padding-left: 12px;">
+                    <div class="section-label" style="margin-bottom: 16px; display:inline-block;">Partner Program</div>
+                    <h1 style="text-align: left; font-size: clamp(2rem, 4vw, 3.2rem); margin-bottom: 20px; background: linear-gradient(135deg, #00d4ff, #7b2fff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Get Paid to Help<br>Small Businesses Win</h1>
+                    <p style="font-size: 1.15rem; color: #a0aec0; line-height: 1.75; margin-bottom: 28px;">Refer clients and earn. Or get certified and build a real recurring income stream — while we do all the heavy lifting behind the scenes. Two paths. Both profitable.</p>
+                    <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 32px; justify-content: flex-start;">
+                        <a href="#apply" class="btn btn-primary btn-lg">Apply to Become a Partner</a>
+                        <a href="#paths" class="btn btn-outline btn-lg">See How It Works</a>
+                    </div>
+                    <div style="display: flex; gap: 24px; flex-wrap: wrap; justify-content: flex-start;">
+                        <div style="display: flex; align-items: center; gap: 8px; color: #9595b0; font-size: 0.9rem;"><span>💰</span><span>Real recurring income</span></div>
+                        <div style="display: flex; align-items: center; gap: 8px; color: #9595b0; font-size: 0.9rem;"><span>⚡</span><span>We do the heavy lifting</span></div>
+                        <div style="display: flex; align-items: center; gap: 8px; color: #9595b0; font-size: 0.9rem;"><span>🤝</span><span>Full training included</span></div>
+                    </div>
+                </div>
+
+                <!-- Right: Video -->
+                <div>
+                    <div style="position: relative; border-radius: 16px; overflow: hidden; box-shadow: 0 0 40px rgba(0,212,255,0.3); background: #000; aspect-ratio: 1/1;">
+                        <video id="partnerHeroVideo" controls playsinline preload="metadata"
+                            style="width: 100%; height: 100%; display: block;"
+                            poster="images/max-avatar.png">
+                            <source src="videos/track-partner-explainer.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <p style="text-align: center; color: #9595b0; font-size: 0.85rem; margin-top: 12px;">👆 MAX breaks down exactly how the Partner Program works (1 min)</p>
+                </div>
+
             </div>
         </div>
+
+        <style>
+        @media (max-width: 768px) {
+            .partner-hero > .container > div[style*="grid-template-columns"] {
+                grid-template-columns: 1fr !important;
+                gap: 36px !important;
+            }
+        }
+        </style>
     </section>
 
     <!-- TWO PATHS -->
-    <section style="padding: 80px 0; background: #0a0a1a;">
+    <section id="paths" style="padding: 80px 0; background: #0a0a1a;">
         <div class="container">
             <div class="section-label" style="text-align:center;">Choose Your Path</div>
             <h2 class="section-title" style="text-align:center;">Two Ways to Partner With Us</h2>

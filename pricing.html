@@ -418,13 +418,48 @@
     <!-- Hero -->
     <section class="pricing-hero">
         <div class="hero-bg"></div>
-        <div class="container">
-            <div class="pricing-hero-inner">
-                <div class="hero-badge">💰 Transparent Pricing</div>
-                <h1>Simple, <span class="gradient-text">Honest Pricing</span></h1>
-                <p class="hero-sub">No surprises. No hidden fees. No bait-and-switch. You'll know exactly what you're getting and exactly what it costs before we shake hands.</p>
+        <div class="container" style="padding-top: 100px; padding-bottom: 80px;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
+
+                <!-- Left: Text -->
+                <div style="padding-left: 12px;">
+                    <div class="hero-badge">💰 Transparent Pricing</div>
+                    <h1 style="text-align: left; font-size: clamp(2rem, 4vw, 3.2rem); margin-bottom: 20px;">Simple, <span class="gradient-text">Honest Pricing</span></h1>
+                    <p class="hero-sub" style="text-align: left; margin-bottom: 28px;">No surprises. No hidden fees. No bait-and-switch. You'll know exactly what you're getting and exactly what it costs before we shake hands. Pick your service, pick your tier, and let's build.</p>
+                    <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 32px; justify-content: flex-start;">
+                        <a href="#phone-pricing" class="btn btn-primary btn-lg">See All Pricing ↧</a>
+                        <a href="index.html#contact" class="btn btn-outline btn-lg">Talk to Us First</a>
+                    </div>
+                    <div style="display: flex; gap: 24px; flex-wrap: wrap; justify-content: flex-start;">
+                        <div style="display: flex; align-items: center; gap: 8px; color: #9595b0; font-size: 0.9rem;"><span>✅</span><span>No setup surprises</span></div>
+                        <div style="display: flex; align-items: center; gap: 8px; color: #9595b0; font-size: 0.9rem;"><span>✅</span><span>Cancel anytime</span></div>
+                        <div style="display: flex; align-items: center; gap: 8px; color: #9595b0; font-size: 0.9rem;"><span>✅</span><span>Free consultation included</span></div>
+                    </div>
+                </div>
+
+                <!-- Right: Video -->
+                <div>
+                    <div style="position: relative; border-radius: 16px; overflow: hidden; box-shadow: 0 0 40px rgba(79,70,229,0.35); background: #000; aspect-ratio: 1/1;">
+                        <video id="pricingHeroVideo" controls playsinline preload="metadata"
+                            style="width: 100%; height: 100%; display: block;"
+                            poster="images/max-avatar.png">
+                            <source src="videos/website-benefits.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <p style="text-align: center; color: #9595b0; font-size: 0.85rem; margin-top: 12px;">👆 MAX walks you through what you get (1 min)</p>
+                </div>
+
             </div>
         </div>
+
+        <style>
+        @media (max-width: 768px) {
+            .pricing-hero > .container > div[style*="grid-template-columns"] {
+                grid-template-columns: 1fr !important;
+                gap: 36px !important;
+            }
+        }
+        </style>
     </section>
 
     <!-- ── SERVICE 1: Phone Answering System ── -->
