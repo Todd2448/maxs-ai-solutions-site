@@ -210,16 +210,20 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 32px;
+    gap: 16px;
     list-style: none;
+    flex-wrap: nowrap;
 }
 
 .nav-links a {
     color: var(--text-secondary);
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 0.82rem;
     font-weight: 500;
     transition: color 0.3s;
+    white-space: nowrap;
+    text-align: center;
+    line-height: 1.2;
 }
 
 .nav-links a:hover {
