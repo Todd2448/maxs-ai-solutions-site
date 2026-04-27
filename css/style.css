@@ -938,20 +938,41 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
 
     .nav-links {
         position: fixed;
-        top: 0;
-        right: -100%;
-        width: 280px;
-        height: 100vh;
+        top: 70px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: auto;
+        max-height: 0;
+        overflow: hidden;
         flex-direction: column;
         background: var(--bg-card);
-        padding: 80px 32px 32px;
-        gap: 24px;
-        transition: right 0.3s ease;
-        border-left: 1px solid var(--border);
+        padding: 0 24px;
+        gap: 0;
+        transition: max-height 0.35s ease, padding 0.35s ease;
+        border-bottom: 1px solid var(--border);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+        z-index: 999;
     }
 
     .nav-links.active {
-        right: 0;
+        max-height: 600px;
+        padding: 16px 24px 24px;
+    }
+
+    .nav-links li {
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .nav-links li:last-child {
+        border-bottom: none;
+        margin-top: 8px;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 14px 0;
+        font-size: 1rem;
     }
 
     .hero {
