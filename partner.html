@@ -3,607 +3,389 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Partner Program | Max's AI Solutions</title>
+    <title>Referral Program — Earn 25% Forever | Max's AI Solutions</title>
+    <meta name="description" content="Refer clients to Max's AI Solutions and earn 25% of what they pay — every month, forever. No selling. No work. Just introductions.">
+    <link rel="icon" type="image/png" href="images/logo.png">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        .partner-hero {
-            background: linear-gradient(135deg, #0a0a1a 0%, #0d1b2a 50%, #0a0a1a 100%);
-            padding: 100px 0 80px;
+        .ref-hero {
+            background: linear-gradient(135deg, #0f0f1a 0%, #1a1030 50%, #0f0f1a 100%);
+            padding: 120px 0 80px;
             text-align: center;
+            position: relative;
+            overflow: hidden;
         }
-        .partner-hero h1 {
-            font-size: 3rem;
+        .ref-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: radial-gradient(circle at 40% 50%, rgba(34,197,94,0.06) 0%, transparent 50%),
+                        radial-gradient(circle at 60% 50%, rgba(79,70,229,0.06) 0%, transparent 50%);
+        }
+        .ref-hero .container { position: relative; z-index: 1; }
+        .ref-badge {
+            display: inline-block;
+            background: rgba(34,197,94,0.15);
+            border: 1px solid rgba(34,197,94,0.3);
+            color: #4ade80;
+            padding: 8px 20px;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+        .ref-hero h1 {
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
             font-weight: 800;
-            background: linear-gradient(135deg, #00d4ff, #7b2fff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 20px;
+            line-height: 1.15;
+            margin-bottom: 24px;
+            color: #fff;
         }
-        .partner-hero p {
-            font-size: 1.25rem;
-            color: #a0aec0;
+        .ref-hero h1 .green { color: #4ade80; }
+        .ref-hero .subtext {
+            font-size: 1.15rem;
+            color: #9595b0;
             max-width: 650px;
             margin: 0 auto 40px;
             line-height: 1.7;
         }
-        .paths-grid {
+
+        .ref-section {
+            padding: 80px 0;
+        }
+        .ref-section h2 {
+            font-size: clamp(1.8rem, 3vw, 2.4rem);
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 16px;
+            color: #fff;
+        }
+        .ref-section .section-sub {
+            text-align: center;
+            color: #9595b0;
+            font-size: 1.05rem;
+            max-width: 600px;
+            margin: 0 auto 48px;
+        }
+        .ref-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .ref-card {
+            background: rgba(26,26,46,0.8);
+            border: 1px solid #2d2d44;
+            border-radius: 16px;
+            padding: 32px;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        .ref-card:hover {
+            transform: translateY(-4px);
+            border-color: #4ade80;
+        }
+        .ref-card .icon { font-size: 2rem; margin-bottom: 16px; }
+        .ref-card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; color: #fff; }
+        .ref-card p { color: #9595b0; font-size: 0.95rem; line-height: 1.6; }
+
+        .math-section {
+            background: linear-gradient(135deg, #1a1030 0%, #0f0f1a 100%);
+            padding: 80px 0;
+        }
+        .math-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 30px;
+            gap: 48px;
             max-width: 900px;
-            margin: 60px auto;
-        }
-        .path-card {
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 20px;
-            padding: 40px;
-            text-align: center;
-        }
-        .path-card.featured {
-            border-color: #00d4ff;
-            background: rgba(0,212,255,0.05);
-            position: relative;
-        }
-        .path-card.featured::before {
-            content: "MOST POPULAR";
-            position: absolute;
-            top: -14px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: linear-gradient(135deg, #00d4ff, #7b2fff);
-            color: white;
-            font-size: 0.7rem;
-            font-weight: 700;
-            padding: 4px 16px;
-            border-radius: 20px;
-            letter-spacing: 1px;
-        }
-        .path-price {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: #00d4ff;
-            margin: 15px 0 5px;
-        }
-        .path-price span {
-            font-size: 1rem;
-            color: #a0aec0;
-            font-weight: 400;
-        }
-        .path-card h3 {
-            font-size: 1.4rem;
-            color: white;
-            margin-bottom: 10px;
-        }
-        .path-card p {
-            color: #a0aec0;
-            margin-bottom: 25px;
-            line-height: 1.6;
-        }
-        .path-features {
-            list-style: none;
-            padding: 0;
-            text-align: left;
-            margin-bottom: 30px;
-        }
-        .path-features li {
-            color: #e2e8f0;
-            padding: 8px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-            font-size: 0.95rem;
-        }
-        .path-features li::before {
-            content: "✓ ";
-            color: #00d4ff;
-            font-weight: 700;
-        }
-
-        /* Video section */
-        .video-section {
-            background: #0d1b2a;
-            padding: 80px 0;
-            text-align: center;
-        }
-        .video-placeholder {
-            width: 100%;
-            max-width: 720px;
-            height: 400px;
-            background: rgba(0,0,0,0.4);
-            border: 1px solid rgba(0,212,255,0.2);
-            border-radius: 16px;
             margin: 0 auto;
-            display: flex;
             align-items: center;
-            justify-content: center;
-            color: #a0aec0;
-            font-size: 1.1rem;
         }
-
-        /* Gate section */
-        .gate-section {
-            background: linear-gradient(135deg, rgba(0,212,255,0.08), rgba(123,47,255,0.08));
-            border: 1px solid rgba(0,212,255,0.2);
-            border-radius: 24px;
-            padding: 60px 40px;
-            text-align: center;
-            max-width: 700px;
-            margin: 80px auto;
-        }
-        .gate-section h2 {
-            font-size: 2rem;
-            color: white;
-            margin-bottom: 15px;
-        }
-        .gate-section p {
-            color: #a0aec0;
-            margin-bottom: 30px;
-            font-size: 1.05rem;
-        }
-        .gate-form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            max-width: 420px;
-            margin: 0 auto;
-        }
-        .gate-form input {
-            padding: 14px 18px;
-            background: rgba(255,255,255,0.06);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 10px;
-            color: white;
-            font-size: 1rem;
-        }
-        .gate-form input::placeholder { color: #666; }
-        .gate-form input:focus {
-            outline: none;
-            border-color: #00d4ff;
-        }
-        .gate-form button {
-            padding: 16px;
-            background: linear-gradient(135deg, #00d4ff, #7b2fff);
-            border: none;
-            border-radius: 10px;
-            color: white;
-            font-size: 1rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: opacity 0.2s;
-        }
-        .gate-form button:hover { opacity: 0.9; }
-
-        /* Numbers section - hidden until gate */
-        .numbers-section {
-            display: none;
-            padding: 60px 0;
-        }
-        .numbers-section.revealed { display: block; }
-        .numbers-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        .number-card {
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.08);
+        .math-text h2 { font-size: 2rem; font-weight: 800; margin-bottom: 16px; color: #fff; text-align: left; }
+        .math-text p { color: #9595b0; line-height: 1.7; margin-bottom: 16px; text-align: left; }
+        .math-box {
+            background: rgba(26,26,46,0.9);
+            border: 1px solid #2d2d44;
             border-radius: 16px;
-            padding: 35px 25px;
-            text-align: center;
+            padding: 32px;
         }
-        .number-card h4 {
-            color: #a0aec0;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
+        .math-box h3 {
+            color: #4ade80;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
             text-transform: uppercase;
-            margin-bottom: 15px;
+            letter-spacing: 1px;
         }
-        .number-big {
-            font-size: 2.8rem;
-            font-weight: 800;
-            color: #00d4ff;
-            line-height: 1;
-            margin-bottom: 8px;
+        .math-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #2d2d44;
+            color: #e2e8f0;
         }
-        .number-sub {
-            color: #a0aec0;
-            font-size: 0.9rem;
+        .math-row:last-child { border-bottom: none; }
+        .math-row .label { color: #9595b0; }
+        .math-row .value { font-weight: 700; color: #22c55e; }
+
+        .ref-cta {
+            text-align: center;
+            padding: 80px 0;
+            background: linear-gradient(180deg, #0f0f1a 0%, #1a1030 50%, #0f0f1a 100%);
         }
-        .number-annual {
-            color: #7b2fff;
+        .ref-cta h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 800; margin-bottom: 16px; color: #fff; }
+        .ref-cta p { color: #9595b0; font-size: 1.1rem; max-width: 600px; margin: 0 auto 32px; }
+        .btn-ref {
+            display: inline-block;
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            color: #fff;
             font-size: 1.1rem;
             font-weight: 700;
-            margin-top: 10px;
+            padding: 16px 40px;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn-ref:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(34,197,94,0.4);
         }
 
-        /* Training overview */
-        .training-section {
-            padding: 80px 0;
-            background: #0a0a1a;
-        }
-        .modules-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            max-width: 1000px;
-            margin: 40px auto 0;
-        }
-        .module-card {
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.06);
-            border-radius: 14px;
-            padding: 28px;
-        }
-        .module-num {
-            font-size: 0.8rem;
-            color: #00d4ff;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 8px;
-        }
-        .module-card h4 {
-            color: white;
-            font-size: 1rem;
-            margin-bottom: 8px;
-        }
-        .module-card p {
-            color: #718096;
-            font-size: 0.875rem;
-            line-height: 1.5;
-        }
-
-        /* Apply form */
-        .apply-section {
-            background: #0d1b2a;
-            padding: 80px 0;
+        .divider {
             text-align: center;
+            padding: 60px 0;
+            border-top: 1px solid #2d2d44;
         }
-        .apply-form {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            max-width: 600px;
-            margin: 30px auto 0;
-        }
-        .apply-form input, .apply-form textarea {
-            padding: 14px 18px;
-            background: rgba(255,255,255,0.06);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 10px;
-            color: white;
-            font-size: 0.95rem;
-            font-family: inherit;
-        }
-        .apply-form textarea {
-            grid-column: 1 / -1;
-            height: 100px;
-            resize: vertical;
-        }
-        .apply-form input::placeholder,
-        .apply-form textarea::placeholder { color: #666; }
-        .apply-form input:focus,
-        .apply-form textarea:focus {
-            outline: none;
-            border-color: #00d4ff;
-        }
-        .apply-form button {
-            grid-column: 1 / -1;
-            padding: 16px;
-            background: linear-gradient(135deg, #00d4ff, #7b2fff);
-            border: none;
-            border-radius: 10px;
-            color: white;
-            font-size: 1rem;
-            font-weight: 700;
-            cursor: pointer;
-        }
-
-        .section-label {
-            font-size: 0.85rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #00d4ff;
-            margin-bottom: 12px;
-        }
-        .section-title {
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: white;
-            margin-bottom: 15px;
-        }
-        .section-sub {
-            color: #a0aec0;
-            font-size: 1.05rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
+        .divider h2 { font-size: 1.6rem; font-weight: 800; color: #fff; margin-bottom: 16px; }
+        .divider p { color: #9595b0; max-width: 600px; margin: 0 auto; font-size: 1.05rem; }
 
         @media (max-width: 768px) {
-            .paths-grid, .numbers-grid, .modules-grid { grid-template-columns: 1fr; }
-            .apply-form { grid-template-columns: 1fr; }
-            .apply-form textarea, .apply-form button { grid-column: 1; }
-            .partner-hero h1 { font-size: 2rem; }
+            .math-grid { grid-template-columns: 1fr; }
+            .ref-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-    <!-- NAV -->
-    <nav class="navbar">
-        <div class="nav-container">
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
             <a href="index.html" class="nav-logo">
                 <img src="images/logo.png" alt="Max's AI Solutions" class="logo-img">
+                <span class="logo-text">Max's AI Solutions</span>
             </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
             <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="index.html#about">About Us</a></li>
-                <li><a href="index.html#services">AI Powered Services</a></li>
-                <li><a href="phone-answering.html">AI Phone Answering</a></li>
-                <li><a href="training.html">Free AI Training</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="training.html">Free Training</a></li>
                 <li><a href="pricing.html">Pricing</a></li>
-                <li><a href="demos.html"><span style="white-space:nowrap">Live AI</span><br><span style="white-space:nowrap">Demos</span></a></li>
-                <li><a href="index.html#contact" class="btn btn-nav">Get Started</a></li>
+                <li><a href="box.html" style="color:#a78bfa;font-weight:600;">📦 AI in a Box</a></li>
+                <li><a href="#start" class="btn btn-nav">Start Referring</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- HERO -->
-    <section class="partner-hero" style="position:relative; overflow:hidden;">
-        <div style="position:absolute;inset:0;background:radial-gradient(ellipse 80% 50% at 50% -20%, rgba(0,212,255,0.18), transparent), radial-gradient(ellipse 60% 40% at 80% 60%, rgba(123,47,255,0.18), transparent);pointer-events:none;"></div>
-        <div class="container" style="position:relative;z-index:1;padding-top: 120px; padding-bottom: 80px;">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
-
-                <!-- Left: Text -->
-                <div style="padding-left: 12px;">
-                    <div class="section-label" style="margin-bottom: 16px; display:inline-block;">Partner Program</div>
-                    <h1 style="text-align: left; font-size: clamp(2rem, 4vw, 3.2rem); margin-bottom: 20px; background: linear-gradient(135deg, #00d4ff, #7b2fff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Get Paid to Help<br>Small Businesses Win</h1>
-                    <p style="font-size: 1.15rem; color: #a0aec0; line-height: 1.75; margin-bottom: 28px;">Refer clients and earn. Or get certified and build a real recurring income stream — while we do all the heavy lifting behind the scenes. Two paths. Both profitable.</p>
-                    <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 32px; justify-content: flex-start;">
-                        <a href="#apply" class="btn btn-primary btn-lg">Apply to Become a Partner</a>
-                        <a href="#paths" class="btn btn-outline btn-lg">See How It Works</a>
-                    </div>
-                    <div style="display: flex; gap: 24px; flex-wrap: wrap; justify-content: flex-start;">
-                        <div style="display: flex; align-items: center; gap: 8px; color: #9595b0; font-size: 0.9rem;"><span>💰</span><span>Real recurring income</span></div>
-                        <div style="display: flex; align-items: center; gap: 8px; color: #9595b0; font-size: 0.9rem;"><span>⚡</span><span>We do the heavy lifting</span></div>
-                        <div style="display: flex; align-items: center; gap: 8px; color: #9595b0; font-size: 0.9rem;"><span>🤝</span><span>Full training included</span></div>
-                    </div>
-                </div>
-
-                <!-- Right: Video -->
-                <div>
-                    <div style="position: relative; border-radius: 16px; overflow: hidden; box-shadow: 0 0 40px rgba(0,212,255,0.3); background: #000; aspect-ratio: 1/1;">
-                        <video id="partnerHeroVideo" controls playsinline preload="metadata"
-                            style="width: 100%; height: 100%; display: block;"
-                            poster="images/max-avatar.png">
-                            <source src="videos/track-partner-explainer.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <p style="text-align: center; color: #9595b0; font-size: 0.85rem; margin-top: 12px;">👆 MAX breaks down exactly how the Partner Program works (1 min)</p>
-                </div>
-
-            </div>
+    <!-- Hero -->
+    <section class="ref-hero">
+        <div class="container">
+            <div class="ref-badge">💰 REFERRAL PROGRAM</div>
+            <h1>Refer a Client. Earn <span class="green">25% Forever.</span></h1>
+            <p class="subtext">Know a business that needs an AI-powered phone system, automation, or any of our services? Send them our way. When they sign up, you earn 25% of what they pay — every single month, for as long as they're a client.</p>
+            <a href="#start" class="btn-ref">Start Earning Today</a>
         </div>
-
-        <style>
-        @media (max-width: 768px) {
-            .partner-hero > .container > div[style*="grid-template-columns"] {
-                grid-template-columns: 1fr !important;
-                gap: 36px !important;
-            }
-        }
-        </style>
     </section>
 
-    <!-- TWO PATHS -->
-    <section id="paths" style="padding: 80px 0; background: #0a0a1a;">
+    <!-- How It Works -->
+    <section class="ref-section">
         <div class="container">
-            <div class="section-label" style="text-align:center;">Choose Your Path</div>
-            <h2 class="section-title" style="text-align:center;">Two Ways to Partner With Us</h2>
-            <div class="paths-grid">
-                <!-- Referral -->
-                <div class="path-card">
-                    <h3>Referral Partner</h3>
-                    <div class="path-price">Free <span>to join</span></div>
-                    <p>Send us a lead. We close it. You get paid. Simple as that.</p>
-                    <ul class="path-features">
-                        <li>No training required</li>
-                        <li>10% of first month's revenue per referral</li>
-                        <li>One-time payout per client</li>
-                        <li>No ongoing responsibility</li>
-                        <li>Commissions offset your own MAX services</li>
-                    </ul>
-                    <a href="#apply" class="btn-secondary" style="display:block;text-align:center;padding:14px;">Join as Referral Partner</a>
-                </div>
+            <h2>How It Works</h2>
+            <p class="section-sub">Three steps. No selling required. Just introductions.</p>
 
-                <!-- Certified -->
-                <div class="path-card featured">
-                    <h3>Certified Partner</h3>
-                    <div class="path-price">$499 <span>one-time</span></div>
-                    <p>Get trained, get certified, manage accounts, and earn 25% recurring — forever.</p>
-                    <ul class="path-features">
-                        <li>Full 5-module training program</li>
-                        <li>Written certification test</li>
-                        <li>1 accompanied sales appointment</li>
-                        <li>25% of monthly recurring revenue — forever</li>
-                        <li>$499 fee credited back after first client</li>
-                        <li>Commissions offset your own MAX services</li>
-                        <li>Build your own client base under our brand</li>
-                    </ul>
-                    <a href="#apply" class="btn-primary" style="display:block;text-align:center;padding:14px;">Apply for Certification</a>
+            <div class="ref-grid" style="max-width: 900px;">
+                <div class="ref-card" style="text-align: center;">
+                    <div class="icon">1️⃣</div>
+                    <h3>Know Someone Who Needs AI</h3>
+                    <p>A dentist missing calls. A contractor losing leads. A salon that can't keep up. Any business that could use an AI-powered phone system, automation, or training.</p>
+                </div>
+                <div class="ref-card" style="text-align: center;">
+                    <div class="icon">2️⃣</div>
+                    <h3>Make the Introduction</h3>
+                    <p>Tell them about us, share our website, or just give us their info. We handle everything from there — the demo, the pitch, the setup. You do nothing else.</p>
+                </div>
+                <div class="ref-card" style="text-align: center;">
+                    <div class="icon">3️⃣</div>
+                    <h3>Get Paid Every Month</h3>
+                    <p>When they become a client, you earn 25% of their monthly payment. Not once — every month. For as long as they stay. No cap. No expiration.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- EMAIL GATE -->
-    <section style="padding: 40px 20px; background: #0d1b2a;">
+    <!-- The Math -->
+    <section class="math-section">
         <div class="container">
-            <div class="gate-section" id="gate-box">
-                <div class="section-label">The Real Numbers</div>
-                <h2>Want to See What You Could Actually Earn?</h2>
-                <p>We don't show earnings examples to everyone — enter your name and email and we'll show you exactly what the numbers look like for 5, 10, and 20 clients.</p>
-                <form class="gate-form" id="gate-form" onsubmit="revealNumbers(event)">
-                    <input type="text" placeholder="Your first name" required id="gate-name">
-                    <input type="email" placeholder="Your email address" required id="gate-email">
-                    <button type="submit">Show Me the Numbers →</button>
+            <div class="math-grid">
+                <div class="math-text">
+                    <h2>The Math Speaks for Itself</h2>
+                    <p>Our AI-powered phone system runs $97 to $297 per month per client. You get 25% of that. Refer a few businesses and you've built yourself a passive income stream.</p>
+                    <p>No inventory. No deliveries. No customer service. No work after the introduction. We handle everything — you just cash the checks.</p>
+                    <p><strong>The more you refer, the more you earn. Forever.</strong></p>
+                </div>
+                <div class="math-box">
+                    <h3>Your Referral Income</h3>
+                    <div class="math-row">
+                        <span class="label">1 client @ $297/mo</span>
+                        <span class="value">$74/mo</span>
+                    </div>
+                    <div class="math-row">
+                        <span class="label">5 clients @ $297/mo</span>
+                        <span class="value">$371/mo</span>
+                    </div>
+                    <div class="math-row">
+                        <span class="label">10 clients @ $297/mo</span>
+                        <span class="value">$742/mo</span>
+                    </div>
+                    <div class="math-row">
+                        <span class="label">25 clients @ $297/mo</span>
+                        <span class="value">$1,856/mo</span>
+                    </div>
+                    <div class="math-row" style="border-top: 2px solid #22c55e; margin-top: 8px; padding-top: 16px;">
+                        <span class="label"><strong>25 referrals annually</strong></span>
+                        <span class="value" style="font-size: 1.2rem;">$22,275/year</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What Counts -->
+    <section class="ref-section" style="background: rgba(26,26,46,0.3);">
+        <div class="container">
+            <h2>What Services Earn You 25%</h2>
+            <p class="section-sub">Any service a referred client purchases from Max's AI Solutions — you earn on all of it.</p>
+
+            <div class="ref-grid">
+                <div class="ref-card">
+                    <div class="icon">📞</div>
+                    <h3>AI-Powered Phone System</h3>
+                    <p>$97–$297/month per client. The most common referral. Every business with a phone needs this.</p>
+                </div>
+                <div class="ref-card">
+                    <div class="icon">🤖</div>
+                    <h3>AI Automation & Consulting</h3>
+                    <p>Custom AI builds, workflow automation, business consulting. One-time and recurring projects.</p>
+                </div>
+                <div class="ref-card">
+                    <div class="icon">🎓</div>
+                    <h3>Training & Academy Access</h3>
+                    <p>Courses, subscriptions, and training programs. $47–$497 per purchase.</p>
+                </div>
+                <div class="ref-card">
+                    <div class="icon">🌐</div>
+                    <h3>Website & Digital Services</h3>
+                    <p>Website builds, SEO, social media setup. Any digital service we offer.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who Can Refer -->
+    <section class="ref-section">
+        <div class="container">
+            <h2>Who Can Be a Referrer?</h2>
+            <p class="section-sub">Anyone. Seriously.</p>
+
+            <div class="ref-grid" style="max-width: 800px;">
+                <div class="ref-card">
+                    <div class="icon">👤</div>
+                    <h3>Current Clients</h3>
+                    <p>Already use our services? Refer other businesses and earn on top of what you're already getting.</p>
+                </div>
+                <div class="ref-card">
+                    <div class="icon">👥</div>
+                    <h3>Friends & Family</h3>
+                    <p>Know someone with a business? That conversation at dinner could earn you $74/month forever.</p>
+                </div>
+                <div class="ref-card">
+                    <div class="icon">🏢</div>
+                    <h3>Business Owners</h3>
+                    <p>Connected to other business owners? Every referral builds your passive income alongside your own business.</p>
+                </div>
+                <div class="ref-card">
+                    <div class="icon">🌍</div>
+                    <h3>Anyone, Anywhere</h3>
+                    <p>No application. No training required. No territory. If you can make an introduction, you can earn.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divider: Also check out the Box -->
+    <section class="divider">
+        <div class="container">
+            <h2>Want to Go Bigger?</h2>
+            <p>If you want to run your own AI business — not just refer clients — check out the <a href="box.html" style="color: #a78bfa; font-weight: 600;">AI Business in a Box</a>. A complete, turnkey AI business system you own and operate.</p>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="ref-cta" id="start">
+        <div class="container">
+            <h2>Ready to Start Earning?</h2>
+            <p>Tell us who you are and we'll set you up. When your referrals become clients, you get paid. Simple as that.</p>
+
+            <div style="max-width: 450px; margin: 0 auto;">
+                <form action="https://formspree.io/f/mwvwjjoq" method="POST" style="display: flex; flex-direction: column; gap: 14px;">
+                    <input type="hidden" name="_subject" value="New Referral Partner Signup">
+                    <input type="hidden" name="form_type" value="referral_partner">
+                    <input type="text" name="name" placeholder="Your Full Name" required
+                        style="padding: 14px 18px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; color: white; font-size: 1rem;">
+                    <input type="email" name="email" placeholder="Your Email" required
+                        style="padding: 14px 18px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; color: white; font-size: 1rem;">
+                    <input type="tel" name="phone" placeholder="Your Phone Number" required
+                        style="padding: 14px 18px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; color: white; font-size: 1rem;">
+                    <textarea name="message" placeholder="Already have someone in mind? Tell us about them (optional)" rows="3"
+                        style="padding: 14px 18px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; color: white; font-size: 1rem; resize: vertical;"></textarea>
+                    <button type="submit" class="btn-ref" style="border: none; cursor: pointer; font-size: 1.1rem;">Sign Up as a Referral Partner</button>
                 </form>
             </div>
 
-            <!-- Hidden numbers section -->
-            <div class="numbers-section" id="numbers-section">
-                <div style="text-align:center; margin-bottom:40px;">
-                    <div class="section-label">Partner Earnings Examples</div>
-                    <h2 class="section-title">Here's What the Numbers Look Like</h2>
-                    <p class="section-sub">Based on 25% of $297/mo per client. These are real numbers — not projections.</p>
-                </div>
-                <div class="numbers-grid">
-                    <div class="number-card">
-                        <h4>5 Clients</h4>
-                        <div class="number-big">$371</div>
-                        <div class="number-sub">per month</div>
-                        <div class="number-annual">$4,455 / year</div>
-                        <p style="color:#718096;font-size:0.85rem;margin-top:12px;">Your own MAX services fully covered + cash left over</p>
-                    </div>
-                    <div class="number-card" style="border-color: rgba(0,212,255,0.3);">
-                        <h4>10 Clients</h4>
-                        <div class="number-big">$743</div>
-                        <div class="number-sub">per month</div>
-                        <div class="number-annual">$8,910 / year</div>
-                        <p style="color:#718096;font-size:0.85rem;margin-top:12px;">A real side income. Most partners hit this in 60-90 days.</p>
-                    </div>
-                    <div class="number-card" style="border-color: rgba(123,47,255,0.4); background: rgba(123,47,255,0.05);">
-                        <h4>20 Clients</h4>
-                        <div class="number-big">$1,485</div>
-                        <div class="number-sub">per month</div>
-                        <div class="number-annual">$17,820 / year</div>
-                        <p style="color:#718096;font-size:0.85rem;margin-top:12px;">Full-time income. No employees. No overhead. Work from anywhere.</p>
-                    </div>
-                </div>
-                <div style="text-align:center;margin-top:40px;padding:30px;background:rgba(0,212,255,0.05);border:1px solid rgba(0,212,255,0.15);border-radius:16px;max-width:600px;margin-left:auto;margin-right:auto;">
-                    <p style="color:white;font-size:1.1rem;font-weight:600;margin-bottom:8px;">💡 The $499 math</p>
-                    <p style="color:#a0aec0;font-size:0.95rem;">Land your first client → $499 training fee credited back immediately. After that, every dollar is pure recurring income. Your first 2 clients pay you back in month one.</p>
-                </div>
-            </div>
+            <p style="color: #6b6b8a; font-size: 0.85rem; margin-top: 32px;">Questions? Email <a href="mailto:todd.maxsaisolutions@gmail.com" style="color: #4ade80;">todd.maxsaisolutions@gmail.com</a> or call <a href="tel:+14433979716" style="color: #4ade80;">(443) 397-9716</a></p>
         </div>
     </section>
 
-    <!-- TRAINING OVERVIEW -->
-    <section class="training-section">
+    <!-- Footer -->
+    <footer style="background: #0a0a14; border-top: 1px solid #2d2d44; padding: 40px 0; text-align: center;">
         <div class="container">
-            <div style="text-align:center;">
-                <div class="section-label">Certified Partner Training</div>
-                <h2 class="section-title">What Your $499 Covers</h2>
-                <p class="section-sub">5 modules. A written test. One real appointment with us by your side. Then you're certified.</p>
-                
-            </div>
-            <div class="modules-grid">
-                <div class="module-card">
-                    <div class="module-num">Module 01</div>
-                    <h4>What MAX Actually Does</h4>
-                    <p>Phone systems, automation, websites, CRM, social media. Know the product cold before you sell it.</p>
-                </div>
-                <div class="module-card">
-                    <div class="module-num">Module 02</div>
-                    <h4>The Sales Conversation</h4>
-                    <p>3 questions that open every conversation. How to demo live. How to handle every objection.</p>
-                </div>
-                <div class="module-card">
-                    <div class="module-num">Module 03</div>
-                    <h4>Onboarding a Client</h4>
-                    <p>What info to collect. How the setup works. What to tell the client to expect on day one.</p>
-                </div>
-                <div class="module-card">
-                    <div class="module-num">Module 04</div>
-                    <h4>Managing the Relationship</h4>
-                    <p>Monthly check-ins. How to upsell. How to handle a complaint. When to escalate.</p>
-                </div>
-                <div class="module-card">
-                    <div class="module-num">Module 05</div>
-                    <h4>The Business of Being a Partner</h4>
-                    <p>Tracking commissions. Offsetting your own services. Building your network. Growing to 20 clients.</p>
-                </div>
-                <div class="module-card" style="border-color:rgba(0,212,255,0.2);background:rgba(0,212,255,0.04);">
-                    <div class="module-num">Certification</div>
-                    <h4>Written Test + Live Appointment</h4>
-                    <p>Pass the test (80%+). Complete one real appointment with us on the call. You're certified. We sign off. You're official.</p>
-                </div>
-            </div>
+            <p style="color: #6b6b8a; font-size: 0.85rem;">© 2026 Max's AI Solutions. All rights reserved.</p>
+            <p style="color: #4a4a6a; font-size: 0.8rem; margin-top: 8px;">
+                <a href="privacy.html" style="color: #4a4a6a;">Privacy</a> · 
+                <a href="terms.html" style="color: #4a4a6a;">Terms</a> · 
+                <a href="index.html" style="color: #4a4a6a;">Home</a>
+            </p>
         </div>
-    </section>
-
-    <!-- REFERRAL PAYS SERVICES -->
-    <section style="padding:80px 0; background:#0d1b2a; text-align:center;">
-        <div class="container">
-            <div class="section-label">Referral Pays for Services</div>
-            <h2 class="section-title">Your Commissions Can Cover Your Own Bill</h2>
-            <p class="section-sub" style="margin-bottom:50px;">Using our AI phone system yourself? Every client you refer offsets your monthly cost. Most partners end up paying nothing.</p>
-            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:25px;max-width:800px;margin:0 auto;">
-                <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:14px;padding:30px;">
-                    <div style="font-size:2rem;margin-bottom:10px;">📞</div>
-                    <h4 style="color:white;margin-bottom:8px;">You Use Our Phone System</h4>
-                    <p style="color:#718096;font-size:0.9rem;">$99/mo Starter plan for your own business</p>
-                </div>
-                <div style="background:rgba(0,212,255,0.05);border:1px solid rgba(0,212,255,0.2);border-radius:14px;padding:30px;">
-                    <div style="font-size:2rem;margin-bottom:10px;">🤝</div>
-                    <h4 style="color:white;margin-bottom:8px;">You Refer 1 Client</h4>
-                    <p style="color:#718096;font-size:0.9rem;">Earn $74.25/mo — your bill is covered with cash left over</p>
-                </div>
-                <div style="background:rgba(123,47,255,0.05);border:1px solid rgba(123,47,255,0.2);border-radius:14px;padding:30px;">
-                    <div style="font-size:2rem;margin-bottom:10px;">💰</div>
-                    <h4 style="color:white;margin-bottom:8px;">Net Cost to You</h4>
-                    <p style="color:#7b2fff;font-size:1.1rem;font-weight:700;">$0</p>
-                    <p style="color:#718096;font-size:0.9rem;">And you're still earning $74/mo after that</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- APPLY -->
-    <section class="apply-section" id="apply">
-        <div class="container">
-            <div class="section-label">Ready to Start?</div>
-            <h2 class="section-title">Apply to Become a Partner</h2>
-            <p class="section-sub">Tell us a little about yourself. We'll reach out within 24 hours.</p>
-            <form class="apply-form" action="https://formspree.io/f/mwvwjjoq" method="POST">
-                <input type="text" name="name" placeholder="Your full name" required>
-                <input type="email" name="email" placeholder="Your email" required>
-                <input type="tel" name="phone" placeholder="Your phone number" required>
-                <input type="text" name="path" placeholder="Referral Partner or Certified Partner?" required>
-                <input type="text" name="referred_by" placeholder="Name of the person who referred you" style="grid-column: 1 / -1;">
-                <textarea name="why" placeholder="Tell us a little about yourself and why you want to partner with us..."></textarea>
-                <input type="hidden" name="_subject" value="New Partner Application">
-                <button type="submit">Submit My Application →</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer style="background:#050510;padding:40px 0;text-align:center;border-top:1px solid rgba(255,255,255,0.06);">
-        <p style="color:#4a5568;font-size:0.9rem;">© 2026 Max's AI Solutions. All rights reserved. | <a href="index.html" style="color:#00d4ff;">Home</a> | <a href="pricing.html" style="color:#00d4ff;">Pricing</a> | <a href="demos.html" style="color:#00d4ff;">Live Demos</a></p>
     </footer>
 
     <script>
-        function revealNumbers(e) {
-            e.preventDefault();
-            const name = document.getElementById('gate-name').value;
-            const email = document.getElementById('gate-email').value;
-
-            // Send to Formspree
-            fetch('https://formspree.io/f/mwvwjjoq', {
-                method: 'POST',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({name, email, _subject: 'Partner Numbers Request'})
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+        if (navToggle) {
+            navToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                navToggle.classList.toggle('active');
             });
-
-            // Hide gate, show numbers
-            document.getElementById('gate-box').style.display = 'none';
-            document.getElementById('numbers-section').classList.add('revealed');
-
-            // Scroll to numbers
-            document.getElementById('numbers-section').scrollIntoView({behavior: 'smooth'});
         }
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) navbar.classList.add('scrolled');
+            else navbar.classList.remove('scrolled');
+        });
     </script>
 </body>
 </html>
