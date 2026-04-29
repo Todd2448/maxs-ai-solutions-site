@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Business in a Box — Launch Your Own AI-Powered Business</title>
+    <meta name="description" content="Get a complete, turnkey AI business system. Automated social media, AI phone receptionist, training academy, payment processing, and your own AI operator — all in one box.">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .box-hero {
+            background: linear-gradient(135deg, #0f0f1a 0%, #1a1030 50%, #0f0f1a 100%);
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .box-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 50%, rgba(79,70,229,0.08) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 50%, rgba(168,85,247,0.06) 0%, transparent 50%);
+            animation: pulse 8s ease-in-out infinite alternate;
+        }
+        @keyframes pulse {
+            0% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+        .box-hero .container { position: relative; z-index: 1; }
+        .box-badge {
+            display: inline-block;
+            background: rgba(79,70,229,0.15);
+            border: 1px solid rgba(79,70,229,0.3);
+            color: #a78bfa;
+            padding: 8px 20px;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            letter-spacing: 0.5px;
+        }
+        .box-hero h1 {
+            font-size: clamp(2.2rem, 5vw, 3.8rem);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 24px;
+            color: #fff;
+        }
+        .box-hero h1 .highlight {
+            background: linear-gradient(135deg, #6366f1, #a855f7, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .box-hero .subtext {
+            font-size: 1.2rem;
+            color: #9595b0;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+        }
+        .box-price-highlight {
+            display: inline-block;
+            background: linear-gradient(135deg, #6366f1, #a855f7);
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 700;
+            padding: 12px 32px;
+            border-radius: 12px;
+            margin-bottom: 16px;
+        }
+        .franchise-compare {
+            color: #9595b0;
+            font-size: 0.95rem;
+            margin-bottom: 40px;
+        }
+        .franchise-compare s { color: #ef4444; }
+
+        /* What's in the Box */
+        .box-section {
+            padding: 80px 0;
+        }
+        .box-section h2 {
+            font-size: clamp(1.8rem, 3vw, 2.6rem);
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 16px;
+            color: #fff;
+        }
+        .box-section .section-sub {
+            text-align: center;
+            color: #9595b0;
+            font-size: 1.05rem;
+            max-width: 600px;
+            margin: 0 auto 48px;
+        }
+        .box-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .box-card {
+            background: rgba(26,26,46,0.8);
+            border: 1px solid #2d2d44;
+            border-radius: 16px;
+            padding: 32px;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        .box-card:hover {
+            transform: translateY(-4px);
+            border-color: #6366f1;
+        }
+        .box-card .icon {
+            font-size: 2rem;
+            margin-bottom: 16px;
+        }
+        .box-card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+        .box-card p {
+            color: #9595b0;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Royalty section */
+        .royalty-section {
+            background: linear-gradient(135deg, #1a1030 0%, #0f0f1a 100%);
+            padding: 80px 0;
+        }
+        .royalty-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            max-width: 900px;
+            margin: 0 auto;
+            align-items: center;
+        }
+        .royalty-text h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            color: #fff;
+        }
+        .royalty-text p {
+            color: #9595b0;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+        .royalty-math {
+            background: rgba(26,26,46,0.9);
+            border: 1px solid #2d2d44;
+            border-radius: 16px;
+            padding: 32px;
+        }
+        .royalty-math h3 {
+            color: #a78bfa;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .math-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #2d2d44;
+            color: #e2e8f0;
+        }
+        .math-row:last-child { border-bottom: none; }
+        .math-row .label { color: #9595b0; }
+        .math-row .value { font-weight: 700; color: #22c55e; }
+
+        /* CTA */
+        .box-cta {
+            text-align: center;
+            padding: 80px 0;
+            background: linear-gradient(180deg, #0f0f1a 0%, #1a1030 50%, #0f0f1a 100%);
+        }
+        .box-cta h2 {
+            font-size: clamp(1.8rem, 3vw, 2.4rem);
+            font-weight: 800;
+            margin-bottom: 16px;
+            color: #fff;
+        }
+        .box-cta p {
+            color: #9595b0;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+        .btn-box {
+            display: inline-block;
+            background: linear-gradient(135deg, #6366f1, #a855f7);
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 700;
+            padding: 16px 40px;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn-box:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(99,102,241,0.4);
+        }
+        .btn-outline-box {
+            display: inline-block;
+            border: 2px solid #6366f1;
+            color: #a78bfa;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 14px 36px;
+            border-radius: 12px;
+            text-decoration: none;
+            margin-left: 16px;
+            transition: background 0.2s;
+        }
+        .btn-outline-box:hover {
+            background: rgba(99,102,241,0.1);
+        }
+
+        /* Comparison table */
+        .compare-table {
+            max-width: 800px;
+            margin: 0 auto;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        .compare-table th, .compare-table td {
+            padding: 16px 20px;
+            text-align: left;
+            border-bottom: 1px solid #2d2d44;
+        }
+        .compare-table th {
+            color: #a78bfa;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .compare-table td { color: #e2e8f0; }
+        .compare-table td:first-child { color: #9595b0; }
+        .compare-table .check { color: #22c55e; font-weight: 700; }
+        .compare-table .x { color: #ef4444; }
+
+        /* FAQ */
+        .faq-item {
+            max-width: 700px;
+            margin: 0 auto 24px;
+            background: rgba(26,26,46,0.8);
+            border: 1px solid #2d2d44;
+            border-radius: 12px;
+            padding: 24px;
+        }
+        .faq-item h3 {
+            color: #fff;
+            font-size: 1.05rem;
+            margin-bottom: 8px;
+        }
+        .faq-item p {
+            color: #9595b0;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            .royalty-grid { grid-template-columns: 1fr; }
+            .box-grid { grid-template-columns: 1fr; }
+            .btn-outline-box { margin-left: 0; margin-top: 12px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo.png" alt="Max's AI Solutions" class="logo-img">
+                <span class="logo-text">Max's AI Solutions</span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="training.html">Free Training</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="demos.html">Live Demos</a></li>
+                <li><a href="#apply" class="btn btn-nav">Apply Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="box-hero">
+        <div class="container">
+            <div class="box-badge">📦 NOW AVAILABLE</div>
+            <h1>Your Own <span class="highlight">AI-Powered Business</span><br>Ready to Run</h1>
+            <p class="subtext">Everything you need to launch and operate a complete AI business — automated social media, AI-powered phone system, training academy, payment processing, and your own AI operator that builds, posts, and sells while you sleep.</p>
+            <div class="box-price-highlight">Starting at $2,997 — A Fraction of Any Franchise</div>
+            <p class="franchise-compare">
+                Traditional franchises cost <s>$50,000 – $500,000</s>. No territory restrictions. No storefront. No employees required.
+            </p>
+            <a href="#apply" class="btn-box">Apply for Your Box</a>
+            <a href="#whats-inside" class="btn-outline-box">See What's Inside</a>
+        </div>
+    </section>
+
+    <!-- What's in the Box -->
+    <section class="box-section" id="whats-inside">
+        <div class="container">
+            <h2>What's in the Box</h2>
+            <p class="section-sub">A complete, tested, running AI business — not a course about starting one.</p>
+
+            <div class="box-grid">
+                <div class="box-card">
+                    <div class="icon">📱</div>
+                    <h3>Automated Social Media</h3>
+                    <p>Content posts automatically across X, Instagram, Facebook, and TikTok — 6 times daily. AI-generated quote cards and video content included. Never think about posting again.</p>
+                </div>
+                <div class="box-card">
+                    <div class="icon">📞</div>
+                    <h3>AI-Powered Phone System</h3>
+                    <p>A professional AI receptionist that answers every call, books appointments, qualifies leads, and routes urgent matters — 24/7/365. Sounds human. Works like a machine.</p>
+                </div>
+                <div class="box-card">
+                    <div class="icon">🎓</div>
+                    <h3>Training Academy</h3>
+                    <p>Your own branded training platform with courses, progress tracking, and student management. Sell one-time courses, bundles, or monthly subscriptions.</p>
+                </div>
+                <div class="box-card">
+                    <div class="icon">💳</div>
+                    <h3>Payment Processing</h3>
+                    <p>Stripe integration ready to accept payments from day one. Payment links, subscriptions, and automatic access grants when customers buy.</p>
+                </div>
+                <div class="box-card">
+                    <div class="icon">🌐</div>
+                    <h3>Professional Website</h3>
+                    <p>A complete, mobile-responsive website with your branding — service pages, pricing, contact forms, and live AI voice demos built in.</p>
+                </div>
+                <div class="box-card">
+                    <div class="icon">🤖</div>
+                    <h3>Your Own AI Operator</h3>
+                    <p>This is the real power. Your own MAX — an AI that manages your business, posts content, researches prospects, answers questions, and can build entirely new products for you.</p>
+                </div>
+                <div class="box-card">
+                    <div class="icon">🔍</div>
+                    <h3>Pre-Meeting Research Tool</h3>
+                    <p>Before any sales meeting, your AI pulls a complete briefing on the prospect — business details, reviews, social presence, competitor context, and suggested talking points.</p>
+                </div>
+                <div class="box-card">
+                    <div class="icon">🗣️</div>
+                    <h3>AI Voice Widget</h3>
+                    <p>An interactive voice assistant embedded on your website. Visitors can talk to your AI in real time — answer questions, book demos, qualify leads automatically.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Franchise Comparison -->
+    <section class="box-section" style="background: rgba(26,26,46,0.3);">
+        <div class="container">
+            <h2>This Isn't a Course. It's a Business.</h2>
+            <p class="section-sub">Compare what you get versus what a traditional franchise costs.</p>
+
+            <table class="compare-table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Traditional Franchise</th>
+                        <th>AI Business in a Box</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Startup Cost</td>
+                        <td>$50,000 – $500,000</td>
+                        <td class="check">Starting at $2,997</td>
+                    </tr>
+                    <tr>
+                        <td>Monthly Overhead</td>
+                        <td>Rent, staff, inventory</td>
+                        <td class="check">Under $100/mo (hosting + AI tools)</td>
+                    </tr>
+                    <tr>
+                        <td>Employees Required</td>
+                        <td>3-20+</td>
+                        <td class="check">Zero — AI handles it</td>
+                    </tr>
+                    <tr>
+                        <td>Territory Restrictions</td>
+                        <td>Yes — locked to one area</td>
+                        <td class="check">None — sell anywhere</td>
+                    </tr>
+                    <tr>
+                        <td>Physical Location</td>
+                        <td>Required</td>
+                        <td class="check">Run from anywhere</td>
+                    </tr>
+                    <tr>
+                        <td>Time to Launch</td>
+                        <td>3-12 months</td>
+                        <td class="check">Days, not months</td>
+                    </tr>
+                    <tr>
+                        <td>Marketing Included</td>
+                        <td>Sometimes — at extra cost</td>
+                        <td class="check">Fully automated from day one</td>
+                    </tr>
+                    <tr>
+                        <td>Can Build New Products</td>
+                        <td class="x">No — locked to franchise model</td>
+                        <td class="check">Yes — your AI builds for you</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="box-section">
+        <div class="container">
+            <h2>How It Works</h2>
+            <p class="section-sub">From zero to running business in three steps.</p>
+
+            <div class="box-grid" style="max-width: 900px;">
+                <div class="box-card" style="text-align: center;">
+                    <div class="icon">1️⃣</div>
+                    <h3>Apply & Get Approved</h3>
+                    <p>Tell us about yourself and your goals. We want Box owners who are serious about building something real. Not everyone gets in.</p>
+                </div>
+                <div class="box-card" style="text-align: center;">
+                    <div class="icon">2️⃣</div>
+                    <h3>We Build Your Box</h3>
+                    <p>We configure everything — your AI operator, website, phone system, social accounts, academy, and payment processing. You plug in your brand and go.</p>
+                </div>
+                <div class="box-card" style="text-align: center;">
+                    <div class="icon">3️⃣</div>
+                    <h3>Launch & Grow</h3>
+                    <p>Your business starts running. Content posts automatically. Calls get answered. Customers sign up. You focus on growth while your AI handles the operations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The AI Advantage -->
+    <section class="royalty-section">
+        <div class="container">
+            <div class="royalty-grid">
+                <div class="royalty-text">
+                    <h2>Your AI Doesn't Just Run Your Business. It Builds New Ones.</h2>
+                    <p>Every Box comes with your own AI operator. It doesn't just post content and answer phones — it can research markets, write proposals, build web apps, create new products, and find opportunities you haven't thought of yet.</p>
+                    <p>One of our AI operators built a food safety scanner app from scratch — API, website, mobile app, content strategy, automated TikTok videos — all without a human developer.</p>
+                    <p><strong>That same capability is in your Box.</strong></p>
+                </div>
+                <div class="royalty-math">
+                    <h3>The Opportunity Math</h3>
+                    <div class="math-row">
+                        <span class="label">AI Phone System (per client)</span>
+                        <span class="value">$97–$297/mo</span>
+                    </div>
+                    <div class="math-row">
+                        <span class="label">10 phone system clients</span>
+                        <span class="value">$970–$2,970/mo</span>
+                    </div>
+                    <div class="math-row">
+                        <span class="label">Academy subscriptions (25 students)</span>
+                        <span class="value">$1,175/mo</span>
+                    </div>
+                    <div class="math-row">
+                        <span class="label">Custom AI builds (2/month)</span>
+                        <span class="value">$5,000–$10,000/mo</span>
+                    </div>
+                    <div class="math-row" style="border-top: 2px solid #6366f1; margin-top: 8px; padding-top: 16px;">
+                        <span class="label"><strong>Potential Monthly Revenue</strong></span>
+                        <span class="value" style="font-size: 1.2rem;">$7,145–$14,145</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Tiers -->
+    <section class="box-section" style="background: rgba(26,26,46,0.3);">
+        <div class="container">
+            <h2>You're Not Alone</h2>
+            <p class="section-sub">Every Box comes with support. Scale up as you grow.</p>
+
+            <div class="box-grid" style="max-width: 900px;">
+                <div class="box-card">
+                    <div class="icon">🆓</div>
+                    <h3>Self-Serve (Included)</h3>
+                    <p>Your AI operator handles most questions and issues. Setup guide, video walkthroughs, and documentation included. Most Box owners never need more than this.</p>
+                </div>
+                <div class="box-card">
+                    <div class="icon">🔧</div>
+                    <h3>Priority Support — $297/mo</h3>
+                    <p>Monthly retainer for hands-on help. We build custom features, troubleshoot issues, and help you scale. Same-day response. Think of us as your AI engineering team.</p>
+                </div>
+                <div class="box-card">
+                    <div class="icon">🚨</div>
+                    <h3>Emergency Fix — $250–$500</h3>
+                    <p>Something broke and you need it fixed now? One-time emergency support. We diagnose, fix, and verify within hours.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="box-section">
+        <div class="container">
+            <h2>Common Questions</h2>
+            <p class="section-sub">Everything you want to know before you apply.</p>
+
+            <div class="faq-item">
+                <h3>Do I need technical skills?</h3>
+                <p>No. We build and configure everything. Your AI operator handles the technical work. You focus on selling, networking, and growing your business.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What's the 5% royalty?</h3>
+                <p>We take 5% of your total revenue — forever. That's our long-term partnership. You grow, we grow. It keeps us invested in your success because your success IS our success.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Can I sell in any market?</h3>
+                <p>Yes. No territory restrictions. Sell AI services to businesses anywhere — local or nationwide. Your AI doesn't care about zip codes.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What if I want to build something custom?</h3>
+                <p>Your AI operator can build custom products — web apps, scanners, tools, platforms. That's the whole point. The Box isn't just a set of tools. It's a brain that creates new tools.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How fast can I start making money?</h3>
+                <p>Your social media starts posting immediately. Your phone system is live within days. The question isn't when the system is ready — it's when YOU start selling. Most Box owners land their first client within the first month.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What's my ongoing cost?</h3>
+                <p>Under $100/month for hosting, AI API usage, and tools. Compare that to franchise fees, rent, payroll, and inventory. This is the leanest business model you'll find.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="box-cta" id="apply">
+        <div class="container">
+            <h2>Ready to Own Your AI Business?</h2>
+            <p>We're selective about who gets a Box. Apply below and we'll review your application within 48 hours.</p>
+            <a href="https://formspree.io/f/mwvwjjoq" class="btn-box" style="margin-bottom: 16px;">Apply Now</a>
+            <p style="color: #6b6b8a; font-size: 0.85rem; margin-top: 24px;">Questions? Email <a href="mailto:todd.maxsaisolutions@gmail.com" style="color: #a78bfa;">todd.maxsaisolutions@gmail.com</a> or call <a href="tel:+14433979716" style="color: #a78bfa;">(443) 397-9716</a></p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: #0a0a14; border-top: 1px solid #2d2d44; padding: 40px 0; text-align: center;">
+        <div class="container">
+            <p style="color: #6b6b8a; font-size: 0.85rem;">© 2026 Max's AI Solutions. All rights reserved.</p>
+            <p style="color: #4a4a6a; font-size: 0.8rem; margin-top: 8px;">
+                <a href="privacy.html" style="color: #4a4a6a;">Privacy</a> · 
+                <a href="terms.html" style="color: #4a4a6a;">Terms</a> · 
+                <a href="index.html" style="color: #4a4a6a;">Home</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile nav toggle
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+        if (navToggle) {
+            navToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                navToggle.classList.toggle('active');
+            });
+        }
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
