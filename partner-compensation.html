@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partner Compensation Plan — How Our Partners Get Paid | Max's AI Solutions</title>
+    <meta name="description" content="See exactly how much you can earn as a Max's AI Solutions partner. Referral commissions, lifetime partner income, and downline bonuses explained.">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* ─── Hero ─── */
+        .cp-hero {
+            background: linear-gradient(135deg, #0f0f1a 0%, #1a1030 50%, #0f0f1a 100%);
+            padding: 130px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .cp-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: radial-gradient(circle at 40% 50%, rgba(79,70,229,0.08) 0%, transparent 50%),
+                        radial-gradient(circle at 65% 40%, rgba(168,139,250,0.06) 0%, transparent 45%);
+            pointer-events: none;
+        }
+        .cp-hero .container { position: relative; z-index: 1; }
+        .cp-badge {
+            display: inline-block;
+            background: rgba(168,139,250,0.15);
+            border: 1px solid rgba(168,139,250,0.35);
+            color: #a78bfa;
+            padding: 8px 22px;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            letter-spacing: 0.5px;
+        }
+        .cp-hero h1 {
+            font-size: clamp(2.2rem, 5vw, 3.6rem);
+            font-weight: 800;
+            line-height: 1.12;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+        .cp-hero h1 .grad {
+            background: linear-gradient(135deg, #a78bfa, #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .cp-hero .subtext {
+            font-size: 1.1rem;
+            color: #9595b0;
+            max-width: 620px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+        }
+
+        /* ─── Email Gate ─── */
+        .gate-card {
+            background: rgba(26,26,46,0.95);
+            border: 1px solid rgba(168,139,250,0.3);
+            border-radius: 20px;
+            padding: 40px 48px;
+            max-width: 520px;
+            margin: 0 auto;
+            box-shadow: 0 0 60px rgba(124,58,237,0.2);
+        }
+        .gate-card h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+        .gate-card p {
+            color: #9595b0;
+            font-size: 0.95rem;
+            text-align: center;
+            margin-bottom: 28px;
+            line-height: 1.6;
+        }
+        .gate-card .field-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .gate-card input {
+            padding: 14px 18px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 10px;
+            color: #fff;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            transition: border-color 0.2s;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .gate-card input:focus {
+            outline: none;
+            border-color: #a78bfa;
+        }
+        .gate-card input::placeholder { color: #6b6b8a; }
+        .btn-reveal {
+            display: block;
+            width: 100%;
+            background: linear-gradient(135deg, #7c3aed, #4f46e5);
+            color: #fff;
+            font-size: 1.05rem;
+            font-weight: 700;
+            padding: 16px 32px;
+            border-radius: 12px;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            font-family: 'Inter', sans-serif;
+            margin-top: 4px;
+        }
+        .btn-reveal:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(124,58,237,0.45);
+        }
+        .btn-reveal:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+        .gate-note {
+            color: #5a5a7a;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 14px;
+        }
+        .gate-error {
+            color: #f87171;
+            font-size: 0.9rem;
+            text-align: center;
+            margin-top: 10px;
+            display: none;
+        }
+
+        /* ─── Comp Plan (hidden until gate passes) ─── */
+        #comp-plan {
+            display: none;
+        }
+
+        /* ─── Section styles ─── */
+        .cp-section {
+            padding: 80px 0;
+        }
+        .cp-section-dark {
+            padding: 80px 0;
+            background: rgba(15,15,26,0.6);
+        }
+        .section-label {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 5px 14px;
+            border-radius: 100px;
+            margin-bottom: 16px;
+        }
+        .label-free { background: rgba(34,197,94,0.15); color: #4ade80; border: 1px solid rgba(34,197,94,0.3); }
+        .label-partner { background: rgba(168,139,250,0.15); color: #a78bfa; border: 1px solid rgba(168,139,250,0.3); }
+        .label-income { background: rgba(251,191,36,0.15); color: #fbbf24; border: 1px solid rgba(251,191,36,0.3); }
+
+        .cp-section h2, .cp-section-dark h2 {
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 12px;
+        }
+        .cp-section .section-sub, .cp-section-dark .section-sub {
+            color: #9595b0;
+            font-size: 1.05rem;
+            max-width: 640px;
+            line-height: 1.7;
+            margin-bottom: 48px;
+        }
+
+        /* ─── Tier boxes ─── */
+        .tier-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .tier-card {
+            background: rgba(26,26,46,0.85);
+            border-radius: 20px;
+            padding: 36px;
+            border: 1px solid #2d2d44;
+            position: relative;
+            overflow: hidden;
+        }
+        .tier-card.green-glow { border-color: rgba(34,197,94,0.3); box-shadow: 0 0 40px rgba(34,197,94,0.08); }
+        .tier-card.purple-glow { border-color: rgba(168,139,250,0.4); box-shadow: 0 0 40px rgba(124,58,237,0.15); }
+        .tier-card .tier-price {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #fff;
+            margin: 12px 0 4px;
+        }
+        .tier-card .tier-price span { font-size: 1rem; color: #9595b0; font-weight: 400; }
+        .tier-card .tier-desc {
+            color: #9595b0;
+            font-size: 0.95rem;
+            margin-bottom: 28px;
+            line-height: 1.6;
+        }
+        .tier-features { list-style: none; padding: 0; margin: 0 0 28px; }
+        .tier-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            color: #c4c4d4;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .tier-features li:last-child { border-bottom: none; }
+        .tier-features li .check { font-size: 1rem; flex-shrink: 0; margin-top: 1px; }
+        .tier-features li .check.green { color: #4ade80; }
+        .tier-features li .check.purple { color: #a78bfa; }
+
+        /* ─── Downline bonus table ─── */
+        .bonus-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+        .bonus-card {
+            background: rgba(26,26,46,0.8);
+            border: 1px solid #2d2d44;
+            border-radius: 16px;
+            padding: 28px 20px;
+            text-align: center;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        .bonus-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(168,139,250,0.4);
+        }
+        .bonus-card .level-badge {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #6b6b8a;
+            margin-bottom: 8px;
+        }
+        .bonus-card .bonus-amt {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #a78bfa;
+            margin-bottom: 6px;
+        }
+        .bonus-card .bonus-label {
+            font-size: 0.85rem;
+            color: #9595b0;
+            line-height: 1.5;
+        }
+
+        /* ─── Income calculator ─── */
+        .income-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            max-width: 980px;
+            margin: 0 auto;
+            align-items: start;
+        }
+        .income-card {
+            background: rgba(26,26,46,0.85);
+            border: 1px solid #2d2d44;
+            border-radius: 20px;
+            padding: 36px;
+        }
+        .income-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #fbbf24;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .income-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .income-row:last-child { border-bottom: none; }
+        .income-row .scenario { color: #9595b0; font-size: 0.95rem; line-height: 1.4; }
+        .income-row .earn { font-size: 1.2rem; font-weight: 800; color: #22c55e; white-space: nowrap; padding-left: 12px; }
+        .income-total {
+            margin-top: 20px;
+            padding: 20px;
+            background: rgba(34,197,94,0.08);
+            border: 1px solid rgba(34,197,94,0.25);
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .income-total .label { color: #e2e8f0; font-weight: 600; }
+        .income-total .total-amt { font-size: 1.4rem; font-weight: 800; color: #4ade80; }
+
+        /* ─── CTA ─── */
+        .cp-cta {
+            padding: 100px 0;
+            text-align: center;
+            background: linear-gradient(180deg, #0f0f1a 0%, #1a1030 60%, #0f0f1a 100%);
+        }
+        .cp-cta h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 16px;
+        }
+        .cp-cta p {
+            color: #9595b0;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+        }
+        .btn-partner {
+            display: inline-block;
+            background: linear-gradient(135deg, #7c3aed, #4f46e5);
+            color: #fff;
+            font-size: 1.15rem;
+            font-weight: 700;
+            padding: 18px 48px;
+            border-radius: 14px;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+            letter-spacing: 0.3px;
+        }
+        .btn-partner:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(124,58,237,0.5);
+        }
+        .btn-partner-outline {
+            display: inline-block;
+            background: transparent;
+            color: #a78bfa;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 14px 36px;
+            border-radius: 12px;
+            border: 1px solid rgba(168,139,250,0.4);
+            text-decoration: none;
+            transition: all 0.2s;
+            margin-left: 16px;
+        }
+        .btn-partner-outline:hover {
+            background: rgba(168,139,250,0.1);
+            border-color: #a78bfa;
+        }
+        .risk-note {
+            color: #5a5a7a;
+            font-size: 0.85rem;
+            margin-top: 28px;
+        }
+
+        /* ─── Comparison strip ─── */
+        .compare-strip {
+            background: rgba(26,26,46,0.5);
+            border: 1px solid #2d2d44;
+            border-radius: 16px;
+            padding: 32px 40px;
+            max-width: 820px;
+            margin: 0 auto;
+        }
+        .compare-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 16px;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+            font-size: 0.95rem;
+        }
+        .compare-row:last-child { border-bottom: none; }
+        .compare-row.header { color: #6b6b8a; font-size: 0.8rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding-bottom: 16px; }
+        .compare-row .feature { color: #9595b0; }
+        .compare-row .free-col { text-align: center; color: #4ade80; font-weight: 600; }
+        .compare-row .partner-col { text-align: center; color: #a78bfa; font-weight: 600; }
+        .compare-row .free-col.dim, .compare-row .partner-col.dim { color: #3d3d5a; }
+
+        /* ─── Responsive ─── */
+        @media (max-width: 768px) {
+            .gate-card { padding: 32px 24px; }
+            .tier-grid { grid-template-columns: 1fr; }
+            .bonus-grid { grid-template-columns: 1fr; gap: 16px; }
+            .income-grid { grid-template-columns: 1fr; gap: 24px; }
+            .compare-row { grid-template-columns: 2fr 1fr 1fr; gap: 8px; font-size: 0.85rem; }
+            .btn-partner-outline { display: block; margin: 12px auto 0; max-width: 260px; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo.png" alt="Max's AI Solutions" class="logo-img">
+                <span class="logo-text">Max's AI Solutions</span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="training.html">Free Training</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="partner.html" class="active" style="color:#a78bfa;font-weight:600;">🤝 Partner Program</a></li>
+                <li><a href="box.html" style="color:#a78bfa;font-weight:600;">📦 AI in a Box</a></li>
+                <li><a href="index.html#contact" class="btn btn-nav">Get Started</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ─── HERO ─── -->
+    <section class="cp-hero">
+        <div class="container">
+            <div class="cp-badge">💰 PARTNER COMPENSATION PLAN</div>
+            <h1>See How Our Partners<br><span class="grad">Get Paid</span></h1>
+            <p class="subtext">We believe in radical transparency. Before you decide to partner with us, see exactly what you'll earn — every commission, every bonus, every level. No surprises.</p>
+        </div>
+    </section>
+
+    <!-- ─── EMAIL GATE ─── -->
+    <section style="padding: 60px 0 80px; background: #0f0f1a;">
+        <div class="container">
+            <div class="gate-card" id="gate-card">
+                <h3>🔓 Unlock the Full Comp Plan</h3>
+                <p>Drop your email below and we'll reveal the complete compensation structure — referral commissions, partner bonuses, downline income, and real income examples.</p>
+
+                <form id="gate-form" class="field-group" novalidate>
+                    <input type="hidden" name="_subject" value="Partner Comp Plan Access Request">
+                    <input type="hidden" name="form_type" value="partner_comp_plan">
+                    <input type="text" name="name" id="gate-name" placeholder="Your First Name" required autocomplete="given-name">
+                    <input type="email" name="email" id="gate-email" placeholder="Your Email Address" required autocomplete="email">
+                    <button type="submit" class="btn-reveal" id="gate-btn">Show Me the Comp Plan →</button>
+                    <p class="gate-error" id="gate-error">Something went wrong. Please try again.</p>
+                </form>
+                <p class="gate-note">🔒 No spam. We'll also send you a copy of the comp plan for reference.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── COMP PLAN (revealed after gate) ─── -->
+    <div id="comp-plan">
+
+        <!-- ── COMPARISON TABLE ── -->
+        <section class="cp-section" style="padding-top: 60px;">
+            <div class="container">
+                <div style="text-align:center; margin-bottom: 40px;">
+                    <span class="section-label label-partner">AT A GLANCE</span>
+                    <h2>Two Ways to Earn</h2>
+                    <p class="section-sub">Start free as a Referrer, or invest $497 once to unlock Partner-level income — commissions, bonuses, and passive upline earnings.</p>
+                </div>
+                <div class="compare-strip">
+                    <div class="compare-row header">
+                        <div>What You Get</div>
+                        <div style="text-align:center;">Free Referrer</div>
+                        <div style="text-align:center;">Partner ($497)</div>
+                    </div>
+                    <div class="compare-row">
+                        <div class="feature">25% commission on referrals</div>
+                        <div class="free-col">✓</div>
+                        <div class="partner-col">✓</div>
+                    </div>
+                    <div class="compare-row">
+                        <div class="feature">Commission duration</div>
+                        <div class="free-col" style="font-weight:600; color:#9595b0;">3 months</div>
+                        <div class="partner-col">Lifetime</div>
+                    </div>
+                    <div class="compare-row">
+                        <div class="feature">Downline Level 1 bonus (+$200)</div>
+                        <div class="free-col dim">✗</div>
+                        <div class="partner-col">✓</div>
+                    </div>
+                    <div class="compare-row">
+                        <div class="feature">Downline Level 2 bonus (+$100)</div>
+                        <div class="free-col dim">✗</div>
+                        <div class="partner-col">✓</div>
+                    </div>
+                    <div class="compare-row">
+                        <div class="feature">Downline Level 3 bonus (+$50)</div>
+                        <div class="free-col dim">✗</div>
+                        <div class="partner-col">✓</div>
+                    </div>
+                    <div class="compare-row">
+                        <div class="feature">Partner training & resources</div>
+                        <div class="free-col dim">✗</div>
+                        <div class="partner-col">✓</div>
+                    </div>
+                    <div class="compare-row">
+                        <div class="feature">Referral tracking dashboard</div>
+                        <div class="free-col dim">✗</div>
+                        <div class="partner-col">Coming soon</div>
+                    </div>
+                    <div class="compare-row">
+                        <div class="feature">Cost to join</div>
+                        <div class="free-col">Free</div>
+                        <div class="partner-col">$497 one-time</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── TIER DETAILS ── -->
+        <section class="cp-section-dark">
+            <div class="container">
+                <div class="tier-grid">
+
+                    <!-- Free Referrer -->
+                    <div class="tier-card green-glow">
+                        <span class="section-label label-free">FREE TO JOIN</span>
+                        <h2 style="font-size:1.8rem; margin-bottom: 4px;">Referral Program</h2>
+                        <div class="tier-price">25% <span>/ 3 months</span></div>
+                        <p class="tier-desc">Earn 25% commission on every service your referral signs up for — for the first 3 months from their sign-up date. No cost, no commitment. Just share the opportunity.</p>
+                        <ul class="tier-features">
+                            <li><span class="check green">✅</span> 25% of any AI-powered service they purchase</li>
+                            <li><span class="check green">✅</span> Commissions paid for 3 months from their start date</li>
+                            <li><span class="check green">✅</span> Works on phone systems, automation, training, websites</li>
+                            <li><span class="check green">✅</span> No selling — just introduce them to us</li>
+                            <li><span class="check green">✅</span> No inventory, no deliveries, no support work</li>
+                        </ul>
+                        <a href="partner.html#start" class="btn btn-outline" style="display:block; text-align:center; padding: 14px 24px; border-radius: 10px;">Start Referring — Free</a>
+                    </div>
+
+                    <!-- Partner -->
+                    <div class="tier-card purple-glow">
+                        <span class="section-label label-partner">$497 ONE-TIME</span>
+                        <h2 style="font-size:1.8rem; margin-bottom: 4px;">Partner Program</h2>
+                        <div class="tier-price">25% <span>/ for life</span></div>
+                        <p class="tier-desc">Earn 25% commission on every direct referral's account — for as long as they're a client. Plus earn upline bonuses every time someone in your downline becomes a Partner.</p>
+                        <ul class="tier-features">
+                            <li><span class="check purple">⚡</span> Lifetime 25% on all direct referrals' accounts</li>
+                            <li><span class="check purple">⚡</span> <strong style="color:#fff;">Level 1 downline bonus: +$200</strong> (anyone you recruit goes Partner)</li>
+                            <li><span class="check purple">⚡</span> <strong style="color:#fff;">Level 2 downline bonus: +$100</strong> (they recruit someone who goes Partner)</li>
+                            <li><span class="check purple">⚡</span> <strong style="color:#fff;">Level 3 downline bonus: +$50</strong> (3rd generation Partner)</li>
+                            <li><span class="check purple">⚡</span> Partner training, resources, and priority support</li>
+                            <li><span class="check purple">⚡</span> Referral tracking dashboard (coming soon)</li>
+                        </ul>
+                        <a href="https://buy.stripe.com/eVqeVdeSS0g37e4bKc3F60c" class="btn-partner" style="display:block; text-align:center; padding: 16px 24px; border-radius: 12px; font-size:1rem;">Become a Partner — $497</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ── DOWNLINE BONUSES ── -->
+        <section class="cp-section">
+            <div class="container" style="text-align:center;">
+                <span class="section-label label-partner">PARTNER EXCLUSIVE</span>
+                <h2>Your Downline Bonus Structure</h2>
+                <p class="section-sub" style="margin: 0 auto 48px;">Every time someone you recruited — or someone further down your network — upgrades to Partner, you earn a one-time bonus. Build once, earn repeatedly.</p>
+
+                <div class="bonus-grid">
+                    <div class="bonus-card">
+                        <div class="level-badge">Level 1</div>
+                        <div class="bonus-amt">$200</div>
+                        <div class="bonus-label">You directly recruited them<br>and they become a Partner</div>
+                    </div>
+                    <div class="bonus-card">
+                        <div class="level-badge">Level 2</div>
+                        <div class="bonus-amt">$100</div>
+                        <div class="bonus-label">Your recruit brought them in<br>and they become a Partner</div>
+                    </div>
+                    <div class="bonus-card">
+                        <div class="level-badge">Level 3</div>
+                        <div class="bonus-amt">$50</div>
+                        <div class="bonus-label">3rd-generation recruit<br>becomes a Partner</div>
+                    </div>
+                </div>
+
+                <p style="color:#6b6b8a; font-size:0.9rem; max-width:560px; margin: 0 auto;">Downline bonuses are one-time payments per qualifying Partner upgrade. There's no cap on how many bonuses you can earn.</p>
+            </div>
+        </section>
+
+        <!-- ── INCOME EXAMPLES ── -->
+        <section class="cp-section-dark">
+            <div class="container">
+                <div style="text-align:center; margin-bottom: 48px;">
+                    <span class="section-label label-income">REAL NUMBERS</span>
+                    <h2>What This Actually Looks Like</h2>
+                    <p class="section-sub" style="margin: 0 auto;">These are real products at real prices. Here's what your commissions add up to.</p>
+                </div>
+
+                <div class="income-grid">
+                    <!-- Referral Examples -->
+                    <div class="income-card">
+                        <h3>📞 Referral Income (25%)</h3>
+                        <div class="income-row">
+                            <div class="scenario">1 referral on $297/mo<br>AI-powered phone system</div>
+                            <div class="earn">$74/mo</div>
+                        </div>
+                        <div class="income-row">
+                            <div class="scenario">5 referrals averaging<br>$200/mo each</div>
+                            <div class="earn">$250/mo</div>
+                        </div>
+                        <div class="income-row">
+                            <div class="scenario">10 referrals averaging<br>$200/mo each</div>
+                            <div class="earn">$500/mo</div>
+                        </div>
+                        <div class="income-row">
+                            <div class="scenario">1 referral buys Academy<br>Bundle ($297 one-time)</div>
+                            <div class="earn">$74 once</div>
+                        </div>
+                        <div class="income-total">
+                            <div class="label">5 phone clients + 3 academy buyers</div>
+                            <div class="total-amt">$472/mo</div>
+                        </div>
+                    </div>
+
+                    <!-- Partner + Downline -->
+                    <div class="income-card">
+                        <h3>⚡ Partner + Downline Bonus Example</h3>
+                        <div class="income-row">
+                            <div class="scenario">10 lifetime referrals<br>@ $297/mo AI phone system</div>
+                            <div class="earn">$742/mo</div>
+                        </div>
+                        <div class="income-row">
+                            <div class="scenario">5 people you recruited<br>upgrade to Partner</div>
+                            <div class="earn">+$1,000</div>
+                        </div>
+                        <div class="income-row">
+                            <div class="scenario">3 Level 2 Partner upgrades<br>(from your recruits' networks)</div>
+                            <div class="earn">+$300</div>
+                        </div>
+                        <div class="income-row">
+                            <div class="scenario">2 Level 3 Partner upgrades<br>(3rd generation)</div>
+                            <div class="earn">+$100</div>
+                        </div>
+                        <div class="income-total">
+                            <div class="label">First-year Partner potential</div>
+                            <div class="total-amt">$10,304+</div>
+                        </div>
+                    </div>
+                </div>
+
+                <p style="color:#5a5a7a; font-size:0.85rem; text-align:center; margin-top:32px;">Income examples are illustrative. Results depend on your network and activity. No income is guaranteed.</p>
+            </div>
+        </section>
+
+        <!-- ── WHAT EARNS YOU 25% ── -->
+        <section class="cp-section">
+            <div class="container" style="text-align:center;">
+                <span class="section-label label-free">COMMISSION-ELIGIBLE SERVICES</span>
+                <h2>What AI-Powered Services You Earn On</h2>
+                <p class="section-sub" style="margin: 0 auto 48px;">When your referral buys any of these, you earn 25%. There's no cherry-picking — all products qualify.</p>
+
+                <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; max-width: 980px; margin: 0 auto;">
+                    <div style="background:rgba(26,26,46,0.8); border:1px solid #2d2d44; border-radius:16px; padding:28px; text-align:left;">
+                        <div style="font-size:1.8rem; margin-bottom:12px;">📞</div>
+                        <h3 style="font-size:1.05rem; font-weight:700; color:#fff; margin-bottom:8px;">AI-Powered Phone System</h3>
+                        <p style="color:#9595b0; font-size:0.9rem; line-height:1.6;">$97–$297/month recurring. The highest-value referral — most businesses need this.</p>
+                    </div>
+                    <div style="background:rgba(26,26,46,0.8); border:1px solid #2d2d44; border-radius:16px; padding:28px; text-align:left;">
+                        <div style="font-size:1.8rem; margin-bottom:12px;">🤖</div>
+                        <h3 style="font-size:1.05rem; font-weight:700; color:#fff; margin-bottom:8px;">AI Automation & Consulting</h3>
+                        <p style="color:#9595b0; font-size:0.9rem; line-height:1.6;">Custom AI builds and workflow automation. One-time and recurring project fees.</p>
+                    </div>
+                    <div style="background:rgba(26,26,46,0.8); border:1px solid #2d2d44; border-radius:16px; padding:28px; text-align:left;">
+                        <div style="font-size:1.8rem; margin-bottom:12px;">🎓</div>
+                        <h3 style="font-size:1.05rem; font-weight:700; color:#fff; margin-bottom:8px;">Academy & Training Programs</h3>
+                        <p style="color:#9595b0; font-size:0.9rem; line-height:1.6;">Courses from $47–$297. Academy bundle, memberships, and individual tracks.</p>
+                    </div>
+                    <div style="background:rgba(26,26,46,0.8); border:1px solid #2d2d44; border-radius:16px; padding:28px; text-align:left;">
+                        <div style="font-size:1.8rem; margin-bottom:12px;">🌐</div>
+                        <h3 style="font-size:1.05rem; font-weight:700; color:#fff; margin-bottom:8px;">Website & Digital Services</h3>
+                        <p style="color:#9595b0; font-size:0.9rem; line-height:1.6;">Website builds, SEO, social media setup, and all digital AI-powered services we offer.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── CTA ── -->
+        <section class="cp-cta" id="join">
+            <div class="container">
+                <h2>Ready to Start Building<br>Your Income?</h2>
+                <p>Join as a free Referrer and start earning immediately — or invest $497 once and unlock lifetime commissions, downline bonuses, and full partner support.</p>
+                <div>
+                    <a href="https://buy.stripe.com/eVqeVdeSS0g37e4bKc3F60c" class="btn-partner">Become a Partner — $497</a>
+                    <a href="partner.html#start" class="btn-partner-outline">Start Free as Referrer</a>
+                </div>
+                <p class="risk-note">💜 $497 one-time. No monthly fees. No territory restrictions. Cancel anytime isn't needed — it's a one-time purchase, not a subscription.</p>
+                <p style="color:#5a5a7a; font-size:0.85rem; margin-top:16px;">Questions? <a href="mailto:todd.maxsaisolutions@gmail.com" style="color:#a78bfa;">todd.maxsaisolutions@gmail.com</a> or call <a href="tel:+14433979716" style="color:#a78bfa;">(443) 397-9716</a></p>
+            </div>
+        </section>
+
+    </div><!-- /#comp-plan -->
+
+    <!-- Footer -->
+    <footer style="background: #0a0a14; border-top: 1px solid #2d2d44; padding: 40px 0; text-align: center;">
+        <div class="container">
+            <p style="color: #6b6b8a; font-size: 0.85rem;">© 2026 Max's AI Solutions. All rights reserved.</p>
+            <p style="color: #4a4a6a; font-size: 0.8rem; margin-top: 8px;">
+                <a href="privacy.html" style="color: #4a4a6a;">Privacy</a> ·
+                <a href="terms.html" style="color: #4a4a6a;">Terms</a> ·
+                <a href="index.html" style="color: #4a4a6a;">Home</a> ·
+                <a href="partner.html" style="color: #4a4a6a;">Partner Program</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // ── Navbar ──
+        const navToggle = document.getElementById('navToggle');
+        const navLinks  = document.getElementById('navLinks');
+        if (navToggle) {
+            navToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                navToggle.classList.toggle('active');
+            });
+        }
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) navbar.classList.add('scrolled');
+            else navbar.classList.remove('scrolled');
+        });
+
+        // ── Email Gate ──
+        const gateForm  = document.getElementById('gate-form');
+        const gateBtn   = document.getElementById('gate-btn');
+        const gateError = document.getElementById('gate-error');
+        const compPlan  = document.getElementById('comp-plan');
+        const gateSection = document.getElementById('gate-card');
+
+        gateForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const name  = document.getElementById('gate-name').value.trim();
+            const email = document.getElementById('gate-email').value.trim();
+
+            if (!name || !email) return;
+
+            gateBtn.disabled = true;
+            gateBtn.textContent = 'Sending…';
+            gateError.style.display = 'none';
+
+            try {
+                const res = await fetch('https://formspree.io/f/mwvwjjoq', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                    body: JSON.stringify({
+                        name: name,
+                        email: email,
+                        _subject: 'Partner Comp Plan Access Request',
+                        form_type: 'partner_comp_plan'
+                    })
+                });
+
+                if (res.ok) {
+                    // Reveal comp plan
+                    gateSection.innerHTML = `
+                        <div style="text-align:center; padding: 12px 0;">
+                            <div style="font-size:2.5rem; margin-bottom:12px;">🎉</div>
+                            <h3 style="color:#4ade80; margin-bottom:8px;">You're In!</h3>
+                            <p style="color:#9595b0;">Scroll down to see the full compensation plan. We've also emailed you a copy.</p>
+                        </div>`;
+                    compPlan.style.display = 'block';
+                    // Smooth scroll to comp plan
+                    setTimeout(() => {
+                        compPlan.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }, 400);
+                } else {
+                    throw new Error('non-ok response');
+                }
+            } catch (err) {
+                gateBtn.disabled = false;
+                gateBtn.textContent = 'Show Me the Comp Plan →';
+                gateError.style.display = 'block';
+                gateError.textContent = 'Something went wrong. Please try again or email us directly.';
+            }
+        });
+    </script>
+</body>
+</html>
