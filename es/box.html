@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IA en Caja — Lanza Tu Propio Negocio con IA</title>
+    <meta name="description" content="Obtén un sistema de negocio de IA completo y listo para operar. Redes sociales automatizadas, recepcionista IA, academia de capacitación, procesamiento de pagos y tu propio operador IA — todo en una caja.">
+    <link rel="icon" type="image/png" href="../images/logo.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .box-hero {
+            background: linear-gradient(135deg, #0f0f1a 0%, #1a1030 50%, #0f0f1a 100%);
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .box-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 50%, rgba(79,70,229,0.08) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 50%, rgba(168,85,247,0.06) 0%, transparent 50%);
+            animation: pulse 8s ease-in-out infinite alternate;
+        }
+        @keyframes pulse {
+            0% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+        .box-hero .container { position: relative; z-index: 1; }
+        .box-badge {
+            display: inline-block;
+            background: rgba(79,70,229,0.15);
+            border: 1px solid rgba(79,70,229,0.3);
+            color: #a78bfa;
+            padding: 8px 20px;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            letter-spacing: 0.5px;
+        }
+        .box-hero h1 {
+            font-size: clamp(2.2rem, 5vw, 3.8rem);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 24px;
+            color: #fff;
+        }
+        .box-hero h1 .highlight {
+            background: linear-gradient(135deg, #6366f1, #a855f7, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .box-hero .subtext {
+            font-size: 1.2rem;
+            color: #9595b0;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+        }
+        .box-price-highlight {
+            display: inline-block;
+            background: linear-gradient(135deg, #6366f1, #a855f7);
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 700;
+            padding: 12px 32px;
+            border-radius: 12px;
+            margin-bottom: 16px;
+        }
+        .franchise-compare {
+            color: #9595b0;
+            font-size: 0.95rem;
+            margin-bottom: 40px;
+        }
+        .franchise-compare s { color: #ef4444; }
+
+        /* What's in the Box */
+        .box-section {
+            padding: 80px 0;
+        }
+        .box-section h2 {
+            font-size: clamp(1.8rem, 3vw, 2.6rem);
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 16px;
+            color: #fff;
+        }
+        .box-section .section-sub {
+            text-align: center;
+            color: #9595b0;
+            font-size: 1.05rem;
+            max-width: 600px;
+            margin: 0 auto 48px;
+        }
+        .box-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .box-card {
+            background: rgba(26,26,46,0.8);
+            border: 1px solid #2d2d44;
+            border-radius: 16px;
+            padding: 32px;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        .box-card:hover {
+            transform: translateY(-4px);
+            border-color: #6366f1;
+        }
+        .box-card .icon {
+            font-size: 2rem;
+            margin-bottom: 16px;
+        }
+        .box-card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+        .box-card p {
+            color: #9595b0;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Royalty section */
+        .royalty-section {
+            background: linear-gradient(135deg, #1a1030 0%, #0f0f1a 100%);
+            padding: 80px 0;
+        }
+        .royalty-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            max-width: 900px;
+            margin: 0 auto;
+            align-items: center;
+        }
+        .royalty-text h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            color: #fff;
+        }
+        .royalty-text p {
+            color: #9595b0;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+        .royalty-math {
+            background: rgba(26,26,46,0.9);
+            border: 1px solid #2d2d44;
+            border-radius: 16px;
+            padding: 32px;
+        }
+        .royalty-math h3 {
+            color: #a78bfa;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .math-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #2d2d44;
+            color: #e2e8f0;
+        }
+        .math-row:last-child { border-bottom: none; }
+        .math-row .label { color: #9595b0; }
+        .math-row .value { font-weight: 700; color: #22c55e; }
+
+        /* CTA */
+        .box-cta {
+            text-align: center;
+            padding: 80px 0;
+            background: linear-gradient(180deg, #0f0f1a 0%, #1a1030 50%, #0f0f1a 100%);
+        }
+        .box-cta h2 {
+            font-size: clamp(1.8rem, 3vw, 2.4rem);
+            font-weight: 800;
+            margin-bottom: 16px;
+            color: #fff;
+        }
+        .box-cta p {
+            color: #9595b0;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+        .btn-box {
+            display: inline-block;
+            background: linear-gradient(135deg, #6366f1, #a855f7);
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 700;
+            padding: 16px 40px;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn-box:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(99,102,241,0.4);
+        }
+        .btn-outline-box {
+            display: inline-block;
+            border: 2px solid #6366f1;
+            color: #a78bfa;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 14px 36px;
+            border-radius: 12px;
+            text-decoration: none;
+            margin-left: 16px;
+            transition: background 0.2s;
+        }
+        .btn-outline-box:hover {
+            background: rgba(99,102,241,0.1);
+        }
+
+        /* Comparison table */
+        .compare-table {
+            max-width: 800px;
+            margin: 0 auto;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        .compare-table th, .compare-table td {
+            padding: 16px 20px;
+            text-align: left;
+            border-bottom: 1px solid #2d2d44;
+        }
+        .compare-table th {
+            color: #a78bfa;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .compare-table td { color: #e2e8f0; }
+        .compare-table td:first-child { color: #9595b0; }
+        .compare-table .check { color: #22c55e; font-weight: 700; }
+        .compare-table .x { color: #ef4444; }
+
+        /* FAQ */
+        .faq-item {
+            max-width: 700px;
+            margin: 0 auto 24px;
+            background: rgba(26,26,46,0.8);
+            border: 1px solid #2d2d44;
+            border-radius: 12px;
+            padding: 24px;
+        }
+        .faq-item h3 {
+            color: #fff;
+            font-size: 1.05rem;
+            margin-bottom: 8px;
+        }
+        .faq-item p {
+            color: #9595b0;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            .royalty-grid { grid-template-columns: 1fr; }
+            .box-grid { grid-template-columns: 1fr; }
+            .btn-outline-box { margin-left: 0; margin-top: 12px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="../index.html" class="nav-logo">
+                <img src="../images/logo.png" alt="Max's AI Solutions" class="logo-img">
+                <span class="logo-text">Max's AI Solutions</span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html#services">Servicios</a></li>
+                <li><a href="training.html">Capacitación Gratuita</a></li>
+                <li><a href="pricing.html">Precios</a></li>
+                <li><a href="demos.html">Demos en Vivo</a></li>
+                <li><a href="#apply" class="btn btn-nav">Aplicar Ahora</a></li>
+                <li><a href="../box.html" style="color:#9595b0;font-size:0.85rem;">🇺🇸 English</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="box-hero">
+        <div class="container">
+            <div class="box-badge">📦 DISPONIBLE AHORA</div>
+            <h1>Tu Propio <span class="highlight">Negocio con IA</span><br>Listo para Operar</h1>
+            <p class="subtext">Todo lo que necesitas para lanzar y operar un negocio completo de IA — redes sociales automatizadas, sistema telefónico con IA, academia de capacitación, procesamiento de pagos y tu propio operador IA que construye, publica y vende mientras duermes.</p>
+            <div class="box-price-highlight">🔥 Precio de Miembro Fundador: $4,997 (Solo los Primeros 50)</div>
+            <p class="franchise-compare">
+                Las franquicias tradicionales cuestan <s>$50,000 – $500,000</s>. El precio sube después de los primeros 50 compradores. Sin restricciones de territorio. Sin local. Sin empleados requeridos.
+            </p>
+            <a href="#apply" class="btn-box">Aplica para tu Caja</a>
+            <a href="#whats-inside" class="btn-outline-box">Ve lo que Hay Adentro</a>
+        </div>
+    </section>
+
+    <!-- Qué Hay en la Caja -->
+    <section class="box-section" id="whats-inside">
+        <div class="container">
+            <h2>Qué Hay en la Caja</h2>
+            <p class="section-sub">Un negocio de IA completo, probado y en funcionamiento — no un curso sobre cómo empezar uno.</p>
+
+            <div class="box-grid">
+                <div class="box-card">
+                    <div class="icon">📱</div>
+                    <h3>Redes Sociales Automatizadas</h3>
+                    <p>El contenido se publica automáticamente en X, Instagram, Facebook y TikTok — 6 veces al día. Incluye tarjetas con frases y contenido de video generado por IA. Nunca más pienses en publicar.</p>
+                </div>
+                <div class="box-card">
+                    <div class="icon">📞</div>
+                    <h3>Sistema Telefónico con IA</h3>
+                    <p>Una recepcionista IA profesional que responde cada llamada, agenda citas, califica prospectos y redirige asuntos urgentes — 24/7/365. Suena humana. Funciona como máquina.</p>
+                </div>
+                <div class="box-card">
+                    <div class="icon">🎓</div>
+                    <h3>Academia de Capacitación</h3>
+                    <p>Tu propia plataforma de formación con tu marca, cursos, seguimiento de progreso y gestión de estudiantes. Vende cursos individuales, paquetes o suscripciones mensuales.</p>
+                </div>
+                <div class="box-card">
+                    <div class="icon">💳</div>
+                    <h3>Procesamiento de Pagos</h3>
+                    <p>Integración con Stripe lista para recibir pagos desde el primer día. Links de pago, suscripciones y acceso automático cuando los clientes compran.</p>
+                </div>
+                <div class="box-card">
+                    <div class="icon">🌐</div>
+                    <h3>Sitio Web Profesional</h3>
+                    <p>Un sitio web completo y adaptable a móvil con tu marca — páginas de servicios, precios, formularios de contacto y demos de voz con IA incluidos.</p>
+                </div>
+                <div class="box-card">
+                    <div class="icon">🤖</div>
+                    <h3>Tu Propio Operador IA</h3>
+                    <p>Aquí está el verdadero poder. Tu propio MAX — una IA que gestiona tu negocio, publica contenido, investiga prospectos, responde preguntas y puede construir productos completamente nuevos para ti.</p>
+                </div>
+                <div class="box-card">
+                    <div class="icon">🔍</div>
+                    <h3>Herramienta de Investigación Previa a Reuniones</h3>
+                    <p>Antes de cualquier reunión de ventas, tu IA genera un informe completo sobre el prospecto — datos del negocio, reseñas, presencia en redes sociales, contexto competitivo y puntos de conversación sugeridos.</p>
+                </div>
+                <div class="box-card">
+                    <div class="icon">🗣️</div>
+                    <h3>Widget de Voz con IA</h3>
+                    <p>Un asistente de voz interactivo integrado en tu sitio web. Los visitantes pueden hablar con tu IA en tiempo real — responder preguntas, agendar demos, calificar prospectos automáticamente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparación con Franquicias -->
+    <section class="box-section" style="background: rgba(26,26,46,0.3);">
+        <div class="container">
+            <h2>Esto No es un Curso. Es un Negocio.</h2>
+            <p class="section-sub">Compara lo que obtienes versus lo que cuesta una franquicia tradicional.</p>
+
+            <table class="compare-table">
+                <thead>
+                    <tr>
+                        <th>Característica</th>
+                        <th>Franquicia Tradicional</th>
+                        <th>IA en Caja</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Costo Inicial</td>
+                        <td>$50,000 – $500,000</td>
+                        <td class="check">Desde $2,997</td>
+                    </tr>
+                    <tr>
+                        <td>Gastos Mensuales</td>
+                        <td>Renta, personal, inventario</td>
+                        <td class="check">Menos de $100/mes (hosting + herramientas IA)</td>
+                    </tr>
+                    <tr>
+                        <td>Empleados Requeridos</td>
+                        <td>3-20+</td>
+                        <td class="check">Cero — la IA se encarga</td>
+                    </tr>
+                    <tr>
+                        <td>Restricciones de Territorio</td>
+                        <td>Sí — limitado a una zona</td>
+                        <td class="check">Ninguna — vende en cualquier lugar</td>
+                    </tr>
+                    <tr>
+                        <td>Ubicación Física</td>
+                        <td>Requerida</td>
+                        <td class="check">Opéra desde cualquier lugar</td>
+                    </tr>
+                    <tr>
+                        <td>Tiempo para Lanzar</td>
+                        <td>3-12 meses</td>
+                        <td class="check">Días, no meses</td>
+                    </tr>
+                    <tr>
+                        <td>Marketing Incluido</td>
+                        <td>A veces — con costo adicional</td>
+                        <td class="check">Totalmente automatizado desde el día uno</td>
+                    </tr>
+                    <tr>
+                        <td>Puede Crear Nuevos Productos</td>
+                        <td class="x">No — limitado al modelo de franquicia</td>
+                        <td class="check">Sí — tu IA construye por ti</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Cómo Funciona -->
+    <section class="box-section">
+        <div class="container">
+            <h2>Cómo Funciona</h2>
+            <p class="section-sub">De cero a negocio operando en tres pasos.</p>
+
+            <div class="box-grid" style="max-width: 900px;">
+                <div class="box-card" style="text-align: center;">
+                    <div class="icon">1️⃣</div>
+                    <h3>Aplica y Obtén Aprobación</h3>
+                    <p>Cuéntanos sobre ti y tus objetivos. Queremos propietarios de Caja que estén serios en construir algo real. No todos entran.</p>
+                </div>
+                <div class="box-card" style="text-align: center;">
+                    <div class="icon">2️⃣</div>
+                    <h3>Construimos tu Caja</h3>
+                    <p>Configuramos todo — tu operador IA, sitio web, sistema telefónico, cuentas de redes sociales, academia y procesamiento de pagos. Tú pones tu marca y ya.</p>
+                </div>
+                <div class="box-card" style="text-align: center;">
+                    <div class="icon">3️⃣</div>
+                    <h3>Lanza y Crece</h3>
+                    <p>Tu negocio empieza a funcionar. El contenido se publica automáticamente. Las llamadas se responden. Los clientes se registran. Tú te enfocas en el crecimiento mientras tu IA maneja las operaciones.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- La Ventaja de la IA -->
+    <section class="royalty-section">
+        <div class="container">
+            <div class="royalty-grid">
+                <div class="royalty-text">
+                    <h2>Tu IA No Solo Opera tu Negocio. Construye Nuevos.</h2>
+                    <p>Cada Caja viene con tu propio operador IA. No solo publica contenido y responde teléfonos — puede investigar mercados, escribir propuestas, construir aplicaciones web, crear nuevos productos y encontrar oportunidades en las que aún no has pensado.</p>
+                    <p>Uno de nuestros operadores IA construyó una app de verificación de seguridad alimentaria desde cero — API, sitio web, app móvil, estrategia de contenido, videos automatizados para TikTok — todo sin un desarrollador humano.</p>
+                    <p><strong>Esa misma capacidad está en tu Caja.</strong></p>
+                </div>
+                <div class="royalty-math">
+                    <h3>Las Matemáticas de la Oportunidad</h3>
+                    <div class="math-row">
+                        <span class="label">Sistema telefónico IA (por cliente)</span>
+                        <span class="value">$97–$297/mes</span>
+                    </div>
+                    <div class="math-row">
+                        <span class="label">10 clientes de sistema telefónico</span>
+                        <span class="value">$970–$2,970/mes</span>
+                    </div>
+                    <div class="math-row">
+                        <span class="label">Suscripciones academia (25 estudiantes)</span>
+                        <span class="value">$1,175/mes</span>
+                    </div>
+                    <div class="math-row">
+                        <span class="label">Construcciones IA personalizadas (2/mes)</span>
+                        <span class="value">$5,000–$10,000/mes</span>
+                    </div>
+                    <div class="math-row" style="border-top: 2px solid #6366f1; margin-top: 8px; padding-top: 16px;">
+                        <span class="label"><strong>Ingresos Mensuales Potenciales</strong></span>
+                        <span class="value" style="font-size: 1.2rem;">$7,145–$14,145</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Niveles de Soporte -->
+    <section class="box-section" style="background: rgba(26,26,46,0.3);">
+        <div class="container">
+            <h2>No Estás Solo</h2>
+            <p class="section-sub">Cada Caja incluye soporte. Escala conforme crezcas.</p>
+
+            <div class="box-grid" style="max-width: 900px;">
+                <div class="box-card">
+                    <div class="icon">🆓</div>
+                    <h3>Autogestión (Incluido)</h3>
+                    <p>Tu operador IA maneja la mayoría de preguntas e incidencias. Guía de configuración, tutoriales en video y documentación incluidos. La mayoría de propietarios de Caja nunca necesita más que esto.</p>
+                </div>
+                <div class="box-card">
+                    <div class="icon">🔧</div>
+                    <h3>Soporte Prioritario — $297/mes</h3>
+                    <p>Retención mensual para ayuda personalizada. Construimos funcionalidades personalizadas, resolvemos problemas y te ayudamos a escalar. Respuesta el mismo día. Piénsanos como tu equipo de ingeniería IA.</p>
+                </div>
+                <div class="box-card">
+                    <div class="icon">🚨</div>
+                    <h3>Reparación de Emergencia — $250–$500</h3>
+                    <p>¿Algo se rompió y lo necesitas arreglar ahora? Soporte de emergencia único. Diagnosticamos, reparamos y verificamos en horas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comunidad -->
+    <section class="box-section">
+        <div class="container">
+            <h2>Estás Uniéndote a una Comunidad, No Comprando un Producto</h2>
+            <p class="section-sub">Cada propietario de Caja obtiene acceso a la comunidad privada donde los dueños comparten logros, estrategias y se ayudan mutuamente a crecer.</p>
+
+            <div class="box-grid" style="max-width: 900px;">
+                <div class="box-card" style="text-align: center;">
+                    <div class="icon">🏆</div>
+                    <h3>Miembros Fundadores</h3>
+                    <p>Los primeros 50 compradores obtienen el estatus de "Miembro Fundador" — el mejor precio que ofreceremos, reconocimiento permanente en la comunidad y acceso directo a nuestro equipo mientras construimos esto juntos.</p>
+                </div>
+                <div class="box-card" style="text-align: center;">
+                    <div class="icon">🤝</div>
+                    <h3>Soporte de la Comunidad</h3>
+                    <p>No lo descifres solo. Los propietarios de Caja comparten lo que funciona — qué industrias cierran más rápido, qué contenido convierte, qué construcciones de IA generan dinero. Operadores reales ayudando a operadores reales.</p>
+                </div>
+                <div class="box-card" style="text-align: center;">
+                    <div class="icon">📈</div>
+                    <h3>Efecto de Red</h3>
+                    <p>Cada nuevo propietario de Caja hace la comunidad más valiosa. Más estrategias compartidas. Más industrias cubiertas. Más prueba de que esto funciona. Mientras más temprano entres, más te beneficias.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Precios -->
+    <section class="box-section" style="background: rgba(26,26,46,0.3);">
+        <div class="container">
+            <h2>Precios</h2>
+            <p class="section-sub">Los que creen primero obtienen el mejor trato. El precio sube conforme crece la demanda.</p>
+
+            <div class="box-grid" style="max-width: 900px;">
+                <div class="box-card" style="text-align: center; border-color: #a855f7;">
+                    <div class="icon">🔥</div>
+                    <h3 style="color: #a855f7;">Miembro Fundador — Primeros 50</h3>
+                    <p style="font-size: 2.2rem; font-weight: 800; color: #fff; margin: 16px 0;">$4,997</p>
+                    <p>+ 5% de regalías sobre ingresos</p>
+                    <p style="margin-top: 12px; font-size: 0.85rem; color: #6b6b8a;">El mejor precio que ofreceremos. Insignia de Miembro Fundador. Acceso directo al equipo.</p>
+                </div>
+                <div class="box-card" style="text-align: center;">
+                    <div class="icon">⚡</div>
+                    <h3>Fase de Crecimiento — 51 a 100</h3>
+                    <p style="font-size: 2.2rem; font-weight: 800; color: #fff; margin: 16px 0;">$6,997</p>
+                    <p>+ 5% de regalías sobre ingresos</p>
+                    <p style="margin-top: 12px; font-size: 0.85rem; color: #6b6b8a;">Todavía temprano. Todavía una fracción de cualquier franquicia.</p>
+                </div>
+                <div class="box-card" style="text-align: center;">
+                    <div class="icon">🚀</div>
+                    <h3>Después de 100</h3>
+                    <p style="font-size: 2.2rem; font-weight: 800; color: #fff; margin: 16px 0;">$9,997+</p>
+                    <p>+ 5% de regalías sobre ingresos</p>
+                    <p style="margin-top: 12px; font-size: 0.85rem; color: #6b6b8a;">El precio sube conforme crecen la comunidad y los resultados probados.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Preguntas Frecuentes -->
+    <section class="box-section">
+        <div class="container">
+            <h2>Preguntas Frecuentes</h2>
+            <p class="section-sub">Todo lo que quieres saber antes de aplicar.</p>
+
+            <div class="faq-item">
+                <h3>¿Necesito conocimientos técnicos?</h3>
+                <p>No. Nosotros construimos y configuramos todo. Tu operador IA maneja el trabajo técnico. Tú te enfocas en vender, hacer contactos y hacer crecer tu negocio.</p>
+            </div>
+            <div class="faq-item">
+                <h3>¿Qué son las regalías del 5%?</h3>
+                <p>Tomamos el 5% de tus ingresos totales — para siempre. Esa es nuestra asociación a largo plazo. Tú creces, nosotros crecemos. Nos mantiene invertidos en tu éxito porque tu éxito ES nuestro éxito.</p>
+            </div>
+            <div class="faq-item">
+                <h3>¿Puedo vender en cualquier mercado?</h3>
+                <p>Sí. Sin restricciones de territorio. Vende servicios de IA a negocios en cualquier lugar — local o nacional. Tu IA no se preocupa por códigos postales.</p>
+            </div>
+            <div class="faq-item">
+                <h3>¿Qué pasa si quiero construir algo personalizado?</h3>
+                <p>Tu operador IA puede construir productos personalizados — apps web, escáneres, herramientas, plataformas. Ese es el punto. La Caja no es solo un conjunto de herramientas. Es un cerebro que crea nuevas herramientas.</p>
+            </div>
+            <div class="faq-item">
+                <h3>¿Qué tan rápido puedo empezar a ganar dinero?</h3>
+                <p>Tus redes sociales empiezan a publicar de inmediato. Tu sistema telefónico está en vivo en días. La pregunta no es cuándo el sistema estará listo — es cuándo TÚ empiezas a vender. La mayoría de propietarios de Caja consigue su primer cliente en el primer mes.</p>
+            </div>
+            <div class="faq-item">
+                <h3>¿Cuál es mi costo mensual continuo?</h3>
+                <p>Menos de $100/mes por hosting, uso de API de IA y herramientas. Compara eso con cuotas de franquicia, renta, nómina e inventario. Este es el modelo de negocio más eficiente que encontrarás.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="box-cta" id="apply">
+        <div class="container">
+            <h2>¿Listo para Tener tu Negocio de IA?</h2>
+            <p>Somos selectivos sobre quién recibe una Caja. Aplica abajo y revisaremos tu solicitud en 48 horas.</p>
+            <a href="https://formspree.io/f/mwvwjjoq" class="btn-box" style="margin-bottom: 16px;">Aplicar Ahora</a>
+            <p style="color: #6b6b8a; font-size: 0.85rem; margin-top: 24px;">¿Preguntas? Escríbenos a <a href="mailto:todd.maxsaisolutions@gmail.com" style="color: #a78bfa;">todd.maxsaisolutions@gmail.com</a> o llama al <a href="tel:+14433979716" style="color: #a78bfa;">(443) 397-9716</a></p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: #0a0a14; border-top: 1px solid #2d2d44; padding: 40px 0; text-align: center;">
+        <div class="container">
+            <p style="color: #6b6b8a; font-size: 0.85rem;">© 2026 Max's AI Solutions. Todos los derechos reservados.</p>
+            <p style="color: #4a4a6a; font-size: 0.8rem; margin-top: 8px;">
+                <a href="privacy.html" style="color: #4a4a6a;">Privacidad</a> · 
+                <a href="terms.html" style="color: #4a4a6a;">Términos</a> · 
+                <a href="index.html" style="color: #4a4a6a;">Inicio</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile nav toggle
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+        if (navToggle) {
+            navToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                navToggle.classList.toggle('active');
+            });
+        }
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>

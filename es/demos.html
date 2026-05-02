@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba Nuestra Recepcionista IA | Max's AI Solutions</title>
+    <meta name="description" content="Llama a nuestras líneas de demo en vivo y escucha exactamente lo que experimentarían tus clientes. Recepcionistas IA reales para plomeros, bienes raíces, médicos y contratistas.">
+    <link rel="icon" type="image/png" href="../images/logo.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .demos-hero {
+            padding: 120px 20px 60px;
+            text-align: center;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+        }
+        .demos-hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 16px;
+            color: #fff;
+        }
+        .demos-hero p {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.7);
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .demos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px 80px;
+        }
+
+        .demo-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 40px 32px;
+            text-align: center;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        .demo-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(102, 126, 234, 0.4);
+        }
+
+        .demo-icon {
+            font-size: 3rem;
+            margin-bottom: 16px;
+        }
+        .demo-name {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        .demo-agent {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 16px;
+        }
+        .demo-desc {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.65);
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+        .demo-scenarios {
+            text-align: left;
+            margin-bottom: 24px;
+        }
+        .demo-scenarios h4 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: rgba(255,255,255,0.4);
+            margin-bottom: 10px;
+        }
+        .demo-scenarios ul {
+            list-style: none;
+            padding: 0;
+        }
+        .demo-scenarios li {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.6);
+            padding: 4px 0;
+        }
+        .demo-scenarios li::before {
+            content: "→ ";
+            color: #667eea;
+        }
+
+        .demo-btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: opacity 0.2s, transform 0.2s;
+        }
+        .demo-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        .demo-widget-btn {
+            display: inline-block;
+            padding: 10px 24px;
+            background: transparent;
+            color: #667eea;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid #667eea;
+            border-radius: 8px;
+            text-decoration: none;
+            margin-top: 10px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .demo-widget-btn:hover {
+            background: rgba(102, 126, 234, 0.1);
+        }
+
+        .demos-cta {
+            text-align: center;
+            padding: 60px 20px 80px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #0a0a0a 100%);
+        }
+        .demos-cta h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 16px;
+        }
+        .demos-cta p {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.6);
+            max-width: 550px;
+            margin: 0 auto 32px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(102, 126, 234, 0.15);
+            color: #667eea;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 6px 14px;
+            border-radius: 20px;
+            margin-bottom: 16px;
+        }
+
+        .demo-card.featured {
+            border-color: rgba(102, 126, 234, 0.3);
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.08) 0%, rgba(118, 75, 162, 0.05) 100%);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container nav-container">
+            <a href="../index.html" class="nav-logo">
+                <img src="../images/logo.png" alt="Max's AI Solutions" class="nav-logo-img" style="width:52px;height:52px;border-radius:10px;">
+                Max's AI Solutions
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html#about">Quiénes Somos</a></li>
+                <li><a href="index.html#services">Servicios con IA</a></li>
+                <li><a href="phone-answering.html">Recepcionista IA</a></li>
+                <li><a href="training.html">Capacitación Gratuita</a></li>
+                <li><a href="pricing.html">Precios</a></li>
+                <li><a href="demos.html" class="active"><span style="white-space:nowrap">Demos en</span><br><span style="white-space:nowrap">Vivo</span></a></li>
+                <li><a href="index.html#contact" class="btn btn-nav">Comenzar</a></li>
+                <li><a href="../demos.html" style="color:#9595b0;font-size:0.85rem;">🇺🇸 English</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="demos-hero">
+        <span class="badge">Demos en Vivo</span>
+        <h1>Escúchalo <span class="gradient-text">Antes de Comprarlo</span></h1>
+        <p>No nos tomes la palabra. Llama a una línea de demo y experimenta exactamente lo que escucharían tus clientes. IA real. Conversaciones reales. Sin guiones.</p>
+    </section>
+
+    <!-- Demo Cards -->
+    <section style="background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);">
+        <div class="demos-grid">
+
+            <!-- Consultorio Médico -->
+            <div class="demo-card featured">
+                <video controls preload="none" style="width:100%;border-radius:12px;margin-bottom:16px;" poster="../images/max-avatar.png">
+                    <source src="../videos/demo-intro-doctor.mp4" type="video/mp4">
+                </video>
+                <div class="demo-icon">🏥</div>
+                <div class="demo-name">Consultorio Médico</div>
+                <div class="demo-agent">Recepcionista IA: Alex</div>
+                <p class="demo-desc">Maneja recargas de medicamentos, agendamiento de citas, mensajes para el equipo de salud y llamadas fuera de horario — con la empatía que los pacientes realmente sienten.</p>
+                <div class="demo-scenarios">
+                    <h4>Prueba preguntar sobre:</h4>
+                    <ul>
+                        <li>Recargar un medicamento</li>
+                        <li>Agendar una cita de seguimiento</li>
+                        <li>Dejar un mensaje para el médico</li>
+                        <li>Resultados de laboratorio</li>
+                    </ul>
+                </div>
+                <a href="tel:+14433979716" class="demo-btn">📞 Llamar a Alex: (443) 397-9716</a>
+                <br>
+                <span class="demo-widget-btn" onclick="document.getElementById('doctor-widget').style.display='block'; this.style.display='none';">🎙️ Hablar con Alex por Chat de Voz</span>
+                <div id="doctor-widget" style="display:none; margin-top: 16px;">
+                    <elevenlabs-convai agent-id="agent_0001kpkbfkmvfm5by110pa0qz2kq"></elevenlabs-convai>
+                </div>
+            </div>
+
+            <!-- Plomería -->
+            <div class="demo-card">
+                <video controls preload="none" style="width:100%;border-radius:12px;margin-bottom:16px;" poster="../images/max-avatar.png">
+                    <source src="../videos/demo-intro-plumber.mp4" type="video/mp4">
+                </video>
+                <div class="demo-icon">🔧</div>
+                <div class="demo-name">Empresa de Plomería</div>
+                <div class="demo-agent">Recepcionista IA: Sam</div>
+                <p class="demo-desc">Maneja emergencias a las 2 de la mañana, agenda visitas de servicio y mantiene a tus clientes tranquilos cuando su sótano se está inundando.</p>
+                <div class="demo-scenarios">
+                    <h4>Prueba preguntar sobre:</h4>
+                    <ul>
+                        <li>Una emergencia de tubería rota</li>
+                        <li>Agendar una limpieza de drenaje</li>
+                        <li>Calentador de agua que no funciona</li>
+                        <li>Preguntas sobre precios</li>
+                    </ul>
+                </div>
+                <a href="tel:+14432412188" class="demo-btn">📞 Llamar a Sam: (443) 241-2188</a>
+                <br>
+                <span class="demo-widget-btn" onclick="document.getElementById('plumber-widget').style.display='block'; this.style.display='none';">🎙️ Hablar con Sam por Chat de Voz</span>
+                <div id="plumber-widget" style="display:none; margin-top: 16px;">
+                    <elevenlabs-convai agent-id="agent_8101kppj9jyhet19db1evr0ebmy4"></elevenlabs-convai>
+                </div>
+            </div>
+
+            <!-- Bienes Raíces -->
+            <div class="demo-card">
+                <video controls preload="none" style="width:100%;border-radius:12px;margin-bottom:16px;" poster="../images/max-avatar.png">
+                    <source src="../videos/demo-intro-realtor.mp4" type="video/mp4">
+                </video>
+                <div class="demo-icon">🏠</div>
+                <div class="demo-name">Agencia de Bienes Raíces</div>
+                <div class="demo-agent">Recepcionista IA: Jamie</div>
+                <p class="demo-desc">Captura consultas sobre propiedades, agenda visitas, califica compradores y nunca deja que un prospecto se escape — ni los fines de semana.</p>
+                <div class="demo-scenarios">
+                    <h4>Prueba preguntar sobre:</h4>
+                    <ul>
+                        <li>Una propiedad que viste en línea</li>
+                        <li>Agendar una visita</li>
+                        <li>Vender tu casa</li>
+                        <li>Qué está disponible en tu zona</li>
+                    </ul>
+                </div>
+                <a href="tel:+14436968944" class="demo-btn">📞 Llamar a Jamie: (443) 696-8944</a>
+                <br>
+                <span class="demo-widget-btn" onclick="document.getElementById('realtor-widget').style.display='block'; this.style.display='none';">🎙️ Hablar con Jamie por Chat de Voz</span>
+                <div id="realtor-widget" style="display:none; margin-top: 16px;">
+                    <elevenlabs-convai agent-id="agent_6901kppj9t21ef7vpj6ttxnbgh65"></elevenlabs-convai>
+                </div>
+            </div>
+
+            <!-- Construcción -->
+            <div class="demo-card">
+                <video controls preload="none" style="width:100%;border-radius:12px;margin-bottom:16px;" poster="../images/max-avatar.png">
+                    <source src="../videos/demo-intro-construction.mp4" type="video/mp4">
+                </video>
+                <div class="demo-icon">🏗️</div>
+                <div class="demo-name">Empresa de Construcción</div>
+                <div class="demo-agent">Recepcionista IA: Jordan</div>
+                <p class="demo-desc">Maneja consultas de nuevos proyectos, solicitudes de cotización, agendamiento y mantiene tu teléfono cubierto cuando estás en la obra.</p>
+                <div class="demo-scenarios">
+                    <h4>Prueba preguntar sobre:</h4>
+                    <ul>
+                        <li>Obtener una cotización para una remodelación</li>
+                        <li>Agendar una estimación</li>
+                        <li>Consultar sobre un proyecto en curso</li>
+                        <li>Necesidad de reparación de emergencia</li>
+                    </ul>
+                </div>
+                <a href="tel:+14432335482" class="demo-btn">📞 Llamar a Jordan: (443) 233-5482</a>
+                <br>
+                <span class="demo-widget-btn" onclick="document.getElementById('construction-widget').style.display='block'; this.style.display='none';">🎙️ Hablar con Jordan por Chat de Voz</span>
+                <div id="construction-widget" style="display:none; margin-top: 16px;">
+                    <elevenlabs-convai agent-id="agent_0801kpr50075eerrwbpektsdr187"></elevenlabs-convai>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="demos-cta">
+        <h2>¿Listo para <span class="gradient-text">Dejar de Perder Llamadas?</span></h2>
+        <p>Tu recepcionista IA puede estar en vivo en 48 horas. Construida a medida para tu negocio, tu industria, tu voz. Desde $97/mes.</p>
+        <a href="index.html#contact" class="demo-btn">Obtén tu Consulta Gratuita</a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <img src="../images/logo.png" alt="Logo" class="footer-logo-img">
+                <span>Max's AI Solutions</span>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Inicio</a>
+                <a href="pricing.html">Precios</a>
+                <a href="phone-answering.html">Recepcionista IA</a>
+                <a href="training.html">Capacitación Gratuita</a>
+            </div>
+            <p class="footer-copy">&copy; 2026 Max's AI Solutions. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- ElevenLabs Widget Script -->
+    <script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript"></script>
+
+    <!-- Nav toggle -->
+    <script>
+        document.getElementById('navToggle').addEventListener('click', () => {
+            document.getElementById('navLinks').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

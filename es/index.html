@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Max's AI Solutions — IA que Trabaja para tu Negocio</title>
+    <meta name="description" content="Automatización con IA personalizada, asistentes inteligentes y sistemas de negocio que realmente funcionan. Deja de perder tiempo en tareas que una máquina puede hacer.">
+    <link rel="icon" type="image/png" href="../images/logo.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="nav-logo">
+                <img src="../images/logo.png" alt="Max's AI Solutions" class="logo-img">
+                <span class="logo-text">Max's AI Solutions</span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#" class="active">Inicio</a></li>
+                <li><a href="#about">Quiénes Somos</a></li>
+                <li><a href="#services">Servicios con IA</a></li>
+                <li><a href="phone-answering.html">Recepcionista IA</a></li>
+                <li><a href="training.html">Capacitación Gratuita</a></li>
+                <li><a href="pricing.html">Precios</a></li>
+                <li><a href="demos.html"><span style="white-space:nowrap">Demos en</span><br><span style="white-space:nowrap">Vivo</span></a></li>
+                <li><a href="partner.html" style="color:#a78bfa;font-weight:600;">🤝 Programa Socio</a></li>
+                <li><a href="box.html" style="color:#a78bfa;font-weight:600;">📦 IA en Caja</a></li>
+                <li><a href="#contact" class="btn btn-nav">Comenzar</a></li>
+                <li><a href="../index.html" style="color:#9595b0;font-size:0.85rem;">🇺🇸 English</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="container" style="padding-top: 100px; padding-bottom: 80px;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
+
+                <!-- Left: Text -->
+                <div style="padding-left: 12px;">
+                    <div class="hero-badge">⚡ Soluciones Empresariales con IA</div>
+                    <h1 style="text-align: left; font-size: clamp(2rem, 4vw, 3.2rem); margin-bottom: 20px;">Deja de Hacer el Trabajo que <span class="gradient-text">una Máquina Puede Hacer</span></h1>
+                    <p class="hero-subtitle" style="text-align: left; margin-bottom: 28px;">Creamos sistemas de IA personalizados que automatizan tus tareas repetitivas, hacen seguimiento a tus prospectos y manejan las partes de tu negocio que no necesitan un toque humano.</p>
+                    <div class="hero-cta" style="justify-content: flex-start; margin-bottom: 32px;">
+                        <a href="#contact" class="btn btn-primary btn-lg">Obtén tu Consulta Gratuita</a>
+                        <a href="#services" class="btn btn-outline btn-lg">Ve lo que Construimos</a>
+                    </div>
+                    <div class="hero-proof" style="justify-content: flex-start;">
+                        <div class="proof-item"><span class="proof-icon">🤖</span><span>Asistentes IA Personalizados</span></div>
+                        <div class="proof-item"><span class="proof-icon">⚙️</span><span>Automatización Empresarial</span></div>
+                        <div class="proof-item"><span class="proof-icon">📈</span><span>Sistemas de Crecimiento</span></div>
+                    </div>
+                </div>
+
+                <!-- Right: Video -->
+                <div>
+                    <div style="position: relative; border-radius: 16px; overflow: hidden; box-shadow: 0 0 40px rgba(79,70,229,0.35); background: #000; aspect-ratio: 1/1;">
+                        <video id="heroVideo" controls playsinline preload="metadata"
+                            style="width: 100%; height: 100%; display: block;"
+                            poster="../images/max-avatar.png">
+                            <source src="../videos/homepage-intro-v3.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <p style="text-align: center; color: #9595b0; font-size: 0.85rem; margin-top: 12px;">👆 Conoce a MAX — nuestro operador de IA (1 min)</p>
+                </div>
+
+            </div>
+        </div>
+
+        <style>
+        @media (max-width: 768px) {
+            .hero > .container > div[style*="grid-template-columns"] {
+                grid-template-columns: 1fr !important;
+                gap: 36px !important;
+            }
+        }
+        </style>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>¿Te Suena Familiar?</h2>
+                <p>La mayoría de las pequeñas empresas están ahogadas en trabajo manual que la IA puede manejar hoy mismo.</p>
+            </div>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="problem-emoji">😩</div>
+                    <h3>Enterrado en Tareas Repetitivas</h3>
+                    <p>Pasas horas en correos, agendamiento, captura de datos y seguimientos en vez de hacer crecer tu negocio.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-emoji">💸</div>
+                    <h3>Prospectos que se Pierden</h3>
+                    <p>Alguien llena tu formulario a las 9pm y no recibe respuesta hasta el día siguiente. Para entonces, ya se fue con otro.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-emoji">🔧</div>
+                    <h3>Demasiadas Herramientas, Ningún Sistema</h3>
+                    <p>Estás pagando por 10 apps diferentes que no se comunican entre sí. Nada parece estar conectado.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-emoji">🕐</div>
+                    <h3>Sin Tiempo para Crecer</h3>
+                    <p>Sabes que puedes crecer, pero estás atascado haciendo tareas de $15/hora cuando tu tiempo vale $150.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New to AI Section -->
+    <section class="newtoai-section">
+        <div class="container">
+            <div class="newtoai-card">
+                <div class="newtoai-icon">💡</div>
+                <div class="newtoai-content">
+                    <h3>¿Nuevo en la IA? Perfecto.</h3>
+                    <p>No necesitas entender cómo funciona la IA para beneficiarte de ella — igual que no necesitas saber cómo funciona el motor de tu auto para manejar. Dinos qué te está quitando tiempo y nosotros hacemos el resto. Sin tecnicismos, sin confusión, sin necesidad de un título en tecnología. Hablamos en tu idioma.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Lo que Construimos</div>
+                <h2>Soluciones de IA que Realmente <span class="gradient-text">Funcionan</span></h2>
+                <p>Sin chatbots genéricos. Sin plantillas de molde. Sistemas personalizados construidos según cómo opera tu negocio en realidad.</p>
+            </div>
+            <!-- What We Build Video -->
+            <div style="max-width: 800px; margin: 0 auto 56px auto;">
+                <p style="text-align: center; color: #9595b0; font-size: 0.85rem; margin-top: 12px;">👆 MAX te muestra todo lo que construimos (~1:40)</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🤖</div>
+                    <h3>Asistentes de IA</h3>
+                    <p>Agentes de IA personalizados que atienden consultas, califican prospectos, agendan citas y hacen seguimiento — 24/7, con la voz de tu marca.</p>
+                    <ul class="service-features">
+                        <li>Respuesta instantánea a prospectos</li>
+                        <li>Agendamiento de citas</li>
+                        <li>Atención al cliente automatizada</li>
+                    </ul>
+                </div>
+                <div class="service-card featured">
+                    <div class="card-badge">Más Popular</div>
+                    <div class="service-icon">⚙️</div>
+                    <h3>Automatización Empresarial</h3>
+                    <p>Conecta tus herramientas, elimina tareas repetitivas y crea flujos de trabajo que administran tu operación en piloto automático.</p>
+                    <ul class="service-features">
+                        <li>Automatización de flujos de trabajo</li>
+                        <li>Integración con CRM</li>
+                        <li>Reportes y dashboards</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📱</div>
+                    <h3>Contenido y Redes Sociales</h3>
+                    <p>Sistemas de creación de contenido, programación y engagement con IA que mantienen tu marca activa sin consumir tu día.</p>
+                    <ul class="service-features">
+                        <li>Creación de contenido</li>
+                        <li>Automatización de redes sociales</li>
+                        <li>Consistencia de marca</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏗️</div>
+                    <h3>Desarrollos IA Personalizados</h3>
+                    <p>¿Tienes un problema único? Diseñamos y construimos una solución de IA a medida para tu desafío empresarial específico.</p>
+                    <ul class="service-features">
+                        <li>Desarrollo personalizado</li>
+                        <li>Integraciones de API</li>
+                        <li>Arquitectura escalable</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-section" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Proceso Simple</div>
+                <h2>Cómo Funciona</h2>
+                <p>Desde la primera conversación hasta el sistema funcionando — así es el camino.</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">01</div>
+                    <h3>Cuéntanos lo que No Funciona</h3>
+                    <p>Llena el formulario de abajo. Dinos qué te está quitando tiempo, qué te está costando dinero, o qué desearías que una máquina pudiera hacer. Sin tecnicismos.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">02</div>
+                    <h3>Diseñamos la Solución</h3>
+                    <p>Identificamos la solución adecuada, te mostramos exactamente cómo se verá y te damos un plazo y precio claros. Sin sorpresas.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">03</div>
+                    <h3>Construimos y Lanzamos</h3>
+                    <p>Construimos tu sistema, lo probamos a fondo y lo desplegamos. Recibirás capacitación y soporte continuo para asegurar que siga dando resultados.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">04</div>
+                    <h3>Tú Creces</h3>
+                    <p>Tu nuevo sistema de IA se encarga del trabajo pesado mientras tú te enfocas en crecer. A medida que tu negocio evoluciona, evolucionamos el sistema contigo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <div class="section-badge">Quiénes Somos</div>
+                    <h2>Construidos Diferente. <span class="gradient-text">A Propósito.</span></h2>
+                    <p>Max's AI Solutions no es otra agencia tecnológica que habla en buzzwords y entrega presentaciones. Somos constructores.</p>
+                    <p>Creemos que las pequeñas empresas merecen el mismo poder de IA que tienen las compañías Fortune 500 — sin el precio de seis cifras ni el plazo de seis meses.</p>
+                    <p>Cada sistema que construimos resuelve un problema real. Cada solución está diseñada para pagarse sola. Y cada cliente recibe la atención que las grandes agencias olvidaron cómo dar.</p>
+                    <div class="about-values">
+                        <div class="value-item">
+                            <span class="value-icon">🎯</span>
+                            <div>
+                                <strong>Resultados Primero</strong>
+                                <p>Si no mueve la aguja, no lo construimos.</p>
+                            </div>
+                        </div>
+                        <div class="value-item">
+                            <span class="value-icon">🤝</span>
+                            <div>
+                                <strong>Asociación Honesta</strong>
+                                <p>Te decimos lo que necesitas — no lo que cuesta más.</p>
+                            </div>
+                        </div>
+                        <div class="value-item">
+                            <span class="value-icon">⚡</span>
+                            <div>
+                                <strong>Velocidad que Importa</strong>
+                                <p>La mayoría de los proyectos se lanzan en días, no meses.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="about-card" style="margin-top: 16px;">
+                        <p class="about-card-text">"No solo construimos herramientas de IA. Construimos compañeros de equipo de IA."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Closer Video -->
+    <section style="background: #0a0a1a; padding: 60px 0 20px 0;">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 24px;">
+                <div class="section-badge" style="display: inline-block;">¿Listo para Empezar?</div>
+                <h2 style="margin-top: 12px; font-size: clamp(1.6rem, 3vw, 2.4rem);">Deja que MAX te convenza — <span class="gradient-text">personalmente.</span></h2>
+            </div>
+            <div style="max-width: 720px; margin: 0 auto;">
+                <p style="text-align: center; color: #9595b0; font-size: 0.85rem; margin-top: 12px;">👇 Luego llena el formulario de abajo — te respondemos rápido.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-content">
+                    <div class="section-badge">Hablemos</div>
+                    <h2>¿Listo para Poner la IA a <span class="gradient-text">Trabajar?</span></h2>
+                    <p>Cuéntanos sobre tu negocio y lo que te está quitando tiempo. Te respondemos rápido — normalmente en menos de una hora.</p>
+                    <div class="contact-features">
+                        <div class="contact-feature">
+                            <span>✅</span>
+                            <p>Consulta gratuita — sin compromiso</p>
+                        </div>
+                        <div class="contact-feature">
+                            <span>✅</span>
+                            <p>Respuesta en 1 hora en horario laboral</p>
+                        </div>
+                        <div class="contact-feature">
+                            <span>✅</span>
+                            <p>Propuesta personalizada para tu negocio</p>
+                        </div>
+                        <div class="contact-feature">
+                            <span>✅</span>
+                            <p>Sin ventas agresivas — solo consejos honestos</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contactForm" action="https://formspree.io/f/mwvwjjoq" method="POST">
+                        <div class="form-group">
+                            <label for="name">Tu Nombre *</label>
+                            <input type="text" id="name" name="name" required placeholder="Juan García">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Correo Electrónico *</label>
+                            <input type="email" id="email" name="email" required placeholder="juan@tunegocio.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Número de Teléfono</label>
+                            <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567">
+                        </div>
+                        <div class="form-group">
+                            <label for="business">Nombre del Negocio</label>
+                            <input type="text" id="business" name="business" placeholder="Tu Negocio LLC">
+                        </div>
+                        <div class="form-group">
+                            <label for="service">¿En Qué Estás Interesado? *</label>
+                            <select id="service" name="service" required>
+                                <option value="" disabled selected>Selecciona un servicio...</option>
+                                <option value="ai-assistant">Asistente IA / Chatbot</option>
+                                <option value="automation">Automatización Empresarial</option>
+                                <option value="content">Contenido y Redes Sociales</option>
+                                <option value="custom">Desarrollo IA Personalizado</option>
+                                <option value="not-sure">No Sé — Ayúdame a Descubrirlo</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Cuéntanos qué te Está Quitando Tiempo *</label>
+                            <textarea id="message" name="message" required placeholder="¿En qué tareas estás invirtiendo demasiado tiempo? ¿Qué automatizarías si pudieras? Entre más detalle, mejor podemos ayudarte."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg btn-full">Enviar Mensaje ⚡</button>
+                        <p class="form-note">Tomamos tu privacidad en serio. Tu información nunca se comparte ni se vende.</p>
+                    </form>
+                    <div class="form-success" id="formSuccess" style="display:none;">
+                        <div class="success-icon">🎉</div>
+                        <h3>¡Mensaje Recibido!</h3>
+                        <p>Ya estamos en ello. Espera noticias nuestras pronto. Mientras tanto, síguenos en X para consejos de IA y novedades.</p>
+                        <a href="https://x.com/maxsaisolution" target="_blank" class="btn btn-outline">Síguenos en X</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="../images/logo.png" alt="Max's AI Solutions" class="footer-logo">
+                    <p>Soluciones de IA que realmente funcionan para tu negocio. Construidas con honestidad, entregadas con rapidez.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Enlaces Rápidos</h4>
+                    <a href="#services">Servicios</a>
+                    <a href="#how-it-works">Cómo Funciona</a>
+                    <a href="#about">Quiénes Somos</a>
+                    <a href="#contact">Contacto</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Servicios</h4>
+                    <a href="phone-answering.html">Recepcionista IA</a>
+                    <a href="pricing.html">Automatización Empresarial</a>
+                    <a href="pricing.html">Creación de Sitios Web</a>
+                    <a href="pricing.html">Gestión de Redes Sociales</a>
+                    <a href="pricing.html">Chatbots con IA</a>
+                    <a href="pricing.html">Sistemas CRM</a>
+                    <a href="partner.html">Programa Socio</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Conéctate con Nosotros</h4>
+                    <a href="https://x.com/maxsaisolution" target="_blank">🐦 X (Twitter)</a>
+                    <a href="https://www.facebook.com/profile.php?id=1094878833707072" target="_blank">📘 Facebook</a>
+                    <a href="https://www.tiktok.com/@toddspersonaljourney" target="_blank">🎵 TikTok</a>
+                    <a href="demos.html">🎧 Demos en Vivo</a>
+                    <a href="#contact">📞 Contáctanos</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Max's AI Solutions. Todos los derechos reservados.</p>
+                <p>maxsaisolutions.com</p>
+                <p><a href="../terms.html" style="color:#4a5568;">Términos de Servicio</a> | <a href="../privacy.html" style="color:#4a5568;">Política de Privacidad</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+
+    <!-- ElevenLabs Conversational AI Widget -->
+    <style>
+      #max-widget-container {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        z-index: 9999;
+      }
+      #max-widget-close {
+        display: none;
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        width: 26px;
+        height: 26px;
+        background: #fff;
+        border: 2px solid #6c47ff;
+        border-radius: 50%;
+        color: #6c47ff;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 22px;
+        text-align: center;
+        cursor: pointer;
+        z-index: 10000;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      }
+      #max-widget-close:hover { background: #6c47ff; color: #fff; }
+      elevenlabs-convai {
+        --el-convai-button-color: #6c47ff;
+        --el-convai-button-icon-color: #ffffff;
+      }
+    </style>
+    <div id="max-widget-container">
+      <div id="max-widget-close" onclick="document.getElementById('max-widget-container').style.display='none'">×</div>
+      <elevenlabs-convai agent-id="agent_8901kppgsk0qezab60wrd94xbm7a" action-text="¿Preguntas? ¡Pregunta aquí!" start-call-text="¿Preguntas? ¡Pregunta aquí!"></elevenlabs-convai>
+    </div>
+    <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const observer = new MutationObserver(function() {
+          const widget = document.querySelector('elevenlabs-convai');
+          const closeBtn = document.getElementById('max-widget-close');
+          if (widget && closeBtn) {
+            const expanded = widget.getAttribute('expand') === 'true' ||
+                            widget.shadowRoot?.querySelector('.expanded') ||
+                            widget.offsetHeight > 80;
+            closeBtn.style.display = expanded ? 'block' : 'none';
+          }
+        });
+        const widget = document.querySelector('elevenlabs-convai');
+        if (widget) observer.observe(widget, { attributes: true, subtree: true, childList: true });
+        setTimeout(() => {
+          document.getElementById('max-widget-close').style.display = 'block';
+        }, 2000);
+      });
+    </script>
+
+</body>
+</html>

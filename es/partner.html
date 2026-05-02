@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programa de Referidos — Gana 25% por 3 Meses | Max's AI Solutions</title>
+    <meta name="description" content="Refiere clientes a Max's AI Solutions y gana el 25% de lo que paguen durante 3 meses. ¿Quieres comisiones de por vida? Conviértete en Socio. Sin vender. Solo presentaciones.">
+    <link rel="icon" type="image/png" href="../images/logo.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .ref-hero {
+            background: linear-gradient(135deg, #0f0f1a 0%, #1a1030 50%, #0f0f1a 100%);
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .ref-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: radial-gradient(circle at 40% 50%, rgba(34,197,94,0.06) 0%, transparent 50%),
+                        radial-gradient(circle at 60% 50%, rgba(79,70,229,0.06) 0%, transparent 50%);
+        }
+        .ref-hero .container { position: relative; z-index: 1; }
+        .ref-badge {
+            display: inline-block;
+            background: rgba(34,197,94,0.15);
+            border: 1px solid rgba(34,197,94,0.3);
+            color: #4ade80;
+            padding: 8px 20px;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+        .ref-hero h1 {
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 24px;
+            color: #fff;
+        }
+        .ref-hero h1 .green { color: #4ade80; }
+        .ref-hero .subtext {
+            font-size: 1.15rem;
+            color: #9595b0;
+            max-width: 650px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+        }
+
+        .ref-section {
+            padding: 80px 0;
+        }
+        .ref-section h2 {
+            font-size: clamp(1.8rem, 3vw, 2.4rem);
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 16px;
+            color: #fff;
+        }
+        .ref-section .section-sub {
+            text-align: center;
+            color: #9595b0;
+            font-size: 1.05rem;
+            max-width: 600px;
+            margin: 0 auto 48px;
+        }
+        .ref-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .ref-card {
+            background: rgba(26,26,46,0.8);
+            border: 1px solid #2d2d44;
+            border-radius: 16px;
+            padding: 32px;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        .ref-card:hover {
+            transform: translateY(-4px);
+            border-color: #4ade80;
+        }
+        .ref-card .icon { font-size: 2rem; margin-bottom: 16px; }
+        .ref-card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; color: #fff; }
+        .ref-card p { color: #9595b0; font-size: 0.95rem; line-height: 1.6; }
+
+        .math-section {
+            background: linear-gradient(135deg, #1a1030 0%, #0f0f1a 100%);
+            padding: 80px 0;
+        }
+        .math-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            max-width: 900px;
+            margin: 0 auto;
+            align-items: center;
+        }
+        .math-text h2 { font-size: 2rem; font-weight: 800; margin-bottom: 16px; color: #fff; text-align: left; }
+        .math-text p { color: #9595b0; line-height: 1.7; margin-bottom: 16px; text-align: left; }
+        .math-box {
+            background: rgba(26,26,46,0.9);
+            border: 1px solid #2d2d44;
+            border-radius: 16px;
+            padding: 32px;
+        }
+        .math-box h3 {
+            color: #4ade80;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .math-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #2d2d44;
+            color: #e2e8f0;
+        }
+        .math-row:last-child { border-bottom: none; }
+        .math-row .label { color: #9595b0; }
+        .math-row .value { font-weight: 700; color: #22c55e; }
+
+        .ref-cta {
+            text-align: center;
+            padding: 80px 0;
+            background: linear-gradient(180deg, #0f0f1a 0%, #1a1030 50%, #0f0f1a 100%);
+        }
+        .ref-cta h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 800; margin-bottom: 16px; color: #fff; }
+        .ref-cta p { color: #9595b0; font-size: 1.1rem; max-width: 600px; margin: 0 auto 32px; }
+        .btn-ref {
+            display: inline-block;
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 700;
+            padding: 16px 40px;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn-ref:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(34,197,94,0.4);
+        }
+
+        .divider {
+            text-align: center;
+            padding: 60px 0;
+            border-top: 1px solid #2d2d44;
+        }
+        .divider h2 { font-size: 1.6rem; font-weight: 800; color: #fff; margin-bottom: 16px; }
+        .divider p { color: #9595b0; max-width: 600px; margin: 0 auto; font-size: 1.05rem; }
+
+        @media (max-width: 768px) {
+            .math-grid { grid-template-columns: 1fr; }
+            .ref-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="../index.html" class="nav-logo">
+                <img src="../images/logo.png" alt="Max's AI Solutions" class="logo-img">
+                <span class="logo-text">Max's AI Solutions</span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html#services">Servicios</a></li>
+                <li><a href="training.html">Capacitación Gratuita</a></li>
+                <li><a href="pricing.html">Precios</a></li>
+                <li><a href="partner.html" class="active" style="color:#a78bfa;font-weight:600;">🤝 Programa Socio</a></li>
+                <li><a href="box.html" style="color:#a78bfa;font-weight:600;">📦 IA en Caja</a></li>
+                <li><a href="#start" class="btn btn-nav">Comenzar a Referir</a></li>
+                <li><a href="../partner.html" style="color:#9595b0;font-size:0.85rem;">🇺🇸 English</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="ref-hero">
+        <div class="container">
+            <div class="ref-badge">💰 PROGRAMA DE REFERIDOS</div>
+            <h1>Refiere un Cliente. Gana <span class="green">25% de Comisión.</span></h1>
+            <p class="subtext">¿Conoces un negocio que necesita un sistema telefónico con IA, automatización o cualquiera de nuestros servicios? Mándanos a esa persona. Cuando se registren, ganas el 25% de lo que paguen — durante los primeros 3 meses desde su fecha de registro. ¿Quieres comisiones de por vida? <a href="partner-compensation.html" style="color:#4ade80; font-weight:600;">Conoce el Programa Socio →</a></p>
+            <a href="#start" class="btn-ref">Empieza a Ganar Hoy</a>
+        </div>
+    </section>
+
+    <!-- Cómo Funciona -->
+    <section class="ref-section">
+        <div class="container">
+            <h2>Cómo Funciona</h2>
+            <p class="section-sub">Tres pasos. Sin necesidad de vender. Solo presentaciones.</p>
+
+            <div class="ref-grid" style="max-width: 900px;">
+                <div class="ref-card" style="text-align: center;">
+                    <div class="icon">1️⃣</div>
+                    <h3>Conoce a Alguien que Necesite IA</h3>
+                    <p>Un dentista que pierde llamadas. Un contratista que pierde prospectos. Un salón que no da abasto. Cualquier negocio que pueda beneficiarse de un sistema telefónico con IA, automatización o capacitación.</p>
+                </div>
+                <div class="ref-card" style="text-align: center;">
+                    <div class="icon">2️⃣</div>
+                    <h3>Haz la Presentación</h3>
+                    <p>Cuéntales sobre nosotros, comparte nuestro sitio web, o simplemente danos su información. Nosotros nos encargamos de todo desde ahí — el demo, la propuesta, la configuración. Tú no tienes que hacer nada más.</p>
+                </div>
+                <div class="ref-card" style="text-align: center;">
+                    <div class="icon">3️⃣</div>
+                    <h3>Cobra Cada Mes</h3>
+                    <p>Cuando se conviertan en clientes, ganas el 25% de su pago mensual — durante los primeros 3 meses desde su fecha de registro. ¿Quieres comisiones que no expiren? <a href="partner-compensation.html" style="color:#4ade80;">Conviértete en Socio →</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Las Matemáticas -->
+    <section class="math-section">
+        <div class="container">
+            <div class="math-grid">
+                <div class="math-text">
+                    <h2>Las Matemáticas Hablan por Sí Solas</h2>
+                    <p>Nuestro sistema telefónico con IA cuesta entre $97 y $297 por mes por cliente. Tú recibes el 25% de eso — durante los primeros 3 meses desde su registro. Refiere unos cuantos negocios y habrás construido un flujo de ingresos real.</p>
+                    <p>Sin inventario. Sin entregas. Sin atención al cliente. Sin trabajo después de la presentación. Nosotros nos encargamos de todo — tú solo cobras.</p>
+                    <p><strong>¿Quieres comisiones que no expiren? <a href="partner-compensation.html" style="color:#4ade80;">Conoce el Programa Socio completo →</a></strong></p>
+                </div>
+                <div class="math-box">
+                    <h3>Tus Ingresos como Referidor</h3>
+                    <div class="math-row">
+                        <span class="label">1 cliente a $297/mes (3 meses)</span>
+                        <span class="value">$222 total</span>
+                    </div>
+                    <div class="math-row">
+                        <span class="label">5 clientes a $297/mes (3 meses)</span>
+                        <span class="value">$1,113 total</span>
+                    </div>
+                    <div class="math-row">
+                        <span class="label">1 referido/mes, todo el año</span>
+                        <span class="value">$800+/año</span>
+                    </div>
+                    <div class="math-row" style="border-top: 2px solid #22c55e; margin-top: 8px; padding-top: 16px;">
+                        <span class="label"><strong>¿Quieres comisiones DE POR VIDA?</strong></span>
+                        <span class="value" style="font-size: 0.9rem;"><a href="partner-compensation.html" style="color:#4ade80;">Programa Socio →</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Qué Cuenta -->
+    <section class="ref-section" style="background: rgba(26,26,46,0.3);">
+        <div class="container">
+            <h2>Qué Servicios Te Dan el 25%</h2>
+            <p class="section-sub">Cualquier servicio que compre un cliente referido de Max's AI Solutions — tú ganas en todo.</p>
+
+            <div class="ref-grid">
+                <div class="ref-card">
+                    <div class="icon">📞</div>
+                    <h3>Sistema Telefónico con IA</h3>
+                    <p>$97–$297/mes por cliente. El referido más común. Todos los negocios con teléfono necesitan esto.</p>
+                </div>
+                <div class="ref-card">
+                    <div class="icon">🤖</div>
+                    <h3>Automatización con IA y Consultoría</h3>
+                    <p>Construcciones de IA personalizadas, automatización de flujos de trabajo, consultoría de negocio. Proyectos únicos y recurrentes.</p>
+                </div>
+                <div class="ref-card">
+                    <div class="icon">🎓</div>
+                    <h3>Capacitación y Acceso a la Academia</h3>
+                    <p>Cursos, suscripciones y programas de formación. $47–$497 por compra.</p>
+                </div>
+                <div class="ref-card">
+                    <div class="icon">🌐</div>
+                    <h3>Sitio Web y Servicios Digitales</h3>
+                    <p>Desarrollo de sitios web, SEO, configuración de redes sociales. Cualquier servicio digital que ofrezcamos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quién Puede Referir -->
+    <section class="ref-section">
+        <div class="container">
+            <h2>¿Quién Puede Ser Referidor?</h2>
+            <p class="section-sub">Cualquiera. En serio.</p>
+
+            <div class="ref-grid" style="max-width: 800px;">
+                <div class="ref-card">
+                    <div class="icon">👤</div>
+                    <h3>Clientes Actuales</h3>
+                    <p>¿Ya usas nuestros servicios? Refiere otros negocios y gana además de lo que ya estás obteniendo.</p>
+                </div>
+                <div class="ref-card">
+                    <div class="icon">👥</div>
+                    <h3>Amigos y Familia</h3>
+                    <p>¿Conoces a alguien con un negocio? Esa conversación en la cena podría generarte $74/mes para siempre.</p>
+                </div>
+                <div class="ref-card">
+                    <div class="icon">🏢</div>
+                    <h3>Dueños de Negocio</h3>
+                    <p>¿Tienes conexión con otros dueños de negocio? Cada referido construye tus ingresos pasivos junto a tu propio negocio.</p>
+                </div>
+                <div class="ref-card">
+                    <div class="icon">🌍</div>
+                    <h3>Cualquiera, en Cualquier Lugar</h3>
+                    <p>Sin solicitud. Sin capacitación requerida. Sin territorios. Si puedes hacer una presentación, puedes ganar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divisor: Upgrade a Socio y Box -->
+    <section class="divider">
+        <div class="container">
+            <h2>¿Quieres Comisiones de Por Vida + Bonos por Tu Red?</h2>
+            <p>Conviértete en <a href="partner-compensation.html" style="color: #a78bfa; font-weight: 600;">Socio</a> por $497 único y gana el 25% de por vida en cada referido — más hasta $200 en bonos cada vez que alguien en tu red se convierte en Socio.</p>
+            <p style="margin-top: 16px;">O si quieres operar tu propio negocio de IA por completo — revisa <a href="box.html" style="color: #a78bfa; font-weight: 600;">IA en Caja</a>. Un sistema completo de negocio de IA listo para operar que tú posees y gestionas.</p>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="ref-cta" id="start">
+        <div class="container">
+            <h2>¿Listo para Empezar a Ganar?</h2>
+            <p>Regístrate gratis como Referidor abajo — gana el 25% por 3 meses en cada referido. O <a href="partner-compensation.html" style="color:#4ade80; font-weight:600;">conoce el Programa Socio completo</a> para comisiones de por vida + bonos por tu red.</p>
+
+            <div style="max-width: 450px; margin: 0 auto;">
+                <form action="https://formspree.io/f/mwvwjjoq" method="POST" style="display: flex; flex-direction: column; gap: 14px;">
+                    <input type="hidden" name="_subject" value="New Referral Partner Signup">
+                    <input type="hidden" name="form_type" value="referral_partner">
+                    <input type="text" name="name" placeholder="Tu Nombre Completo" required
+                        style="padding: 14px 18px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; color: white; font-size: 1rem;">
+                    <input type="email" name="email" placeholder="Tu Correo Electrónico" required
+                        style="padding: 14px 18px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; color: white; font-size: 1rem;">
+                    <input type="tel" name="phone" placeholder="Tu Número de Teléfono" required
+                        style="padding: 14px 18px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; color: white; font-size: 1rem;">
+                    <textarea name="message" placeholder="¿Ya tienes a alguien en mente? Cuéntanos sobre ellos (opcional)" rows="3"
+                        style="padding: 14px 18px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; color: white; font-size: 1rem; resize: vertical;"></textarea>
+                    <button type="submit" class="btn-ref" style="border: none; cursor: pointer; font-size: 1.1rem;">Registrarme como Referidor</button>
+                </form>
+            </div>
+
+            <p style="color: #6b6b8a; font-size: 0.85rem; margin-top: 32px;">¿Preguntas? Escríbenos a <a href="mailto:todd.maxsaisolutions@gmail.com" style="color: #4ade80;">todd.maxsaisolutions@gmail.com</a> o llama al <a href="tel:+14433979716" style="color: #4ade80;">(443) 397-9716</a></p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: #0a0a14; border-top: 1px solid #2d2d44; padding: 40px 0; text-align: center;">
+        <div class="container">
+            <p style="color: #6b6b8a; font-size: 0.85rem;">© 2026 Max's AI Solutions. Todos los derechos reservados.</p>
+            <p style="color: #4a4a6a; font-size: 0.8rem; margin-top: 8px;">
+                <a href="privacy.html" style="color: #4a4a6a;">Privacidad</a> · 
+                <a href="terms.html" style="color: #4a4a6a;">Términos</a> · 
+                <a href="index.html" style="color: #4a4a6a;">Inicio</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+        if (navToggle) {
+            navToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                navToggle.classList.toggle('active');
+            });
+        }
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) navbar.classList.add('scrolled');
+            else navbar.classList.remove('scrolled');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Precios — Transparentes y Honestos | Max's AI Solutions</title>
+    <meta name="description" content="Precios transparentes para contestador IA, automatización empresarial y chatbots con IA. Sin sorpresas, sin cargos ocultos. Ve qué incluye cada nivel.">
+    <link rel="icon" type="image/png" href="../images/logo.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .pricing-hero { position: relative; padding: 140px 0 80px; overflow: hidden; text-align: center; }
+        .pricing-hero .hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(79,70,229,0.28), transparent), radial-gradient(ellipse 60% 40% at 80% 60%, rgba(124,58,237,0.18), transparent), radial-gradient(ellipse 40% 30% at 10% 80%, rgba(245,158,11,0.10), transparent); pointer-events: none; }
+        .pricing-hero-inner { position: relative; z-index: 1; max-width: 760px; margin: 0 auto; }
+        .pricing-hero .hero-badge { display: inline-block; background: rgba(79,70,229,0.15); border: 1px solid rgba(99,102,241,0.35); color: #A78BFA; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 6px 16px; border-radius: 100px; margin-bottom: 24px; }
+        .pricing-hero h1 { font-size: clamp(2.4rem, 5vw, 3.8rem); margin-bottom: 20px; }
+        .pricing-hero .hero-sub { font-size: 1.15rem; color: var(--text-secondary); max-width: 580px; margin: 0 auto; line-height: 1.75; }
+        .pricing-section { padding: 72px 0; }
+        .pricing-section + .pricing-section { padding-top: 0; }
+        .section-label { display: inline-block; background: rgba(79,70,229,0.12); border: 1px solid rgba(99,102,241,0.25); color: #818CF8; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 5px 14px; border-radius: 100px; margin-bottom: 12px; }
+        .section-heading { font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: 8px; }
+        .section-sub { color: var(--text-secondary); font-size: 1rem; max-width: 560px; line-height: 1.7; }
+        .section-header { margin-bottom: 44px; }
+        .tier-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; align-items: start; }
+        @media (max-width: 900px) { .tier-grid { grid-template-columns: 1fr; max-width: 480px; } }
+        .tier-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 36px 30px; position: relative; transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease; }
+        .tier-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+        .tier-card.featured { border-color: rgba(99,102,241,0.6); box-shadow: 0 0 40px rgba(79,70,229,0.2); background: linear-gradient(160deg, #1e1e38, #1a1a2e); }
+        .tier-card.featured:hover { box-shadow: 0 0 60px rgba(79,70,229,0.35); }
+        .tier-badge { position: absolute; top: -13px; left: 50%; transform: translateX(-50%); background: var(--gradient); color: white; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 14px; border-radius: 100px; white-space: nowrap; }
+        .tier-icon { font-size: 2rem; margin-bottom: 16px; }
+        .tier-name { font-size: 0.85rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #818CF8; margin-bottom: 8px; }
+        .tier-price { font-size: 2.4rem; font-weight: 800; color: var(--text-primary); line-height: 1; margin-bottom: 6px; }
+        .tier-price sup { font-size: 1.2rem; font-weight: 700; vertical-align: top; margin-top: 6px; display: inline-block; }
+        .tier-price-note { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 20px; }
+        .tier-divider { height: 1px; background: var(--border); margin: 20px 0; }
+        .tier-tagline { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 24px; }
+        .tier-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+        .tier-features li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5; }
+        .tier-features li .check { color: #10B981; font-size: 1rem; flex-shrink: 0; margin-top: 1px; }
+        .tier-card .btn { width: 100%; text-align: center; }
+        .retainer-section { background: var(--bg-card); border-radius: var(--radius-xl); padding: 60px 48px; border: 1px solid var(--border); }
+        @media (max-width: 600px) { .retainer-section { padding: 40px 24px; } }
+        .retainer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
+        @media (max-width: 900px) { .retainer-grid { grid-template-columns: 1fr; max-width: 400px; } }
+        .retainer-card { background: var(--bg-dark); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 28px 24px; transition: transform 0.2s ease, border-color 0.2s ease; }
+        .retainer-card:hover { transform: translateY(-3px); border-color: rgba(99,102,241,0.4); }
+        .retainer-card.featured { border-color: rgba(99,102,241,0.5); background: linear-gradient(160deg, #1e1e38, #1a1a2e); }
+        .retainer-name { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #818CF8; margin-bottom: 10px; }
+        .retainer-price { font-size: 2rem; font-weight: 800; margin-bottom: 4px; }
+        .retainer-period { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 16px; }
+        .retainer-features { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+        .retainer-features li { display: flex; align-items: flex-start; gap: 9px; font-size: 0.88rem; color: var(--text-secondary); }
+        .retainer-features li .check { color: #10B981; flex-shrink: 0; margin-top: 1px; }
+        .faq-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 40px; }
+        @media (max-width: 760px) { .faq-grid { grid-template-columns: 1fr; } }
+        .faq-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 28px; transition: border-color 0.2s ease; }
+        .faq-card:hover { border-color: rgba(99,102,241,0.35); }
+        .faq-q { font-size: 1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 10px; }
+        .faq-a { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7; }
+        .pricing-cta { background: linear-gradient(135deg, rgba(79,70,229,0.15), rgba(124,58,237,0.10)); border: 1px solid rgba(99,102,241,0.25); border-radius: var(--radius-xl); padding: 72px 48px; text-align: center; margin: 72px 0; }
+        @media (max-width: 600px) { .pricing-cta { padding: 48px 24px; } }
+        .pricing-cta h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); margin-bottom: 16px; }
+        .pricing-cta p { font-size: 1.05rem; color: var(--text-secondary); max-width: 520px; margin: 0 auto 36px; line-height: 1.7; }
+        .pricing-cta .cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="../images/logo.png" alt="Max's AI Solutions" class="logo-img">
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html#about">Quiénes Somos</a></li>
+                <li><a href="index.html#services">Servicios con IA</a></li>
+                <li><a href="phone-answering.html">Recepcionista IA</a></li>
+                <li><a href="training.html">Capacitación Gratuita</a></li>
+                <li><a href="pricing.html" class="active">Precios</a></li>
+                <li><a href="demos.html"><span style="white-space:nowrap">Demos en</span><br><span style="white-space:nowrap">Vivo</span></a></li>
+                <li><a href="partner.html" style="color:#a78bfa;font-weight:600;">🤝 Programa Socio</a></li>
+                <li><a href="box.html" style="color:#a78bfa;font-weight:600;">📦 IA en Caja</a></li>
+                <li><a href="index.html#contact" class="btn btn-nav">Comenzar</a></li>
+                <li><a href="../pricing.html" style="color:#9595b0;font-size:0.85rem;">🇺🇸 English</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="pricing-hero">
+        <div class="hero-bg"></div>
+        <div class="container" style="padding-top: 100px; padding-bottom: 80px;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
+                <div style="padding-left: 12px;">
+                    <div class="hero-badge">💰 Precios Transparentes</div>
+                    <h1 style="text-align: left; font-size: clamp(2rem, 4vw, 3.2rem); margin-bottom: 20px;">Precios Simples y <span class="gradient-text">Honestos</span></h1>
+                    <p class="hero-sub" style="text-align: left; margin-bottom: 28px;">Sin sorpresas. Sin cargos ocultos. Sin anzuelos. Sabrás exactamente qué estás obteniendo y exactamente cuánto cuesta antes de dar la mano. Elige tu servicio, elige tu nivel y construyamos.</p>
+                    <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 32px; justify-content: flex-start;">
+                        <a href="#phone-pricing" class="btn btn-primary btn-lg">Ver Todos los Precios ↧</a>
+                        <a href="index.html#contact" class="btn btn-outline btn-lg">Primero Hablemos</a>
+                    </div>
+                    <div style="display: flex; gap: 24px; flex-wrap: wrap; justify-content: flex-start;">
+                        <div style="display: flex; align-items: center; gap: 8px; color: #9595b0; font-size: 0.9rem;"><span>✅</span><span>Sin sorpresas en la configuración</span></div>
+                        <div style="display: flex; align-items: center; gap: 8px; color: #9595b0; font-size: 0.9rem;"><span>✅</span><span>Cancela cuando quieras</span></div>
+                        <div style="display: flex; align-items: center; gap: 8px; color: #9595b0; font-size: 0.9rem;"><span>✅</span><span>Consulta gratuita incluida</span></div>
+                    </div>
+                </div>
+                <div>
+                    <video controls playsinline preload="metadata" style="width:100%;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,0.4);">
+                        <source src="../videos/pricing-overview-v3.mp4" type="video/mp4">
+                    </video>
+                    <p style="text-align: center; color: #9595b0; font-size: 0.85rem; margin-top: 12px;">👆 MAX te explica qué obtienes (1 min)</p>
+                </div>
+            </div>
+        </div>
+        <style>
+        @media (max-width: 768px) {
+            .pricing-hero > .container > div[style*="grid-template-columns"] {
+                grid-template-columns: 1fr !important;
+                gap: 36px !important;
+            }
+        }
+        </style>
+    </section>
+
+    <!-- SERVICE 1: Phone Answering -->
+    <section class="pricing-section" id="phone-pricing">
+        <div class="container">
+            <div class="section-header">
+                <div style="max-width:560px;margin:0 0 28px;"><video controls playsinline preload="metadata" style="width:100%;border-radius:12px;"><source src="../videos/phone-pricing-v3.mp4" type="video/mp4"></video></div>
+                <div class="section-label">📞 Contestador IA</div>
+                <h2 class="section-heading">Sistema de Contestación Telefónica</h2>
+                <p class="section-sub">Nunca pierdas una llamada. Tu recepcionista de IA trabaja 24/7 — contestando, agendando y haciendo seguimiento mientras tú te enfocas en el trabajo.</p>
+            </div>
+            <div class="tier-grid">
+                <div class="tier-card">
+                    <div class="tier-icon">🌱</div>
+                    <div class="tier-name">Básico</div>
+                    <div class="tier-price"><sup>$</sup>99</div>
+                    <div class="tier-price-note">/mes + $249 de configuración</div>
+                    <div class="tier-divider"></div>
+                    <p class="tier-tagline">Perfecto para bajo volumen de llamadas — cubre tu teléfono sin complicaciones.</p>
+                    <ul class="tier-features">
+                        <li><span class="check">✓</span> Contesta llamadas entrantes 24/7</li>
+                        <li><span class="check">✓</span> Toma mensajes y te los reenvía</li>
+                        <li><span class="check">✓</span> IA personalizada para tu negocio</li>
+                        <li><span class="check">✓</span> Saludo y voz personalizados</li>
+                        <li><span class="check">✓</span> Hasta 200 min/mes incluidos</li>
+                    </ul>
+                    <a href="https://buy.stripe.com/dRmaEXaCC4wjfKA5lO3F603" class="btn btn-outline">Comenzar — $249 de Configuración</a>
+                </div>
+                <div class="tier-card featured">
+                    <div class="tier-badge">Más Popular</div>
+                    <div class="tier-icon">🚀</div>
+                    <div class="tier-name">Profesional</div>
+                    <div class="tier-price"><sup>$</sup>297</div>
+                    <div class="tier-price-note">/mes + $249 de configuración</div>
+                    <div class="tier-divider"></div>
+                    <p class="tier-tagline">Para negocios ocupados — tu recepcionista IA lo maneja todo mientras tú trabajas.</p>
+                    <ul class="tier-features">
+                        <li><span class="check">✓</span> Todo lo del plan Básico</li>
+                        <li><span class="check">✓</span> Hasta 500 min/mes incluidos</li>
+                        <li><span class="check">✓</span> Agendamiento y reagendamiento de citas</li>
+                        <li><span class="check">✓</span> Manejo de llamadas de emergencia</li>
+                        <li><span class="check">✓</span> Base de conocimiento específica de tu industria</li>
+                        <li><span class="check">✓</span> Configuración prioritaria — activo en 48 horas</li>
+                    </ul>
+                    <a href="https://buy.stripe.com/dRmaEXaCC4wjfKA5lO3F603" class="btn btn-primary">Comenzar — $249 de Configuración</a>
+                </div>
+                <div class="tier-card">
+                    <div class="tier-icon">🏢</div>
+                    <div class="tier-name">Empresarial</div>
+                    <div class="tier-price"><sup>$</sup>349<span style="font-size:1.2rem;font-weight:600;">+</span></div>
+                    <div class="tier-price-note">/mes + configuración personalizada</div>
+                    <div class="tier-divider"></div>
+                    <p class="tier-tagline">Alto volumen e industrias reguladas — configuraciones compatibles con HIPAA disponibles.</p>
+                    <ul class="tier-features">
+                        <li><span class="check">✓</span> Todo lo del plan Profesional</li>
+                        <li><span class="check">✓</span> Hasta 1,200 min/mes incluidos</li>
+                        <li><span class="check">✓</span> Soporte multi-línea</li>
+                        <li><span class="check">✓</span> Configuraciones compatibles con HIPAA disponibles</li>
+                        <li><span class="check">✓</span> Enrutamiento avanzado de llamadas</li>
+                        <li><span class="check">✓</span> Soporte dedicado de construcción y lanzamiento</li>
+                    </ul>
+                    <a href="index.html#contact" class="btn btn-outline">Hablemos</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICE 2: Business Automation -->
+    <section class="pricing-section">
+        <div class="container">
+            <div class="section-header">
+                <div style="max-width:560px;margin:0 0 28px;"><video controls playsinline preload="metadata" style="width:100%;border-radius:12px;"><source src="../videos/automation-pricing-v3.mp4" type="video/mp4"></video></div>
+                <div class="section-label">⚙️ Automatización Empresarial</div>
+                <h2 class="section-heading">Automatización Empresarial</h2>
+                <p class="section-sub">Desde secuencias de seguimiento hasta revisiones completas de flujos de trabajo — la IA maneja las tareas repetitivas para que tu equipo no tenga que hacerlo.</p>
+            </div>
+            <div class="tier-grid">
+                <div class="tier-card">
+                    <div class="tier-icon">🌱</div>
+                    <div class="tier-name">Básico</div>
+                    <div class="tier-price"><sup>$</sup>197<span style="font-size:1.2rem;font-weight:600;">/mes</span></div>
+                    <div class="tier-price-note">+ $750 de configuración inicial</div>
+                    <div class="tier-divider"></div>
+                    <p class="tier-tagline">Arregla lo más urgente — deja de perder prospectos por seguimientos manuales y respuestas lentas.</p>
+                    <ul class="tier-features">
+                        <li><span class="check">✓</span> Secuencias automatizadas de seguimiento por correo</li>
+                        <li><span class="check">✓</span> Texto de respuesta a llamadas perdidas</li>
+                        <li><span class="check">✓</span> Recordatorios de citas</li>
+                        <li><span class="check">✓</span> Automatización de captura de prospectos</li>
+                        <li><span class="check">✓</span> Flujos básicos de notificaciones</li>
+                    </ul>
+                    <a href="index.html#contact" class="btn btn-outline">Comenzar</a>
+                </div>
+                <div class="tier-card featured">
+                    <div class="tier-badge">Más Popular</div>
+                    <div class="tier-icon">🚀</div>
+                    <div class="tier-name">Crecimiento</div>
+                    <div class="tier-price"><sup>$</sup>397<span style="font-size:1.2rem;font-weight:600;">/mes</span></div>
+                    <div class="tier-price-note">+ $2,000 de configuración inicial</div>
+                    <div class="tier-divider"></div>
+                    <p class="tier-tagline">Automatización completa de flujos de trabajo con visibilidad total de CRM y reportes.</p>
+                    <ul class="tier-features">
+                        <li><span class="check">✓</span> Todo lo del plan Básico</li>
+                        <li><span class="check">✓</span> Construcción completa de flujos de trabajo automatizados</li>
+                        <li><span class="check">✓</span> Integración con CRM y sincronización de datos</li>
+                        <li><span class="check">✓</span> Panel de reportes en tiempo real</li>
+                        <li><span class="check">✓</span> Secuencias de disparadores multi-paso</li>
+                        <li><span class="check">✓</span> Enrutamiento de notificaciones al equipo</li>
+                    </ul>
+                    <a href="index.html#contact" class="btn btn-primary">Comenzar</a>
+                </div>
+                <div class="tier-card">
+                    <div class="tier-icon">🏢</div>
+                    <div class="tier-name">Premium</div>
+                    <div class="tier-price"><sup>$</sup>797<span style="font-size:1.2rem;font-weight:600;">/mes</span></div>
+                    <div class="tier-price-note">+ $4,500 de configuración inicial</div>
+                    <div class="tier-divider"></div>
+                    <p class="tier-tagline">Transformación empresarial completa con IA — cada departamento, cada flujo de trabajo, integrado.</p>
+                    <ul class="tier-features">
+                        <li><span class="check">✓</span> Todo lo del plan Crecimiento</li>
+                        <li><span class="check">✓</span> Estrategia de automatización entre departamentos</li>
+                        <li><span class="check">✓</span> Lógica de decisiones IA personalizada</li>
+                        <li><span class="check">✓</span> Integraciones con sistemas de terceros</li>
+                        <li><span class="check">✓</span> Capacitación del personal y documentación</li>
+                        <li><span class="check">✓</span> Sprints de optimización continua</li>
+                    </ul>
+                    <a href="index.html#contact" class="btn btn-outline">Hablemos</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICE 3: AI Chatbot -->
+    <section class="pricing-section">
+        <div class="container">
+            <div class="section-header">
+                <div style="max-width:560px;margin:0 0 28px;"><video controls playsinline preload="metadata" style="width:100%;border-radius:12px;"><source src="../videos/chatbot-pricing-v3.mp4" type="video/mp4"></video></div>
+                <div class="section-label">🤖 Chatbot / Asistente IA</div>
+                <h2 class="section-heading">Chatbot y Asistente IA</h2>
+                <p class="section-sub">Desde bots de preguntas frecuentes simples hasta asistentes IA completamente personalizados que conocen tu negocio de adentro hacia afuera — lo construimos bien desde la primera vez.</p>
+            </div>
+            <div class="tier-grid">
+                <div class="tier-card">
+                    <div class="tier-icon">🌱</div>
+                    <div class="tier-name">Básico</div>
+                    <div class="tier-price"><sup>$</sup>99<span style="font-size:1.2rem;font-weight:600;">/mes</span></div>
+                    <div class="tier-price-note">+ $499 de configuración inicial</div>
+                    <div class="tier-divider"></div>
+                    <p class="tier-tagline">Un chatbot inteligente para tu sitio que captura prospectos y responde preguntas frecuentes — activo en días.</p>
+                    <ul class="tier-features">
+                        <li><span class="check">✓</span> Responde preguntas frecuentes sobre tu negocio</li>
+                        <li><span class="check">✓</span> Captura datos de contacto de visitantes</li>
+                        <li><span class="check">✓</span> Se conecta a tu formulario de contacto</li>
+                        <li><span class="check">✓</span> Coincide con el estilo y marca de tu sitio</li>
+                        <li><span class="check">✓</span> Compatible con dispositivos móviles</li>
+                    </ul>
+                    <a href="index.html#contact" class="btn btn-outline">Comenzar</a>
+                </div>
+                <div class="tier-card featured">
+                    <div class="tier-badge">Más Popular</div>
+                    <div class="tier-icon">🚀</div>
+                    <div class="tier-name">Crecimiento</div>
+                    <div class="tier-price"><sup>$</sup>199<span style="font-size:1.2rem;font-weight:600;">/mes</span></div>
+                    <div class="tier-price-note">+ $999 de configuración inicial</div>
+                    <div class="tier-divider"></div>
+                    <p class="tier-tagline">Entrenado en tu negocio — agenda, vende e integra con tu CRM automáticamente.</p>
+                    <ul class="tier-features">
+                        <li><span class="check">✓</span> Todo lo del plan Básico</li>
+                        <li><span class="check">✓</span> Entrenamiento personalizado en tus productos/servicios</li>
+                        <li><span class="check">✓</span> Agendamiento de citas dentro del chat</li>
+                        <li><span class="check">✓</span> Integración con CRM y enrutamiento de prospectos</li>
+                        <li><span class="check">✓</span> Análisis de conversaciones</li>
+                        <li><span class="check">✓</span> Escalada a agente humano</li>
+                    </ul>
+                    <a href="index.html#contact" class="btn btn-primary">Comenzar</a>
+                </div>
+                <div class="tier-card">
+                    <div class="tier-icon">🏢</div>
+                    <div class="tier-name">Premium</div>
+                    <div class="tier-price"><sup>$</sup>349<span style="font-size:1.2rem;font-weight:600;">/mes</span></div>
+                    <div class="tier-price-note">+ $1,750 de configuración inicial</div>
+                    <div class="tier-divider"></div>
+                    <p class="tier-tagline">Un asistente IA completamente personalizado con tu voz, personalidad y presencia multi-canal.</p>
+                    <ul class="tier-features">
+                        <li><span class="check">✓</span> Todo lo del plan Crecimiento</li>
+                        <li><span class="check">✓</span> Voz y personalidad de marca IA personalizada</li>
+                        <li><span class="check">✓</span> Multi-canal (web, SMS, redes sociales)</li>
+                        <li><span class="check">✓</span> Integración de base de conocimiento profunda</li>
+                        <li><span class="check">✓</span> Lógica avanzada de razonamiento y escalada</li>
+                        <li><span class="check">✓</span> Entrenamiento y mejora continua</li>
+                    </ul>
+                    <a href="index.html#contact" class="btn btn-outline">Hablemos</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICE 4: Websites -->
+    <section class="pricing-section">
+        <div class="container">
+            <div class="section-header">
+                <div style="max-width:560px;margin:0 0 28px;"><video controls playsinline preload="metadata" style="width:100%;border-radius:12px;"><source src="../videos/website-pricing-v3.mp4" type="video/mp4"></video></div>
+                <div class="section-label">🌐 Creación de Sitios Web</div>
+                <h2 class="section-heading">Sitios Web Potenciados con IA</h2>
+                <p class="section-sub">Rápidos, profesionales, diseñados para convertir. Construimos tu sitio y lo conectamos a las herramientas de IA que convierten visitantes en clientes.</p>
+            </div>
+            <div class="tier-grid">
+                <div class="tier-card">
+                    <div class="tier-icon">🌱</div>
+                    <div class="tier-name">Básico</div>
+                    <div class="tier-price"><sup>$</sup>997</div>
+                    <div class="tier-price-note">pago único — todo incluido</div>
+                    <div class="tier-divider"></div>
+                    <p class="tier-tagline">Todo lo que una pequeña empresa necesita para estar en línea, verse profesional y comenzar a capturar prospectos.</p>
+                    <ul class="tier-features">
+                        <li><span class="check">✓</span> Hasta 7 páginas (Inicio, Sobre Nosotros, Servicios, Contacto + más)</li>
+                        <li><span class="check">✓</span> Compatible con móviles y de carga rápida</li>
+                        <li><span class="check">✓</span> Formulario de contacto que llega a tu correo</li>
+                        <li><span class="check">✓</span> Tu logo, colores y marca</li>
+                        <li><span class="check">✓</span> Listo para Google (SEO básico incluido)</li>
+                        <li><span class="check">✓</span> Activo en 5–7 días hábiles</li>
+                        <li><span class="check">✓</span> Nosotros lo hacemos todo — tú solo revisas y apruebas</li>
+                    </ul>
+                    <a href="index.html#contact" class="btn btn-outline">Comenzar — $997</a>
+                </div>
+                <div class="tier-card featured">
+                    <div class="tier-badge">Más Popular</div>
+                    <div class="tier-icon">🚀</div>
+                    <div class="tier-name">Profesional</div>
+                    <div class="tier-price"><sup>$</sup>2,497</div>
+                    <div class="tier-price-note">pago único — hablemos de lo que necesitas</div>
+                    <div class="tier-divider"></div>
+                    <p class="tier-tagline">Más páginas, más funciones, construido para crecer. Perfecto cuando necesitas integración de pagos, blog o funcionalidad personalizada.</p>
+                    <ul class="tier-features">
+                        <li><span class="check">✓</span> Todo lo del plan Básico</li>
+                        <li><span class="check">✓</span> Hasta 15 páginas</li>
+                        <li><span class="check">✓</span> Sección de blog o noticias</li>
+                        <li><span class="check">✓</span> Integración de pagos en línea</li>
+                        <li><span class="check">✓</span> Widget de chat con IA instalado</li>
+                        <li><span class="check">✓</span> Google Analytics + seguimiento</li>
+                    </ul>
+                    <a href="index.html#contact" class="btn btn-primary">Hablemos</a>
+                </div>
+                <div class="tier-card">
+                    <div class="tier-icon">🏢</div>
+                    <div class="tier-name">Crecimiento</div>
+                    <div class="tier-price"><sup>$</sup>4,997</div>
+                    <div class="tier-price-note">pago único — alcance personalizado, hablemos</div>
+                    <div class="tier-divider"></div>
+                    <p class="tier-tagline">El stack completo — tu sitio conectado a tu CRM, sistema telefónico y automatización. Todo se habla con todo.</p>
+                    <ul class="tier-features">
+                        <li><span class="check">✓</span> Todo lo del plan Profesional</li>
+                        <li><span class="check">✓</span> Integración con CRM</li>
+                        <li><span class="check">✓</span> Automatización integrada</li>
+                        <li><span class="check">✓</span> Widget de recepcionista IA</li>
+                        <li><span class="check">✓</span> Estrategia avanzada de SEO</li>
+                        <li><span class="check">✓</span> Adaptado a tus necesidades exactas</li>
+                    </ul>
+                    <a href="index.html#contact" class="btn btn-outline">Hablemos</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICE 5: CRM -->
+    <section class="pricing-section">
+        <div class="container">
+            <div class="section-header">
+                <div style="max-width:560px;margin:0 0 28px;"><video controls playsinline preload="metadata" style="width:100%;border-radius:12px;"><source src="../videos/crm-pricing-v3.mp4" type="video/mp4"></video></div>
+                <div class="section-label">📈 CRM y Seguimiento de Prospectos</div>
+                <h2 class="section-heading">CRM Hecho Para Ti</h2>
+                <p class="section-sub">Construimos y administramos tu CRM para que siempre sepas exactamente dónde está cada prospecto — desde la primera llamada hasta el trato cerrado.</p>
+            </div>
+            <div class="tier-grid">
+                <div class="tier-card">
+                    <div class="tier-icon">🌱</div>
+                    <div class="tier-name">Básico</div>
+                    <div class="tier-price"><sup>$</sup>49<span style="font-size:1.2rem;font-weight:600;">/mes</span></div>
+                    <div class="tier-price-note">+ $199 de configuración inicial</div>
+                    <div class="tier-divider"></div>
+                    <p class="tier-tagline">Rastrea cada prospecto, cada seguimiento, cada trato — nada se pierde.</p>
+                    <ul class="tier-features">
+                        <li><span class="check">✓</span> Seguimiento de contactos y prospectos</li>
+                        <li><span class="check">✓</span> Gestión de etapas del pipeline</li>
+                        <li><span class="check">✓</span> Recordatorios de seguimiento</li>
+                        <li><span class="check">✓</span> Resumen diario por correo</li>
+                        <li><span class="check">✓</span> Nosotros lo configuramos por ti</li>
+                    </ul>
+                    <a href="index.html#contact" class="btn btn-outline">Comenzar</a>
+                </div>
+                <div class="tier-card featured">
+                    <div class="tier-badge">Más Popular</div>
+                    <div class="tier-icon">🚀</div>
+                    <div class="tier-name">Pro</div>
+                    <div class="tier-price"><sup>$</sup>97<span style="font-size:1.2rem;font-weight:600;">/mes</span></div>
+                    <div class="tier-price-note">+ $349 de configuración inicial</div>
+                    <div class="tier-divider"></div>
+                    <p class="tier-tagline">Visibilidad completa del pipeline con borradores de seguimiento IA e integración con el sistema telefónico.</p>
+                    <ul class="tier-features">
+                        <li><span class="check">✓</span> Todo lo del plan Básico</li>
+                        <li><span class="check">✓</span> Mensajes de seguimiento redactados por IA</li>
+                        <li><span class="check">✓</span> Resumen semanal de rendimiento</li>
+                        <li><span class="check">✓</span> Seguimiento de ROI por fuente de prospectos</li>
+                        <li><span class="check">✓</span> Integración con registro de llamadas del sistema telefónico</li>
+                    </ul>
+                    <a href="index.html#contact" class="btn btn-primary">Comenzar</a>
+                </div>
+                <div class="tier-card">
+                    <div class="tier-icon">⚡️</div>
+                    <div class="tier-name">Paquete Completo</div>
+                    <div class="tier-price"><sup>$</sup>497<span style="font-size:1.2rem;font-weight:600;">/mes</span></div>
+                    <div class="tier-price-note">sin cuota de configuración — ahorra $100+/mes</div>
+                    <div class="tier-divider"></div>
+                    <p class="tier-tagline">Contestador telefónico + CRM + automatización + mantenimiento web. Todo hecho por nosotros.</p>
+                    <ul class="tier-features">
+                        <li><span class="check">✓</span> Recepcionista IA (24/7)</li>
+                        <li><span class="check">✓</span> CRM Pro completo</li>
+                        <li><span class="check">✓</span> Flujos de automatización empresarial</li>
+                        <li><span class="check">✓</span> Mantenimiento del sitio web</li>
+                        <li><span class="check">✓</span> Cuotas de configuración eliminadas</li>
+                    </ul>
+                    <a href="index.html#contact" class="btn btn-outline">Hablemos</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Monthly Retainers -->
+    <section style="padding: 72px 0; background: rgba(255,255,255,0.02);">
+        <div class="container">
+            <div class="retainer-section">
+                <div class="section-header" style="margin-bottom: 0;">
+                    <div style="max-width:560px;margin:0 0 28px;"><video controls playsinline preload="metadata" style="width:100%;border-radius:12px;"><source src="../videos/retainer-pricing-v3.mp4" type="video/mp4"></video></div>
+                    <div class="section-label">🔧 Soporte Mensual</div>
+                    <h2 class="section-heading">Planes de Mantenimiento Mensual</h2>
+                    <p class="section-sub">Tu sistema de IA no es algo que se hace una vez y se olvida. Mantenlo afilado, monitoreado y evolucionando con un plan de soporte mensual.</p>
+                </div>
+                <div class="retainer-grid">
+                    <div class="retainer-card">
+                        <div class="retainer-name">Básico</div>
+                        <div class="retainer-price">$197</div>
+                        <div class="retainer-period">por mes</div>
+                        <ul class="retainer-features">
+                            <li><span class="check">✓</span> Monitoreo del sistema y verificaciones de disponibilidad</li>
+                            <li><span class="check">✓</span> Actualizaciones y ajustes menores</li>
+                            <li><span class="check">✓</span> 2 horas de cambios / mes</li>
+                            <li><span class="check">✓</span> Resumen mensual de rendimiento</li>
+                        </ul>
+                    </div>
+                    <div class="retainer-card featured">
+                        <div class="retainer-name">Crecimiento</div>
+                        <div class="retainer-price">$497</div>
+                        <div class="retainer-period">por mes</div>
+                        <ul class="retainer-features">
+                            <li><span class="check">✓</span> Todo lo del plan Básico</li>
+                            <li><span class="check">✓</span> Respuesta de soporte prioritario</li>
+                            <li><span class="check">✓</span> 8 horas de cambios / mes</li>
+                            <li><span class="check">✓</span> Adición de nuevas funcionalidades</li>
+                            <li><span class="check">✓</span> Llamada de revisión quincenal</li>
+                        </ul>
+                    </div>
+                    <div class="retainer-card">
+                        <div class="retainer-name">Empresarial</div>
+                        <div class="retainer-price" style="font-size: 1.6rem;">Personalizado</div>
+                        <div class="retainer-period">adaptado a tus necesidades</div>
+                        <ul class="retainer-features">
+                            <li><span class="check">✓</span> Soporte de cuenta dedicado</li>
+                            <li><span class="check">✓</span> Horas ilimitadas (alcance mensual)</li>
+                            <li><span class="check">✓</span> Garantías de SLA</li>
+                            <li><span class="check">✓</span> Planificación de hoja de ruta estratégica</li>
+                            <li><span class="check">✓</span> Capacitación e incorporación del equipo</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="pricing-section">
+        <div class="container">
+            <div class="section-header">
+                <div style="max-width:560px;margin:0 0 28px;"><video controls playsinline preload="metadata" style="width:100%;border-radius:12px;"><source src="../videos/faq-pricing-v3.mp4" type="video/mp4"></video></div>
+                <div class="section-label">❓ Preguntas Frecuentes</div>
+                <h2 class="section-heading">Preguntas Comunes</h2>
+                <p class="section-sub">¿Aún tienes preguntas? Estas son las que más escuchamos — respondidas con honestidad.</p>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-card">
+                    <p class="faq-q">¿Requieren contratos?</p>
+                    <p class="faq-a">Los proyectos de configuración son un compromiso único — sin contrato a largo plazo. Los planes de mantenimiento mensual son mes a mes. Ganamos tu negocio continuo haciendo buen trabajo, no atándote de manos.</p>
+                </div>
+                <div class="faq-card">
+                    <p class="faq-q">¿Cuánto tiempo tarda la configuración?</p>
+                    <p class="faq-a">La mayoría de las configuraciones del plan Básico quedan activas en 5 a 10 días hábiles. Los planes Crecimiento y Empresarial típicamente tardan 3 a 6 semanas dependiendo de la complejidad, integraciones y qué tan rápido recibamos tu información de negocio. Te daremos un plazo claro desde el principio.</p>
+                </div>
+                <div class="faq-card">
+                    <p class="faq-q">¿Qué pasa si necesito cambios después del lanzamiento?</p>
+                    <p class="faq-a">Los ajustes menores en los primeros 30 días no tienen costo adicional. Después de eso, los cambios están cubiertos bajo un plan de mantenimiento mensual o se cobran a nuestra tarifa por hora estándar. Siempre seremos transparentes sobre lo que costará un cambio antes de tocar nada.</p>
+                </div>
+                <div class="faq-card">
+                    <p class="faq-q">¿Ofrecen reembolsos?</p>
+                    <p class="faq-a">Respaldamos nuestro trabajo. Si no hemos comenzado a construir aún, te devolvemos tu depósito completo. Una vez que el trabajo está en marcha, trabajaremos contigo para hacerlo bien antes de hablar de reembolsos. No nos interesa quedarnos con tu dinero por algo que no funciona para ti.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICE 6: Social Media -->
+    <section class="pricing-section">
+        <div class="container">
+            <div class="section-header">
+                <div style="max-width:560px;margin:0 0 28px;"><video controls playsinline preload="metadata" style="width:100%;border-radius:12px;"><source src="../videos/social-pricing-v3.mp4" type="video/mp4"></video></div>
+                <div class="section-label">📱 Gestión de Redes Sociales</div>
+                <h2 class="section-heading">Redes Sociales Gestionadas Para Ti</h2>
+                <p class="section-sub">Escribimos, programamos y publicamos tu contenido en X, Facebook, Instagram, TikTok y LinkedIn. Conectas tus cuentas una vez — nosotros manejamos todo lo demás.</p>
+            </div>
+            <div class="tier-grid">
+                <div class="tier-card">
+                    <div class="tier-icon">📅</div>
+                    <div class="tier-name">Básico</div>
+                    <div class="tier-price"><sup>$</sup>297</div>
+                    <div class="tier-price-note">/mes + $199 de configuración</div>
+                    <div class="tier-divider"></div>
+                    <p class="tier-tagline">Obtén publicaciones profesionales y consistentes en 2 plataformas sin mover un dedo.</p>
+                    <ul class="tier-features">
+                        <li><span class="check">✓</span> 2 plataformas (a tu elección)</li>
+                        <li><span class="check">✓</span> 15 publicaciones/mes</li>
+                        <li><span class="check">✓</span> Contenido escrito para tu industria</li>
+                        <li><span class="check">✓</span> Calendario de contenido mensual</li>
+                        <li><span class="check">✓</span> Estrategia de hashtags</li>
+                    </ul>
+                    <a href="index.html#contact" class="btn btn-outline">Comenzar →</a>
+                </div>
+                <div class="tier-card featured">
+                    <div class="tier-badge">🔥 Más Popular</div>
+                    <div class="tier-icon">🚀</div>
+                    <div class="tier-name">Profesional</div>
+                    <div class="tier-price"><sup>$</sup>497</div>
+                    <div class="tier-price-note">/mes + $299 de configuración</div>
+                    <div class="tier-divider"></div>
+                    <p class="tier-tagline">Presencia social completa en hasta 5 plataformas con publicaciones diarias y monitoreo de engagement.</p>
+                    <ul class="tier-features">
+                        <li><span class="check">✓</span> Hasta 5 plataformas</li>
+                        <li><span class="check">✓</span> Publicaciones diarias</li>
+                        <li><span class="check">✓</span> Contenido escrito para tu industria</li>
+                        <li><span class="check">✓</span> Monitoreo de comentarios y borradores de respuesta</li>
+                        <li><span class="check">✓</span> Calendario de contenido mensual</li>
+                        <li><span class="check">✓</span> Estrategia de hashtags y seguimiento de rendimiento</li>
+                    </ul>
+                    <a href="index.html#contact" class="btn btn-primary">Comenzar →</a>
+                </div>
+                <div class="tier-card">
+                    <div class="tier-icon">👑</div>
+                    <div class="tier-name">Crecimiento</div>
+                    <div class="tier-price"><sup>$</sup>797</div>
+                    <div class="tier-price-note">/mes + $399 de configuración</div>
+                    <div class="tier-divider"></div>
+                    <p class="tier-tagline">Máxima producción — creación de contenido, publicaciones, engagement y estrategia de crecimiento, todo manejado para ti.</p>
+                    <ul class="tier-features">
+                        <li><span class="check">✓</span> Todas las plataformas (5+)</li>
+                        <li><span class="check">✓</span> 2 publicaciones diarias</li>
+                        <li><span class="check">✓</span> Guiones de contenido en video</li>
+                        <li><span class="check">✓</span> Gestión completa de engagement</li>
+                        <li><span class="check">✓</span> Estrategia de crecimiento y reportes</li>
+                        <li><span class="check">✓</span> Soporte prioritario</li>
+                    </ul>
+                    <a href="index.html#contact" class="btn btn-outline">Comenzar →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- No Website Banner -->
+    <section style="padding: 60px 20px; background: linear-gradient(135deg, rgba(102,126,234,0.1) 0%, rgba(118,75,162,0.1) 100%); border-top: 1px solid rgba(102,126,234,0.2); border-bottom: 1px solid rgba(102,126,234,0.2);">
+        <div class="container" style="text-align: center; max-width: 700px;">
+            <div style="font-size: 2.5rem; margin-bottom: 16px">👀</div>
+            <h2 style="font-size: 1.8rem; font-weight: 700; color: #fff; margin-bottom: 12px;">¿Aún No Tienes Sitio Web?</h2>
+            <p style="font-size: 1.05rem; color: rgba(255,255,255,0.7); margin-bottom: 24px; line-height: 1.7;">No estás solo. Miles de excelentes pequeñas empresas operan completamente de boca en boca y un número de teléfono. Eso funciona — hasta que deja de funcionar. Te ponemos en línea de manera rápida, limpia y construida para crecer. Desde <strong style="color:#a78bfa;">$997</strong>.</p>
+            <a href="index.html#contact" class="btn btn-primary">Pon tu Negocio en Línea →</a>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <div class="container">
+        <div class="pricing-cta">
+            <h2>¿Listo para <span class="gradient-text">Dejar de Hacer Todo Manualmente?</span></h2>
+            <p>Elige un nivel, comunícate con nosotros y juntos determinaremos exactamente qué necesita tu negocio. Consulta gratuita — sin presión, sin diapositivas de ventas.</p>
+            <div class="cta-btns">
+                <a href="index.html#contact" class="btn btn-primary btn-lg">Obtén tu Consulta Gratuita</a>
+                <a href="phone-answering.html" class="btn btn-outline btn-lg">Ver Recepcionista IA</a>
+            </div>
+            <p style="margin-top: 24px; font-size: 1rem; opacity: 0.85;">¿Quieres algo que puedas usar ahora mismo? Descarga nuestra guía 👇</p>
+            <a href="https://buy.stripe.com/fZu7sLbGG8Mz9mc7tW3F601" class="btn btn-outline" style="margin-top: 12px;">📥 Obtén la Guía "5 Victorias con IA" — $19</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="index.html" class="nav-logo">
+                    <img src="../images/logo.png" alt="Max's AI Solutions" class="logo-img" style="width:52px;height:52px;border-radius:10px;">
+                </a>
+                <p class="footer-tagline">IA que trabaja para tu negocio.</p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html#services">Servicios</a>
+                <a href="pricing.html">Precios</a>
+                <a href="training.html">Capacitación Gratuita de IA</a>
+                <a href="phone-answering.html">Sistemas de Contestación IA</a>
+                <a href="index.html#contact">Contacto</a>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Max's AI Solutions. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
