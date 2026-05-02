@@ -42,10 +42,10 @@
     <section class="hero">
         <div class="hero-bg"></div>
         <div class="container" style="padding-top: 100px; padding-bottom: 80px;">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
+            <div>
 
                 <!-- Left: Text -->
-                <div style="padding-left: 12px;">
+                <div style="padding-left: 12px; max-width: 700px; margin: 0 auto;">
                     <div class="hero-badge">⚡ Soluciones Empresariales con IA</div>
                     <h1 style="text-align: left; font-size: clamp(2rem, 4vw, 3.2rem); margin-bottom: 20px;">Deja de Hacer el Trabajo que <span class="gradient-text">una Máquina Puede Hacer</span></h1>
                     <p class="hero-subtitle" style="text-align: left; margin-bottom: 28px;">Creamos sistemas de IA personalizados que automatizan tus tareas repetitivas, hacen seguimiento a tus prospectos y manejan las partes de tu negocio que no necesitan un toque humano.</p>
@@ -60,29 +60,10 @@
                     </div>
                 </div>
 
-                <!-- Right: Video -->
-                <div>
-                    <div style="position: relative; border-radius: 16px; overflow: hidden; box-shadow: 0 0 40px rgba(79,70,229,0.35); background: #000; aspect-ratio: 1/1;">
-                        <video id="heroVideo" controls playsinline preload="metadata"
-                            style="width: 100%; height: 100%; display: block;"
-                            poster="../images/max-avatar.png">
-                            <source src="../videos/homepage-intro-v3.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <p style="text-align: center; color: #9595b0; font-size: 0.85rem; margin-top: 12px;">👆 Conoce a MAX — nuestro operador de IA (1 min)</p>
-                </div>
-
             </div>
         </div>
 
-        <style>
-        @media (max-width: 768px) {
-            .hero > .container > div[style*="grid-template-columns"] {
-                grid-template-columns: 1fr !important;
-                gap: 36px !important;
-            }
-        }
-        </style>
+
     </section>
 
     <!-- Problem Section -->
@@ -138,10 +119,7 @@
                 <h2>Soluciones de IA que Realmente <span class="gradient-text">Funcionan</span></h2>
                 <p>Sin chatbots genéricos. Sin plantillas de molde. Sistemas personalizados construidos según cómo opera tu negocio en realidad.</p>
             </div>
-            <!-- What We Build Video -->
-            <div style="max-width: 800px; margin: 0 auto 56px auto;">
-                <p style="text-align: center; color: #9595b0; font-size: 0.85rem; margin-top: 12px;">👆 MAX te muestra todo lo que construimos (~1:40)</p>
-            </div>
+
 
             <div class="services-grid">
                 <div class="service-card">
@@ -265,18 +243,6 @@
         </div>
     </section>
 
-    <!-- CTA Closer Video -->
-    <section style="background: #0a0a1a; padding: 60px 0 20px 0;">
-        <div class="container">
-            <div style="text-align: center; margin-bottom: 24px;">
-                <div class="section-badge" style="display: inline-block;">¿Listo para Empezar?</div>
-                <h2 style="margin-top: 12px; font-size: clamp(1.6rem, 3vw, 2.4rem);">Deja que MAX te convenza — <span class="gradient-text">personalmente.</span></h2>
-            </div>
-            <div style="max-width: 720px; margin: 0 auto;">
-                <p style="text-align: center; color: #9595b0; font-size: 0.85rem; margin-top: 12px;">👇 Luego llena el formulario de abajo — te respondemos rápido.</p>
-            </div>
-        </div>
-    </section>
 
     <!-- Contact Section -->
     <section class="contact-section" id="contact">
@@ -396,63 +362,7 @@
 
     <script src="../js/main.js"></script>
 
-    <!-- ElevenLabs Conversational AI Widget -->
-    <style>
-      #max-widget-container {
-        position: fixed;
-        bottom: 24px;
-        right: 24px;
-        z-index: 9999;
-      }
-      #max-widget-close {
-        display: none;
-        position: absolute;
-        top: -10px;
-        right: -10px;
-        width: 26px;
-        height: 26px;
-        background: #fff;
-        border: 2px solid #6c47ff;
-        border-radius: 50%;
-        color: #6c47ff;
-        font-size: 14px;
-        font-weight: 700;
-        line-height: 22px;
-        text-align: center;
-        cursor: pointer;
-        z-index: 10000;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-      }
-      #max-widget-close:hover { background: #6c47ff; color: #fff; }
-      elevenlabs-convai {
-        --el-convai-button-color: #6c47ff;
-        --el-convai-button-icon-color: #ffffff;
-      }
-    </style>
-    <div id="max-widget-container">
-      <div id="max-widget-close" onclick="document.getElementById('max-widget-container').style.display='none'">×</div>
-      <elevenlabs-convai agent-id="agent_8901kppgsk0qezab60wrd94xbm7a" action-text="¿Preguntas? ¡Pregunta aquí!" start-call-text="¿Preguntas? ¡Pregunta aquí!"></elevenlabs-convai>
-    </div>
-    <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const observer = new MutationObserver(function() {
-          const widget = document.querySelector('elevenlabs-convai');
-          const closeBtn = document.getElementById('max-widget-close');
-          if (widget && closeBtn) {
-            const expanded = widget.getAttribute('expand') === 'true' ||
-                            widget.shadowRoot?.querySelector('.expanded') ||
-                            widget.offsetHeight > 80;
-            closeBtn.style.display = expanded ? 'block' : 'none';
-          }
-        });
-        const widget = document.querySelector('elevenlabs-convai');
-        if (widget) observer.observe(widget, { attributes: true, subtree: true, childList: true });
-        setTimeout(() => {
-          document.getElementById('max-widget-close').style.display = 'block';
-        }, 2000);
-      });
-    </script>
+
 
 </body>
 </html>
