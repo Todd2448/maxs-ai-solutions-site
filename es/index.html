@@ -364,5 +364,28 @@
 
 
 
+
+    <!-- MAX Spanish Chat Widget -->
+    <style>
+      #max-widget-container {
+        position: fixed; bottom: 20px; right: 20px; z-index: 9999;
+      }
+      #max-widget-close {
+        position: absolute; top: -10px; right: -10px; z-index: 10000;
+        background: #1e1e2e; color: #a78bfa; border: 2px solid #a78bfa;
+        border-radius: 50%; width: 28px; height: 28px; cursor: pointer;
+        display: none; font-size: 16px; line-height: 24px; text-align: center;
+      }
+      #max-widget-close:hover { background: #6c47ff; color: #fff; }
+      elevenlabs-convai {
+        --widget-color: #6c47ff;
+      }
+    </style>
+    <div id="max-widget-container">
+      <div id="max-widget-close" onclick="document.getElementById('max-widget-container').style.display='none'">x</div>
+      <elevenlabs-convai agent-id="agent_9601kqn6yta1fgqby47ejk80tazh" action-text="¿Preguntas? ¡Haz clic aquí!" start-call-text="¿Preguntas? ¡Haz clic aquí!"></elevenlabs-convai>
+    </div>
+    <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+
 </body>
 </html>
