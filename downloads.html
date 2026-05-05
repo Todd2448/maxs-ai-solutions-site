@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Materials & Downloads — Max's AI Solutions</title>
+    <meta name="description" content="Download professional sales materials, service one-pagers, and marketing resources from Max's AI Solutions. Print-ready PDFs for your binder.">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .downloads-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .download-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .download-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-glow);
+        }
+        .download-card .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+        .download-card h3 {
+            color: var(--text-primary);
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        .download-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .download-card .includes {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        .download-btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background: var(--gradient);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: opacity 0.3s ease;
+        }
+        .download-btn:hover {
+            opacity: 0.9;
+        }
+        .binder-section {
+            text-align: center;
+            margin: 60px 0 40px;
+            padding: 40px;
+            background: var(--bg-card);
+            border-radius: 16px;
+            border: 1px solid var(--border);
+        }
+        .binder-section h2 {
+            color: var(--text-primary);
+            font-size: 1.8rem;
+            margin-bottom: 16px;
+        }
+        .binder-section p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            max-width: 700px;
+            margin: 0 auto 24px;
+            line-height: 1.6;
+        }
+        .binder-btn {
+            display: inline-block;
+            padding: 16px 40px;
+            background: linear-gradient(135deg, #16a34a, #22c55e);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: opacity 0.3s ease;
+        }
+        .binder-btn:hover {
+            opacity: 0.9;
+        }
+        .page-header {
+            text-align: center;
+            padding: 140px 20px 40px;
+        }
+        .page-header h1 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 16px;
+        }
+        .page-header p {
+            color: var(--text-secondary);
+            font-size: 1.15rem;
+            max-width: 650px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo.png" alt="Max's AI Solutions" class="logo-img">
+                <span class="logo-text">Max's AI Solutions</span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="phone-answering.html">AI Phone Answering</a></li>
+                <li><a href="training.html">Free AI Training</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="demos.html">Live AI Demos</a></li>
+                <li><a href="partner.html" style="color:#a78bfa;font-weight:600;">🤝 Partner Program</a></li>
+                <li><a href="downloads.html" class="active" style="color:#f59e0b;font-weight:600;">📋 Sales Materials</a></li>
+                <li><a href="index.html#contact" class="btn btn-nav">Get Started</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1><span class="gradient-text">Sales Materials</span> & Downloads</h1>
+        <p>Professional, print-ready one-pagers for every service we offer. Download, print, and build your sales binder.</p>
+    </section>
+
+    <!-- Downloads Grid -->
+    <section class="container">
+        <div class="downloads-grid">
+
+            <!-- AI Phone Receptionist -->
+            <div class="download-card">
+                <div class="card-icon">📞</div>
+                <h3>AI-Powered Phone Receptionist</h3>
+                <p>Everything a business owner needs to know about our AI phone system — features, benefits, and pricing on one clean page.</p>
+                <div class="includes">Includes: 24/7 coverage, bilingual support, custom setup, pricing tiers, demo number</div>
+                <a href="downloads/AI-Phone-Receptionist.pdf" class="download-btn" download>Download PDF</a>
+            </div>
+
+            <!-- Full Stack Bundle -->
+            <div class="download-card">
+                <div class="card-icon">🚀</div>
+                <h3>Full Stack Business Bundle</h3>
+                <p>The all-in-one package breakdown — phone system, website, chatbot, CRM, social media, academy access, and partner program.</p>
+                <div class="includes">Includes: Everything included, savings breakdown, bundle vs individual pricing</div>
+                <a href="downloads/Full-Stack-Business-Bundle.pdf" class="download-btn" download>Download PDF</a>
+            </div>
+
+            <!-- Partner Program -->
+            <div class="download-card">
+                <div class="card-icon">🤝</div>
+                <h3>Partner Program</h3>
+                <p>Share the opportunity. This one-pager explains how partners earn by referring businesses to our AI services.</p>
+                <div class="includes">Includes: How it works, what partners get, 5-step process, investment details</div>
+                <a href="downloads/Partner-Program.pdf" class="download-btn" download>Download PDF</a>
+            </div>
+
+            <!-- AI Business Academy -->
+            <div class="download-card">
+                <div class="card-icon">🎓</div>
+                <h3>AI Business Academy</h3>
+                <p>Plain-English AI training for business owners. Three tracks from beginner to revenue-generating AI strategies.</p>
+                <div class="includes">Includes: Course tracks, pricing options (single, bundle, membership), who it's for</div>
+                <a href="downloads/AI-Business-Academy.pdf" class="download-btn" download>Download PDF</a>
+            </div>
+
+            <!-- Company Overview -->
+            <div class="download-card">
+                <div class="card-icon">🏢</div>
+                <h3>Company Overview</h3>
+                <p>Who we are, what we do, and every service at a glance. The first page of any professional binder.</p>
+                <div class="includes">Includes: All services, pricing summary, contact info, demo number</div>
+                <a href="downloads/Company-Overview.pdf" class="download-btn" download>Download PDF</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Binder CTA Section -->
+    <section class="container">
+        <div class="binder-section">
+            <h2>📋 Build Your Sales Binder</h2>
+            <p>Download all five one-pagers, print them out, and put them in a professional binder. Walk into any business with confidence — you'll have everything you need to show what AI can do for them.</p>
+            <p style="color: var(--accent); font-weight: 600; font-size: 0.95rem;">Pro tip: Print on high-quality paper. First impressions matter.</p>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section style="text-align: center; padding: 40px 20px 80px;">
+        <h2 style="color: var(--text-primary); margin-bottom: 16px;">Ready to Start Selling?</h2>
+        <p style="color: var(--text-secondary); margin-bottom: 24px; font-size: 1.05rem;">Join the Partner Program and get access to all materials, training, and support.</p>
+        <a href="partner.html" class="download-btn" style="padding: 16px 40px; font-size: 1.05rem;">Learn About the Partner Program</a>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: var(--bg-card); border-top: 1px solid var(--border); padding: 30px 20px; text-align: center;">
+        <p style="color: var(--text-muted); font-size: 0.9rem;">
+            &copy; 2026 Max's AI Solutions &nbsp;|&nbsp;
+            <a href="index.html" style="color: var(--primary-light); text-decoration: none;">Home</a> &nbsp;|&nbsp;
+            <a href="tel:4433979716" style="color: var(--primary-light); text-decoration: none;">(443) 397-9716</a> &nbsp;|&nbsp;
+            <a href="mailto:todd.maxsaisolutions@gmail.com" style="color: var(--primary-light); text-decoration: none;">todd.maxsaisolutions@gmail.com</a> &nbsp;|&nbsp;
+            maxsaisolutions.com
+        </p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
