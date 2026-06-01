@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog — AI Tips for Small Business Owners | Max's AI Solutions</title>
+    <meta name="description" content="Plain-English AI articles for small business owners. Learn how AI can answer your phones, automate your busywork, and help you compete without a tech degree.">
+    <link rel="icon" type="image/png" href="../images/logo.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .blog-hero {
+            position: relative;
+            padding: 140px 0 80px;
+            overflow: hidden;
+        }
+        .blog-hero-bg {
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 80% 50% at 50% -20%, rgba(79,70,229,0.25), transparent),
+                radial-gradient(ellipse 50% 40% at 90% 70%, rgba(245,158,11,0.12), transparent),
+                radial-gradient(ellipse 40% 30% at 5% 80%, rgba(124,58,237,0.15), transparent);
+            pointer-events: none;
+        }
+        .blog-hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 32px;
+            padding: 60px 0 80px;
+        }
+        .blog-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .blog-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-glow);
+            border-color: var(--primary-light);
+        }
+        .blog-card-icon {
+            background: linear-gradient(135deg, rgba(79,70,229,0.2), rgba(124,58,237,0.15));
+            padding: 40px 32px 32px;
+            font-size: 3rem;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+        .blog-card-body {
+            padding: 28px 28px 24px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .blog-tag {
+            display: inline-block;
+            background: rgba(79,70,229,0.15);
+            color: #a78bfa;
+            border: 1px solid rgba(167,139,250,0.3);
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 4px 12px;
+            margin-bottom: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .blog-card-body h2 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+            line-height: 1.35;
+        }
+        .blog-card-body p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.65;
+            flex: 1;
+            margin-bottom: 20px;
+        }
+        .blog-meta {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            color: var(--text-muted);
+            font-size: 0.82rem;
+            margin-bottom: 20px;
+        }
+        .blog-read-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #a78bfa;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: gap 0.2s ease;
+        }
+        .blog-read-more:hover {
+            gap: 10px;
+        }
+        .blog-cta {
+            background: linear-gradient(135deg, rgba(79,70,229,0.15), rgba(124,58,237,0.1));
+            border: 1px solid rgba(79,70,229,0.3);
+            border-radius: var(--radius-xl);
+            padding: 60px 40px;
+            text-align: center;
+            margin: 0 0 80px;
+        }
+        .blog-cta h2 { margin-bottom: 16px; }
+        .blog-cta p { color: var(--text-secondary); max-width: 560px; margin: 0 auto 32px; }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="../index.html" class="nav-logo">
+                <img src="../images/logo.png" alt="Max's AI Solutions" class="logo-img">
+                <span class="logo-text">Max's AI Solutions</span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html#about">About Us</a></li>
+                <li><a href="../index.html#services">AI Powered Services</a></li>
+                <li><a href="../phone-answering.html">AI Phone Answering</a></li>
+                <li><a href="../training.html">Free AI Training</a></li>
+                <li><a href="../pricing.html">Pricing</a></li>
+                <li><a href="../demos.html"><span style="white-space:nowrap">Live AI</span><br><span style="white-space:nowrap">Demos</span></a></li>
+                <li><a href="index.html" class="active">Blog</a></li>
+                <li><a href="../partner.html" style="color:#a78bfa;font-weight:600;">🤝 Partner Program</a></li>
+                <li><a href="../box.html" style="color:#a78bfa;font-weight:600;">📦 AI in a Box</a></li>
+                <li><a href="../index.html#contact" class="btn btn-nav">Get Started</a></li>
+                <li><a href="../es/index.html" style="color:#f59e0b;font-weight:600;">🇪🇸 Español</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="blog-hero">
+        <div class="blog-hero-bg"></div>
+        <div class="container">
+            <div class="blog-hero-content">
+                <div class="hero-badge">📝 The MAX Blog</div>
+                <h1>AI Tips for <span class="gradient-text">Real Businesses</span></h1>
+                <p class="hero-subtitle" style="margin-top: 20px;">Plain-English guides that help small business owners understand — and actually use — AI. No hype, no tech jargon. Just practical stuff that works.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Grid -->
+    <section>
+        <div class="container">
+            <div class="blog-grid">
+
+                <!-- Article 1 -->
+                <article class="blog-card">
+                    <div class="blog-card-icon">📞</div>
+                    <div class="blog-card-body">
+                        <span class="blog-tag">AI Phone Answering</span>
+                        <h2>How AI Can Answer Your Business Phone 24/7 (And Never Miss a Lead)</h2>
+                        <div class="blog-meta">
+                            <span>📅 June 2025</span>
+                            <span>⏱ 5 min read</span>
+                        </div>
+                        <p>Every missed call is a missed opportunity. An AI-powered receptionist answers every call, books appointments, and handles common questions — even at midnight.</p>
+                        <a href="ai-phone-answering-for-small-business.html" class="blog-read-more">Read Article →</a>
+                    </div>
+                </article>
+
+                <!-- Article 2 -->
+                <article class="blog-card">
+                    <div class="blog-card-icon">⚙️</div>
+                    <div class="blog-card-body">
+                        <span class="blog-tag">Business Automation</span>
+                        <h2>5 Tasks Every Small Business Should Automate This Year</h2>
+                        <div class="blog-meta">
+                            <span>📅 June 2025</span>
+                            <span>⏱ 6 min read</span>
+                        </div>
+                        <p>You're probably doing at least 3 of these by hand right now. Here's how to hand them off to AI so you can focus on the work that actually requires you.</p>
+                        <a href="5-tasks-small-business-should-automate.html" class="blog-read-more">Read Article →</a>
+                    </div>
+                </article>
+
+                <!-- Article 3 -->
+                <article class="blog-card">
+                    <div class="blog-card-icon">🤖</div>
+                    <div class="blog-card-body">
+                        <span class="blog-tag">AI Chatbots</span>
+                        <h2>What Is an AI Chatbot and Does Your Business Actually Need One?</h2>
+                        <div class="blog-meta">
+                            <span>📅 June 2025</span>
+                            <span>⏱ 5 min read</span>
+                        </div>
+                        <p>You've seen the chatbot pop-ups everywhere. But what do they actually do — and is one right for your business? Here's the straight answer.</p>
+                        <a href="what-is-an-ai-chatbot-for-business.html" class="blog-read-more">Read Article →</a>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- CTA Block -->
+            <div class="blog-cta">
+                <h2>Ready to Put AI to Work?</h2>
+                <p>We build AI-powered systems custom-fit for small businesses — no tech degree required. Get a free consultation and see what's possible for your specific situation.</p>
+                <a href="../index.html#contact" class="btn btn-primary btn-lg">Get Your Free Consultation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="../images/logo.png" alt="Max's AI Solutions" class="logo-img">
+                        <span>Max's AI Solutions</span>
+                    </div>
+                    <p>AI-powered business solutions built for small businesses that want to compete and win.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="../phone-answering.html">AI Phone Answering</a></li>
+                        <li><a href="../index.html#services">Business Automation</a></li>
+                        <li><a href="../index.html#services">AI Chatbots</a></li>
+                        <li><a href="../pricing.html">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="../training.html">Free AI Training</a></li>
+                        <li><a href="index.html">Blog</a></li>
+                        <li><a href="../demos.html">Live Demos</a></li>
+                        <li><a href="../partner.html">Partner Program</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="../index.html#about">About Us</a></li>
+                        <li><a href="../index.html#contact">Contact</a></li>
+                        <li><a href="../privacy.html">Privacy Policy</a></li>
+                        <li><a href="../terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Max's AI Solutions. All rights reserved.</p>
+                <p>Built with ⚡ to help small businesses win.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            navToggle.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
