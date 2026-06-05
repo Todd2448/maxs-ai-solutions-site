@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: TikTok
+Allow: /
+
+Sitemap: https://maxsaisolutions.com/sitemap.xml
