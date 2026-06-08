@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programa de Referidos — Gana 25% por 3 Meses | Max's AI Solutions</title>
-    <meta name="description" content="Refiere clientes a Max's AI Solutions y gana el 25% de lo que paguen durante 3 meses. ¿Quieres comisiones de por vida? Conviértete en Socio. Sin vender. Solo presentaciones.">
+    <title>Programa de Socios — Tres Niveles, Gana Hasta el 75% | Max's AI Solutions</title>
+    <meta name="description" content="Únete al programa de socios de Max's AI Solutions. Referidor Gratis (25% por 3 meses), Socio $497 (25% de por vida + bonos), o Gerente de Cuenta (hasta 75%). Tecnología de IA que genera ingresos reales.">
     <link rel="icon" type="image/png" href="../images/logo.png">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,14 +24,15 @@
             top: -50%; left: -50%;
             width: 200%; height: 200%;
             background: radial-gradient(circle at 40% 50%, rgba(34,197,94,0.06) 0%, transparent 50%),
-                        radial-gradient(circle at 60% 50%, rgba(79,70,229,0.06) 0%, transparent 50%);
+                        radial-gradient(circle at 60% 50%, rgba(79,70,229,0.06) 0%, transparent 50%),
+                        radial-gradient(circle at 50% 70%, rgba(245,158,11,0.04) 0%, transparent 45%);
         }
         .ref-hero .container { position: relative; z-index: 1; }
         .ref-badge {
             display: inline-block;
-            background: rgba(34,197,94,0.15);
-            border: 1px solid rgba(34,197,94,0.3);
-            color: #4ade80;
+            background: rgba(168,139,250,0.15);
+            border: 1px solid rgba(168,139,250,0.3);
+            color: #a78bfa;
             padding: 8px 20px;
             border-radius: 100px;
             font-size: 0.85rem;
@@ -45,14 +46,38 @@
             margin-bottom: 24px;
             color: #fff;
         }
-        .ref-hero h1 .green { color: #4ade80; }
+        .ref-hero h1 .grad {
+            background: linear-gradient(135deg, #a78bfa, #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .ref-hero h1 .orange { color: #f59e0b; }
         .ref-hero .subtext {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             color: #9595b0;
-            max-width: 650px;
+            max-width: 680px;
             margin: 0 auto 40px;
             line-height: 1.7;
         }
+
+        /* Tier pillars */
+        .tier-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+        .tier-pill {
+            padding: 10px 24px;
+            border-radius: 100px;
+            font-size: 0.95rem;
+            font-weight: 700;
+        }
+        .tier-pill.green  { background: rgba(34,197,94,0.15);  color: #4ade80; border: 1px solid rgba(34,197,94,0.3); }
+        .tier-pill.purple { background: rgba(168,139,250,0.15); color: #a78bfa; border: 1px solid rgba(168,139,250,0.3); }
+        .tier-pill.orange { background: rgba(245,158,11,0.15);  color: #f59e0b; border: 1px solid rgba(245,158,11,0.3); }
 
         .ref-section {
             padding: 80px 0;
@@ -68,12 +93,130 @@
             text-align: center;
             color: #9595b0;
             font-size: 1.05rem;
-            max-width: 600px;
+            max-width: 650px;
             margin: 0 auto 48px;
         }
+
+        /* Three-tier path cards */
+        .path-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .path-card {
+            background: rgba(26,26,46,0.85);
+            border: 1px solid #2d2d44;
+            border-radius: 20px;
+            padding: 32px;
+            transition: transform 0.2s, border-color 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+        .path-card.green-glow  { border-color: rgba(34,197,94,0.3);  box-shadow: 0 0 30px rgba(34,197,94,0.07); }
+        .path-card.purple-glow { border-color: rgba(168,139,250,0.35); box-shadow: 0 0 30px rgba(124,58,237,0.1); }
+        .path-card.orange-glow { border-color: rgba(245,158,11,0.4);  box-shadow: 0 0 30px rgba(245,158,11,0.12); }
+        .path-card:hover { transform: translateY(-4px); }
+        .path-card .path-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+            padding: 5px 12px;
+            border-radius: 100px;
+            display: inline-block;
+            align-self: flex-start;
+        }
+        .path-card .path-label.green  { background: rgba(34,197,94,0.12);  color: #4ade80; border: 1px solid rgba(34,197,94,0.25); }
+        .path-card .path-label.purple { background: rgba(168,139,250,0.12); color: #a78bfa; border: 1px solid rgba(168,139,250,0.25); }
+        .path-card .path-label.orange { background: rgba(245,158,11,0.12);  color: #f59e0b; border: 1px solid rgba(245,158,11,0.25); }
+        .path-card h3 { font-size: 1.3rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
+        .path-card .pct { font-size: 2.2rem; font-weight: 800; margin: 10px 0 4px; }
+        .path-card .pct.green  { color: #4ade80; }
+        .path-card .pct.purple { color: #a78bfa; }
+        .path-card .pct.orange { color: #f59e0b; }
+        .path-card .pct-note { font-size: 0.85rem; color: #9595b0; margin-bottom: 16px; }
+        .path-card p { color: #9595b0; font-size: 0.93rem; line-height: 1.6; margin-bottom: 16px; flex-grow: 1; }
+        .path-card ul { list-style: none; padding: 0; margin: 0 0 20px; }
+        .path-card ul li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            color: #c4c4d4;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+        .path-card ul li:last-child { border-bottom: none; }
+        .path-card .path-cta {
+            display: block;
+            text-align: center;
+            padding: 13px 20px;
+            border-radius: 11px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin-top: auto;
+        }
+        .path-cta.green-btn  { background: linear-gradient(135deg,#22c55e,#16a34a); color: #fff; }
+        .path-cta.purple-btn { background: linear-gradient(135deg,#7c3aed,#4f46e5); color: #fff; }
+        .path-cta.orange-btn { background: linear-gradient(135deg,#d97706,#f59e0b); color: #fff; }
+        .path-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(0,0,0,0.35); }
+
+        /* Math section */
+        .math-section {
+            background: linear-gradient(135deg, #1a1030 0%, #0f0f1a 100%);
+            padding: 80px 0;
+        }
+        .math-grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .math-box {
+            background: rgba(26,26,46,0.9);
+            border: 1px solid #2d2d44;
+            border-radius: 16px;
+            padding: 28px;
+        }
+        .math-box.green-border  { border-color: rgba(34,197,94,0.3); }
+        .math-box.purple-border { border-color: rgba(168,139,250,0.3); }
+        .math-box.orange-border { border-color: rgba(245,158,11,0.3); }
+        .math-box h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .math-box h3.green  { color: #4ade80; }
+        .math-box h3.purple { color: #a78bfa; }
+        .math-box h3.orange { color: #f59e0b; }
+        .math-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 12px 0;
+            border-bottom: 1px solid #2d2d44;
+            color: #e2e8f0;
+            gap: 12px;
+        }
+        .math-row:last-child { border-bottom: none; }
+        .math-row .label { color: #9595b0; font-size: 0.88rem; line-height: 1.4; }
+        .math-row .value { font-weight: 700; white-space: nowrap; }
+        .math-row .value.green  { color: #22c55e; }
+        .math-row .value.purple { color: #a78bfa; }
+        .math-row .value.orange { color: #f59e0b; }
+
+        /* Services grid */
         .ref-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 24px;
             max-width: 1000px;
             margin: 0 auto;
@@ -82,63 +225,38 @@
             background: rgba(26,26,46,0.8);
             border: 1px solid #2d2d44;
             border-radius: 16px;
-            padding: 32px;
+            padding: 28px;
             transition: transform 0.2s, border-color 0.2s;
         }
         .ref-card:hover {
             transform: translateY(-4px);
-            border-color: #4ade80;
+            border-color: rgba(168,139,250,0.4);
         }
-        .ref-card .icon { font-size: 2rem; margin-bottom: 16px; }
-        .ref-card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; color: #fff; }
-        .ref-card p { color: #9595b0; font-size: 0.95rem; line-height: 1.6; }
+        .ref-card .icon { font-size: 2rem; margin-bottom: 12px; }
+        .ref-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; color: #fff; }
+        .ref-card p { color: #9595b0; font-size: 0.9rem; line-height: 1.6; }
 
-        .math-section {
-            background: linear-gradient(135deg, #1a1030 0%, #0f0f1a 100%);
-            padding: 80px 0;
-        }
-        .math-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 48px;
-            max-width: 900px;
-            margin: 0 auto;
-            align-items: center;
-        }
-        .math-text h2 { font-size: 2rem; font-weight: 800; margin-bottom: 16px; color: #fff; text-align: left; }
-        .math-text p { color: #9595b0; line-height: 1.7; margin-bottom: 16px; text-align: left; }
-        .math-box {
-            background: rgba(26,26,46,0.9);
-            border: 1px solid #2d2d44;
+        /* 75/25 info box */
+        .split-explain {
+            background: rgba(245,158,11,0.07);
+            border: 1px solid rgba(245,158,11,0.2);
             border-radius: 16px;
             padding: 32px;
+            max-width: 860px;
+            margin: 48px auto 0;
         }
-        .math-box h3 {
-            color: #4ade80;
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .math-row {
-            display: flex;
-            justify-content: space-between;
-            padding: 12px 0;
-            border-bottom: 1px solid #2d2d44;
-            color: #e2e8f0;
-        }
-        .math-row:last-child { border-bottom: none; }
-        .math-row .label { color: #9595b0; }
-        .math-row .value { font-weight: 700; color: #22c55e; }
+        .split-explain h3 { font-size: 1.1rem; font-weight: 700; color: #f59e0b; margin-bottom: 16px; }
+        .split-explain p { color: #c4c4d4; font-size: 0.95rem; line-height: 1.7; margin-bottom: 12px; }
+        .split-explain p:last-child { margin-bottom: 0; }
 
+        /* CTA */
         .ref-cta {
             text-align: center;
             padding: 80px 0;
             background: linear-gradient(180deg, #0f0f1a 0%, #1a1030 50%, #0f0f1a 100%);
         }
         .ref-cta h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 800; margin-bottom: 16px; color: #fff; }
-        .ref-cta p { color: #9595b0; font-size: 1.1rem; max-width: 600px; margin: 0 auto 32px; }
+        .ref-cta p { color: #9595b0; font-size: 1.05rem; max-width: 640px; margin: 0 auto 32px; line-height: 1.7; }
         .btn-ref {
             display: inline-block;
             background: linear-gradient(135deg, #22c55e, #16a34a);
@@ -161,11 +279,15 @@
             border-top: 1px solid #2d2d44;
         }
         .divider h2 { font-size: 1.6rem; font-weight: 800; color: #fff; margin-bottom: 16px; }
-        .divider p { color: #9595b0; max-width: 600px; margin: 0 auto; font-size: 1.05rem; }
+        .divider p { color: #9595b0; max-width: 640px; margin: 0 auto 16px; font-size: 1.05rem; line-height: 1.7; }
 
+        @media (max-width: 960px) {
+            .path-grid { grid-template-columns: 1fr; max-width: 500px; }
+            .math-grid-3 { grid-template-columns: 1fr; max-width: 480px; }
+        }
         @media (max-width: 768px) {
-            .math-grid { grid-template-columns: 1fr; }
             .ref-grid { grid-template-columns: 1fr; }
+            .tier-pills { flex-direction: column; align-items: center; }
         }
     </style>
 </head>
@@ -196,35 +318,87 @@
     <!-- Hero -->
     <section class="ref-hero">
         <div class="container">
-            <div class="ref-badge">💰 PROGRAMA DE REFERIDOS</div>
-            <h1>Refiere un Cliente. Gana <span class="green">25% de Comisión.</span></h1>
-            <p class="subtext">¿Conoces un negocio que necesita un sistema telefónico con IA, automatización o cualquiera de nuestros servicios? Mándanos a esa persona. Cuando se registren, ganas el 25% de lo que paguen — durante los primeros 3 meses desde su fecha de registro. ¿Quieres comisiones de por vida? <a href="../partner-compensation.html" style="color:#4ade80; font-weight:600;">Conoce el Programa Socio →</a></p>
-            <a href="#start" class="btn-ref">Empieza a Ganar Hoy</a>
+            <div class="ref-badge">🤝 PROGRAMA DE SOCIOS — TRES NIVELES</div>
+            <h1>Refiere. Asociate. <span class="orange">Gestiona y Gana el 75%.</span></h1>
+            <p class="subtext">Tres formas de ganar con tecnología de IA que los negocios ya necesitan. Empieza gratis como Referidor, invierte $497 para comisiones de por vida como Socio, o conviértete en Gerente de Cuenta y quédate el 75% de cada cuenta que gestiones.</p>
+
+            <div class="tier-pills">
+                <span class="tier-pill green">✅ Referidor Gratis — 25% por 3 meses</span>
+                <span class="tier-pill purple">⚡ Socio $497 — 25% de por vida + bonos</span>
+                <span class="tier-pill orange">🔥 Gerente de Cuenta — Hasta 75%</span>
+            </div>
+
+            <a href="partner-compensation.html" style="display:inline-block; background: linear-gradient(135deg,#7c3aed,#4f46e5); color:#fff; font-size:1.1rem; font-weight:700; padding:16px 36px; border-radius:12px; text-decoration:none; margin-right:12px; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 30px rgba(124,58,237,0.45)'" onmouseout="this.style.transform='none'; this.style.boxShadow='none'">Ver Plan de Compensación Completo →</a>
+            <a href="#start" class="btn-ref" style="margin-top: 8px;">Registrarme Ahora</a>
         </div>
     </section>
 
-    <!-- Cómo Funciona -->
+    <!-- Tres Caminos -->
     <section class="ref-section">
         <div class="container">
-            <h2>Cómo Funciona</h2>
-            <p class="section-sub">Tres pasos. Sin necesidad de vender. Solo presentaciones.</p>
+            <h2>Elige Tu Camino</h2>
+            <p class="section-sub">Cada nivel tiene su papel. Escoge el que se adapte a cómo quieres trabajar y cuánto quieres ganar.</p>
 
-            <div class="ref-grid" style="max-width: 900px;">
-                <div class="ref-card" style="text-align: center;">
-                    <div class="icon">1️⃣</div>
-                    <h3>Conoce a Alguien que Necesite IA</h3>
-                    <p>Un dentista que pierde llamadas. Un contratista que pierde prospectos. Un salón que no da abasto. Cualquier negocio que pueda beneficiarse de un sistema telefónico con IA, automatización o capacitación.</p>
+            <div class="path-grid">
+                <!-- Referidor Gratis -->
+                <div class="path-card green-glow">
+                    <span class="path-label green">GRATIS PARA UNIRSE</span>
+                    <h3>Referidor</h3>
+                    <div class="pct green">25%</div>
+                    <div class="pct-note">durante los primeros 3 meses</div>
+                    <p>¿Conoces un negocio que necesite un sistema telefónico con tecnología de IA, automatización, o capacitación? Preséntanoslos. Nosotros nos encargamos de todo — tú ganas el 25% de lo que paguen durante los primeros 3 meses.</p>
+                    <ul>
+                        <li>✅ Sin costo para unirse</li>
+                        <li>✅ 25% de cualquier servicio con tecnología de IA que compren</li>
+                        <li>✅ Comisiones por 3 meses desde la fecha de registro</li>
+                        <li>✅ Sin vender — solo presentar la oportunidad</li>
+                        <li>✅ Sin inventario, sin soporte, sin entregas</li>
+                    </ul>
+                    <a href="#start" class="path-cta green-btn">Empezar Gratis</a>
                 </div>
-                <div class="ref-card" style="text-align: center;">
-                    <div class="icon">2️⃣</div>
-                    <h3>Haz la Presentación</h3>
-                    <p>Cuéntales sobre nosotros, comparte nuestro sitio web, o simplemente danos su información. Nosotros nos encargamos de todo desde ahí — el demo, la propuesta, la configuración. Tú no tienes que hacer nada más.</p>
+
+                <!-- Socio -->
+                <div class="path-card purple-glow">
+                    <span class="path-label purple">$497 ÚNICO</span>
+                    <h3>Socio</h3>
+                    <div class="pct purple">25%</div>
+                    <div class="pct-note">de por vida en cada referido</div>
+                    <p>Gana el 25% de la cuenta de cada referido directo — para siempre, sin fecha de vencimiento. Más bonos por cada persona que reclutes que se convierta en Socio o Gerente de Cuenta.</p>
+                    <ul>
+                        <li>⚡ 25% de por vida en todos los referidos directos</li>
+                        <li>⚡ Bono Nivel 1: <strong style="color:#fff;">+$200</strong> cuando alguien que reclutaste se une</li>
+                        <li>⚡ Bono Nivel 2: <strong style="color:#fff;">+$100</strong> (segunda generación)</li>
+                        <li>⚡ Bono Nivel 3: <strong style="color:#fff;">+$50</strong> (tercera generación)</li>
+                        <li>⚡ Capacitación, recursos y soporte prioritario</li>
+                    </ul>
+                    <a href="https://buy.stripe.com/eVqeVdeSS0g37e4bKc3F60c" class="path-cta purple-btn">Convertirme en Socio — $497</a>
                 </div>
-                <div class="ref-card" style="text-align: center;">
-                    <div class="icon">3️⃣</div>
-                    <h3>Cobra Cada Mes</h3>
-                    <p>Cuando se conviertan en clientes, ganas el 25% de su pago mensual — durante los primeros 3 meses desde su fecha de registro. ¿Quieres comisiones que no expiren? <a href="../partner-compensation.html" style="color:#4ade80;">Conviértete en Socio →</a></p>
+
+                <!-- Gerente de Cuenta -->
+                <div class="path-card orange-glow">
+                    <span class="path-label orange">NUEVO — $497 ÚNICO</span>
+                    <h3>Gerente de Cuenta</h3>
+                    <div class="pct orange">75%</div>
+                    <div class="pct-note">cuando encuentras y gestionas la cuenta</div>
+                    <p>Tú encuentras el cliente Y gestionas la relación — te quedas el 75%. Ideal para socios en mercados donde no podemos estar físicamente que quieren poseer su territorio local.</p>
+                    <ul>
+                        <li>🔥 <strong style="color:#fff;">75% de cada cuenta gestionada</strong> que tú originas</li>
+                        <li>🔥 <strong style="color:#fff;">50% de gestión</strong> cuando un Referidor trae el cliente y tú lo gestionas</li>
+                        <li>🔥 El 25% del Referidor sale del 75% del Gerente — misma base</li>
+                        <li>🔥 Comisiones de por vida — sin fecha de vencimiento</li>
+                        <li>🔥 Todos los bonos por red (N1: $200, N2: $100, N3: $50)</li>
+                    </ul>
+                    <a href="https://buy.stripe.com/eVqeVdeSS0g37e4bKc3F60c" class="path-cta orange-btn">Convertirme en Gerente — $497</a>
                 </div>
+            </div>
+
+            <!-- 75/25 explanation -->
+            <div class="split-explain">
+                <h3>💡 Cómo Funciona la División 75/25</h3>
+                <p><strong style="color:#fff;">Siempre nos quedamos el 25%.</strong> El 75% restante fluye a los socios que están construyendo y gestionando las relaciones con clientes.</p>
+                <p><strong style="color:#f59e0b;">Escenario A — Tú lo haces todo:</strong> Encuentras el cliente Y lo gestionas → tú te quedas el 75%, nosotros el 25%.</p>
+                <p><strong style="color:#f59e0b;">Escenario B — Trabajo en equipo:</strong> Un Referidor trae el cliente, tú lo gestionas → el 75% se divide entre el Gerente (50%) y el Referidor (25%). Nosotros siempre nos quedamos el 25%. El 25% del Referidor sale del 75% del Gerente — el pastel no cambia.</p>
+                <p style="margin-top: 16px; text-align: center;"><a href="partner-compensation.html" style="color:#f59e0b; font-weight:700;">Ver el Plan Completo con Ejemplos de Ingresos →</a></p>
             </div>
         </div>
     </section>
@@ -232,130 +406,182 @@
     <!-- Las Matemáticas -->
     <section class="math-section">
         <div class="container">
-            <div class="math-grid">
-                <div class="math-text">
-                    <h2>Las Matemáticas Hablan por Sí Solas</h2>
-                    <p>Nuestro sistema telefónico con IA cuesta entre $97 y $297 por mes por cliente. Tú recibes el 25% de eso — durante los primeros 3 meses desde su registro. Refiere unos cuantos negocios y habrás construido un flujo de ingresos real.</p>
-                    <p>Sin inventario. Sin entregas. Sin atención al cliente. Sin trabajo después de la presentación. Nosotros nos encargamos de todo — tú solo cobras.</p>
-                    <p><strong>¿Quieres comisiones que no expiren? <a href="../partner-compensation.html" style="color:#4ade80;">Conoce el Programa Socio completo →</a></strong></p>
+            <h2 style="text-align:center; font-size: clamp(1.8rem,3vw,2.4rem); font-weight:800; color:#fff; margin-bottom:12px;">Las Matemáticas Hablan por Sí Solas</h2>
+            <p style="text-align:center; color:#9595b0; font-size:1.05rem; max-width:600px; margin:0 auto 48px; line-height:1.7;">Nuestro sistema telefónico con tecnología de IA cuesta entre $97 y $297/mes por cliente. Así se ven tus ingresos en cada nivel.</p>
+
+            <div class="math-grid-3">
+                <!-- Referidor -->
+                <div class="math-box green-border">
+                    <h3 class="green">📣 Referidor (25% × 3 meses)</h3>
+                    <div class="math-row">
+                        <span class="label">1 cliente a $297/mes</span>
+                        <span class="value green">$222 total</span>
+                    </div>
+                    <div class="math-row">
+                        <span class="label">5 clientes a $297/mes</span>
+                        <span class="value green">$1,113 total</span>
+                    </div>
+                    <div class="math-row">
+                        <span class="label">1 referido/mes todo el año</span>
+                        <span class="value green">$800+/año</span>
+                    </div>
+                    <div class="math-row">
+                        <span class="label">1 cliente a $97/mes (básico)</span>
+                        <span class="value green">$73 total</span>
+                    </div>
                 </div>
-                <div class="math-box">
-                    <h3>Tus Ingresos como Referidor</h3>
+
+                <!-- Socio -->
+                <div class="math-box purple-border">
+                    <h3 class="purple">⚡ Socio (25% de por vida)</h3>
                     <div class="math-row">
-                        <span class="label">1 cliente a $297/mes (3 meses)</span>
-                        <span class="value">$222 total</span>
+                        <span class="label">1 cliente a $297/mes</span>
+                        <span class="value purple">$74/mes siempre</span>
                     </div>
                     <div class="math-row">
-                        <span class="label">5 clientes a $297/mes (3 meses)</span>
-                        <span class="value">$1,113 total</span>
+                        <span class="label">5 clientes a $297/mes</span>
+                        <span class="value purple">$371/mes siempre</span>
                     </div>
                     <div class="math-row">
-                        <span class="label">1 referido/mes, todo el año</span>
-                        <span class="value">$800+/año</span>
+                        <span class="label">10 clientes a $297/mes</span>
+                        <span class="value purple">$742/mes siempre</span>
                     </div>
-                    <div class="math-row" style="border-top: 2px solid #22c55e; margin-top: 8px; padding-top: 16px;">
-                        <span class="label"><strong>¿Quieres comisiones DE POR VIDA?</strong></span>
-                        <span class="value" style="font-size: 0.9rem;"><a href="../partner-compensation.html" style="color:#4ade80;">Programa Socio →</a></span>
+                    <div class="math-row">
+                        <span class="label">5 reclutas se convierten en Socios</span>
+                        <span class="value purple">+$1,000 bonos</span>
+                    </div>
+                </div>
+
+                <!-- Gerente de Cuenta -->
+                <div class="math-box orange-border">
+                    <h3 class="orange">🔥 Gerente (75% / 50%)</h3>
+                    <div class="math-row">
+                        <span class="label">1 cuenta gestionada a $297/mes</span>
+                        <span class="value orange">$223/mes</span>
+                    </div>
+                    <div class="math-row">
+                        <span class="label">5 cuentas gestionadas a $297/mes</span>
+                        <span class="value orange">$1,114/mes</span>
+                    </div>
+                    <div class="math-row">
+                        <span class="label">10 cuentas gestionadas a $297/mes</span>
+                        <span class="value orange">$2,228/mes</span>
+                    </div>
+                    <div class="math-row">
+                        <span class="label">Co-gestionada (Referidor trajo cliente)</span>
+                        <span class="value orange">$149/mes</span>
                     </div>
                 </div>
             </div>
+
+            <p style="text-align:center; color:#5a5a7a; font-size:0.85rem; margin-top:28px;">Los ejemplos de ingresos son ilustrativos. Los resultados dependen de tu red y actividad. No se garantizan ingresos.</p>
         </div>
     </section>
 
-    <!-- Qué Cuenta -->
+    <!-- Qué Servicios Te Dan la Comisión -->
     <section class="ref-section" style="background: rgba(26,26,46,0.3);">
         <div class="container">
-            <h2>Qué Servicios Te Dan el 25%</h2>
-            <p class="section-sub">Cualquier servicio que compre un cliente referido de Max's AI Solutions — tú ganas en todo.</p>
+            <h2>En Qué Servicios Ganas Comisión</h2>
+            <p class="section-sub">Cualquier servicio con tecnología de IA que compre un cliente referido de Max's AI Solutions — ganas en todo. Sin excepciones.</p>
 
             <div class="ref-grid">
                 <div class="ref-card">
                     <div class="icon">📞</div>
-                    <h3>Sistema Telefónico con IA</h3>
-                    <p>$97–$297/mes por cliente. El referido más común. Todos los negocios con teléfono necesitan esto.</p>
+                    <h3>Sistema Telefónico con Tecnología de IA</h3>
+                    <p>$97–$297/mes por cliente. El referido más común. Todos los negocios con teléfono necesitan esta oportunidad.</p>
                 </div>
                 <div class="ref-card">
                     <div class="icon">🤖</div>
                     <h3>Automatización con IA y Consultoría</h3>
-                    <p>Construcciones de IA personalizadas, automatización de flujos de trabajo, consultoría de negocio. Proyectos únicos y recurrentes.</p>
+                    <p>Construcciones de IA personalizadas y automatización de flujos de trabajo. Proyectos únicos y recurrentes.</p>
                 </div>
                 <div class="ref-card">
                     <div class="icon">🎓</div>
-                    <h3>Capacitación y Acceso a la Academia</h3>
-                    <p>Cursos, suscripciones y programas de formación. $47–$497 por compra.</p>
+                    <h3>Capacitación y Academia de IA</h3>
+                    <p>Cursos, suscripciones y programas de formación con tecnología de IA. $47–$497 por compra.</p>
                 </div>
                 <div class="ref-card">
                     <div class="icon">🌐</div>
                     <h3>Sitio Web y Servicios Digitales</h3>
-                    <p>Desarrollo de sitios web, SEO, configuración de redes sociales. Cualquier servicio digital que ofrezcamos.</p>
+                    <p>Desarrollo de sitios web, SEO, redes sociales. Todos los servicios digitales con tecnología de IA que ofrecemos.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Quién Puede Referir -->
+    <!-- ¿Quién Puede Participar? -->
     <section class="ref-section">
         <div class="container">
-            <h2>¿Quién Puede Ser Referidor?</h2>
-            <p class="section-sub">Cualquiera. En serio.</p>
+            <h2>¿Quién Puede Ser Socio?</h2>
+            <p class="section-sub">Cualquiera. Sin solicitud. Sin capacitación requerida. Sin territorios.</p>
 
-            <div class="ref-grid" style="max-width: 800px;">
+            <div class="ref-grid" style="max-width: 880px;">
                 <div class="ref-card">
                     <div class="icon">👤</div>
                     <h3>Clientes Actuales</h3>
-                    <p>¿Ya usas nuestros servicios? Refiere otros negocios y gana además de lo que ya estás obteniendo.</p>
+                    <p>¿Ya usas nuestros servicios con tecnología de IA? Refiere otros negocios y gana además de lo que ya estás obteniendo.</p>
                 </div>
                 <div class="ref-card">
                     <div class="icon">👥</div>
                     <h3>Amigos y Familia</h3>
-                    <p>¿Conoces a alguien con un negocio? Esa conversación en la cena podría generarte $74/mes para siempre.</p>
+                    <p>¿Conoces a alguien con un negocio? Esa conversación puede generarte $74/mes de por vida como Socio.</p>
                 </div>
                 <div class="ref-card">
                     <div class="icon">🏢</div>
                     <h3>Dueños de Negocio</h3>
-                    <p>¿Tienes conexión con otros dueños de negocio? Cada referido construye tus ingresos pasivos junto a tu propio negocio.</p>
+                    <p>¿Tienes conexiones con otros dueños de negocio? Cada referido construye tus ingresos junto a tu propio negocio.</p>
                 </div>
                 <div class="ref-card">
                     <div class="icon">🌍</div>
                     <h3>Cualquiera, en Cualquier Lugar</h3>
-                    <p>Sin solicitud. Sin capacitación requerida. Sin territorios. Si puedes hacer una presentación, puedes ganar.</p>
+                    <p>Si puedes presentar la oportunidad de la tecnología de IA, puedes ganar. Sin territorios, sin límites geográficos.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Divisor: Upgrade a Socio y Box -->
+    <!-- Divisor -->
     <section class="divider">
         <div class="container">
-            <h2>¿Quieres Comisiones de Por Vida + Bonos por Tu Red?</h2>
-            <p>Conviértete en <a href="../partner-compensation.html" style="color: #a78bfa; font-weight: 600;">Socio</a> por $497 único y gana el 25% de por vida en cada referido — más hasta $200 en bonos cada vez que alguien en tu red se convierte en Socio.</p>
-            <p style="margin-top: 16px;">O si quieres operar tu propio negocio de IA por completo — revisa <a href="box.html" style="color: #a78bfa; font-weight: 600;">IA en Caja</a>. Un sistema completo de negocio de IA listo para operar que tú posees y gestionas.</p>
+            <h2>¿Quieres Ver el Plan Completo con Todos los Números?</h2>
+            <p>El plan de compensación completo incluye tablas de comparación entre los tres niveles, la división 75/25 explicada visualmente, bonos por red, y ejemplos reales de ingresos con nuestros productos con tecnología de IA.</p>
+            <p style="margin-top: 16px;">
+                <a href="partner-compensation.html" style="display:inline-block; background: linear-gradient(135deg,#7c3aed,#4f46e5); color:#fff; font-size:1rem; font-weight:700; padding:14px 32px; border-radius:12px; text-decoration:none;">Ver Plan de Compensación Completo →</a>
+            </p>
+            <p style="margin-top: 20px;">¿Quieres operar tu propio negocio de IA por completo? Revisa <a href="box.html" style="color: #a78bfa; font-weight: 600;">IA en Caja</a> — un sistema completo de negocio con tecnología de IA listo para operar.</p>
         </div>
     </section>
 
-    <!-- CTA -->
+    <!-- CTA / Form -->
     <section class="ref-cta" id="start">
         <div class="container">
             <h2>¿Listo para Empezar a Ganar?</h2>
-            <p>Regístrate gratis como Referidor abajo — gana el 25% por 3 meses en cada referido. O <a href="../partner-compensation.html" style="color:#4ade80; font-weight:600;">conoce el Programa Socio completo</a> para comisiones de por vida + bonos por tu red.</p>
+            <p>Regístrate gratis como Referidor abajo — gana el 25% por 3 meses en cada referido. O <a href="partner-compensation.html" style="color:#a78bfa; font-weight:600;">conoce el Plan Completo</a> para comisiones de por vida + el nivel Gerente de Cuenta con 75%.</p>
 
-            <div style="max-width: 450px; margin: 0 auto;">
+            <div style="max-width: 460px; margin: 0 auto;">
                 <form action="https://formspree.io/f/mwvwjjoq" method="POST" style="display: flex; flex-direction: column; gap: 14px;">
-                    <input type="hidden" name="_subject" value="New Referral Partner Signup">
-                    <input type="hidden" name="form_type" value="referral_partner">
+                    <input type="hidden" name="_subject" value="New Spanish Partner Signup">
+                    <input type="hidden" name="form_type" value="es_partner_signup">
                     <input type="text" name="name" placeholder="Tu Nombre Completo" required
-                        style="padding: 14px 18px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; color: white; font-size: 1rem;">
+                        style="padding: 14px 18px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; color: white; font-size: 1rem; font-family: 'Inter', sans-serif;">
                     <input type="email" name="email" placeholder="Tu Correo Electrónico" required
-                        style="padding: 14px 18px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; color: white; font-size: 1rem;">
+                        style="padding: 14px 18px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; color: white; font-size: 1rem; font-family: 'Inter', sans-serif;">
                     <input type="tel" name="phone" placeholder="Tu Número de Teléfono" required
-                        style="padding: 14px 18px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; color: white; font-size: 1rem;">
-                    <textarea name="message" placeholder="¿Ya tienes a alguien en mente? Cuéntanos sobre ellos (opcional)" rows="3"
-                        style="padding: 14px 18px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; color: white; font-size: 1rem; resize: vertical;"></textarea>
-                    <button type="submit" class="btn-ref" style="border: none; cursor: pointer; font-size: 1.1rem;">Registrarme como Referidor</button>
+                        style="padding: 14px 18px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; color: white; font-size: 1rem; font-family: 'Inter', sans-serif;">
+                    <select name="tier_interest" required style="padding: 14px 18px; background: rgba(26,26,46,0.95); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; color: white; font-size: 1rem; font-family: 'Inter', sans-serif;">
+                        <option value="" disabled selected>¿Qué nivel te interesa?</option>
+                        <option value="referidor_gratis">Referidor Gratis (25% por 3 meses)</option>
+                        <option value="socio_497">Socio $497 (25% de por vida + bonos)</option>
+                        <option value="gerente_cuenta">Gerente de Cuenta (hasta 75%)</option>
+                        <option value="no_se">Aún no lo sé — cuéntenme más</option>
+                    </select>
+                    <textarea name="message" placeholder="¿Ya tienes a alguien en mente? Cuéntanos sobre la oportunidad (opcional)" rows="3"
+                        style="padding: 14px 18px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; color: white; font-size: 1rem; font-family: 'Inter', sans-serif; resize: vertical;"></textarea>
+                    <button type="submit" class="btn-ref" style="border: none; cursor: pointer; font-size: 1.1rem; font-family: 'Inter', sans-serif;">Registrarme como Socio</button>
                 </form>
             </div>
 
-            <p style="color: #6b6b8a; font-size: 0.85rem; margin-top: 32px;">¿Preguntas? Escríbenos a <a href="mailto:todd.maxsaisolutions@gmail.com" style="color: #4ade80;">todd.maxsaisolutions@gmail.com</a> o llama al <a href="tel:+14433979716" style="color: #4ade80;">(443) 397-9716</a></p>
+            <p style="color: #6b6b8a; font-size: 0.85rem; margin-top: 32px;">¿Preguntas? Escríbenos a <a href="mailto:todd.maxsaisolutions@gmail.com" style="color: #a78bfa;">todd.maxsaisolutions@gmail.com</a> o llama al <a href="tel:+14433979716" style="color: #a78bfa;">(443) 397-9716</a></p>
         </div>
     </section>
 
@@ -366,7 +592,8 @@
             <p style="color: #4a4a6a; font-size: 0.8rem; margin-top: 8px;">
                 <a href="privacy.html" style="color: #4a4a6a;">Privacidad</a> · 
                 <a href="terms.html" style="color: #4a4a6a;">Términos</a> · 
-                <a href="index.html" style="color: #4a4a6a;">Inicio</a>
+                <a href="index.html" style="color: #4a4a6a;">Inicio</a> ·
+                <a href="partner-compensation.html" style="color: #4a4a6a;">Plan de Compensación</a>
             </p>
         </div>
     </footer>
